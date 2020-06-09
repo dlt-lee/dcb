@@ -1,4 +1,4 @@
-
+library(Matrix)
 
 rnames<-c("number","a1","a2","a3","a4","a5","a6","b2")
 cnames<-c()
@@ -384,6 +384,24 @@ cell_all<-c(cell_2018,
             cell_2019,
             cell_2020)
 m_all<-matrix(cell_all,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
+
+n<-m_all[,1]
+a1<-m_all[,2]
+a2<-m_all[,3]
+a3<-m_all[,4]
+a4<-m_all[,5]
+a5<-m_all[,6]
+a6<-m_all[,7]
+b1<-m_all[,8]
+#apply(x,marMARGIN,FUN,...)
+sa<-apply(m_all[,2:7],1,sum,na.rm=TRUE)
+dsa<-c(0,diff(sa))
+dsb<-c(0,diff(b1))
+dcb<- data.frame(n,a1,a2,a3,a4,a5,a6,b1,dsa,dsb)
+
+
+write.csv(dlt,file = "dcb.csv")
+print(tail(dcb,1))
 
 
 
