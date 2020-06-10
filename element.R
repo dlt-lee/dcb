@@ -457,7 +457,7 @@ dsb<-c(0,diff(b1))
 dcb<- data.frame(n,a1,a2,a3,a4,a5,a6,b1,dsa,dsb)
 
 
-write.csv(dlt,file = "dcb.csv")
+write.csv(dcb,file = "dcb.csv")
 print(tail(dcb,1))
 
 

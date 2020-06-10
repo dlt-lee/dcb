@@ -1,15 +1,16 @@
-dcb.xgb.clu.9<-function(trains,d_o) {
+dcb.xgb.row.9<-function(trains,d_o) {
   library(xgboost)
   
   #trains<-dlt.data.reset(dlt)
   trains.T<-Matrix(as.matrix(trains[,1:63]),sparse=T)
-  bst.a1<-xgboost(data = trains.T[,c(1,8,15,22,29,36,43,50,57)],label = trains$res.a1,nrounds = 300,print_every_n = 300L)
-  bst.a2<-xgboost(data = trains.T[,c(2,9,16,23,30,37,44,51,58)],label = trains$res.a2,nrounds = 300,print_every_n = 300L)
-  bst.a3<-xgboost(data = trains.T[,c(3,10,17,24,31,38,45,52,59)],label = trains$res.a3,nrounds = 300,print_every_n = 300L)
-  bst.a4<-xgboost(data = trains.T[,c(4,11,18,25,32,39,46,53,60)],label = trains$res.a4,nrounds = 300,print_every_n = 300L)
-  bst.a5<-xgboost(data = trains.T[,c(5,12,19,26,33,40,47,54,61)],label = trains$res.a5,nrounds = 300,print_every_n = 300L)
-  bst.a6<-xgboost(data = trains.T[,c(6,13,20,27,34,41,48,55,62)],label = trains$res.a6,nrounds = 300,print_every_n = 300L)
-  bst.b1<-xgboost(data = trains.T[,c(7,14,21,28,35,42,49,56,63)],label = trains$res.b1,nrounds = 300,print_every_n = 300L)
+  bst.a1<-xgboost(data = trains.T,label = trains$res.a1,nrounds = 300,print_every_n = 300L)
+  bst.a2<-xgboost(data = trains.T,label = trains$res.a2,nrounds = 300,print_every_n = 300L)
+  bst.a3<-xgboost(data = trains.T,label = trains$res.a3,nrounds = 300,print_every_n = 300L)
+  bst.a4<-xgboost(data = trains.T,label = trains$res.a4,nrounds = 300,print_every_n = 300L)
+  bst.a5<-xgboost(data = trains.T,label = trains$res.a5,nrounds = 300,print_every_n = 300L)
+  bst.a6<-xgboost(data = trains.T,label = trains$res.a6,nrounds = 300,print_every_n = 300L)
+  bst.b1<-xgboost(data = trains.T,label = trains$res.b1,nrounds = 300,print_every_n = 300L)
+  
   
   #predoct
   rows<-dim(d_o)[1]
@@ -33,13 +34,13 @@ dcb.xgb.clu.9<-function(trains,d_o) {
                     a1.8,a2.8,a3.8,a4.8,a5.8,a6.8,b1.8,
                     a1.9,a2.9,a3.9,a4.9,a5.9,a6.9,b1.9)
   tests.T<-Matrix(as.matrix(tests),sparse=T)
-  testPredictions.a1 <- predict(object = bst.a1,newdata = tests.T[,c(1,8,15,22,29,36,43,50,57)])
-  testPredictions.a2 <- predict(object = bst.a2,newdata = tests.T[,c(2,9,16,23,30,37,44,51,58)])
-  testPredictions.a3 <- predict(object = bst.a3,newdata = tests.T[,c(3,10,17,24,31,38,45,52,59)])
-  testPredictions.a4 <- predict(object = bst.a4,newdata = tests.T[,c(4,11,18,25,32,39,46,53,60)])
-  testPredictions.a5 <- predict(object = bst.a5,newdata = tests.T[,c(5,12,19,26,33,40,47,54,61)])
-  testPredictions.a6 <- predict(object = bst.a6,newdata = tests.T[,c(6,13,20,27,34,41,48,55,62)])
-  testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T[,c(7,14,21,28,35,42,49,56,63)])
+  testPredictions.a1 <- predict(object = bst.a1,newdata = tests.T)
+  testPredictions.a2 <- predict(object = bst.a2,newdata = tests.T)
+  testPredictions.a3 <- predict(object = bst.a3,newdata = tests.T)
+  testPredictions.a4 <- predict(object = bst.a4,newdata = tests.T)
+  testPredictions.a5 <- predict(object = bst.a5,newdata = tests.T)
+  testPredictions.a6 <- predict(object = bst.a6,newdata = tests.T)
+  testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T)
   
   
   #result
@@ -51,6 +52,8 @@ dcb.xgb.clu.9<-function(trains,d_o) {
            round(tail(testPredictions.a6,1)),
            round(tail(testPredictions.b1,1))
   ))
+  
+  
 }
 
 
