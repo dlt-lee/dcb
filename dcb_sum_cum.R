@@ -1,4 +1,4 @@
-dlt_sum_cum<-function(data_org,n_ch) {
+dcb_sum_cum<-function(data_org,n_ch) {
   library('xgboost')
   
   rows<-dim(data_org)[1]
@@ -9,21 +9,21 @@ dlt_sum_cum<-function(data_org,n_ch) {
   a3_temp<-c(0,0,0,0,0,0,0,0)
   a4_temp<-c(0,0,0,0,0,0,0,0)
   a5_temp<-c(0,0,0,0,0,0,0,0)
+  a6_temp<-c(0,0,0,0,0,0,0,0)
   b1_temp<-c(0,0,0,0,0,0,0,0)
-  b2_temp<-c(0,0,0,0,0,0,0,0)
   res_temp<-c(0,0,0,0,0,0,0)
   
   for (i in 1:line) {
     data<-data_org[j:line,]
-    temp<-dlt_sum_L1(data)
+    temp<-dcb_sum_L1(data)
     a1_temp<-c(a1_temp,temp$a1)
     a2_temp<-c(a2_temp,temp$a2)
     a3_temp<-c(a3_temp,temp$a3)
     a4_temp<-c(a4_temp,temp$a4)
     a5_temp<-c(a5_temp,temp$a5)
+    a6_temp<-c(a6_temp,temp$a6)
     b1_temp<-c(b1_temp,temp$b1)
-    b2_temp<-c(b2_temp,temp$b2)
-    res_temp<-c(res_temp,data_org[line+1,4:10])
+    res_temp<-c(res_temp,data_org[line+1,2:8])
     j<j+3
     line<-line+3
     if (line>=rows) {
@@ -36,8 +36,8 @@ dlt_sum_cum<-function(data_org,n_ch) {
   a3_m<-matrix(a3_temp,ncol = 8,byrow = TRUE)[-1,]
   a4_m<-matrix(a4_temp,ncol = 8,byrow = TRUE)[-1,]
   a5_m<-matrix(a5_temp,ncol = 8,byrow = TRUE)[-1,]
-  b1_m<-matrix(b1_temp,ncol = 8,byrow = TRUE)[-1,]
-  b2_m<-matrix(b2_temp,ncol = 8,byrow = TRUE)[-1,]
+  b1_m<-matrix(a6_temp,ncol = 8,byrow = TRUE)[-1,]
+  b2_m<-matrix(b1_temp,ncol = 8,byrow = TRUE)[-1,]
   res_m<-matrix(res_temp,ncol = 7,byrow = TRUE)[-1,]
   
   trains.T.a1<-Matrix(a1_m,sparse=T)
@@ -45,16 +45,16 @@ dlt_sum_cum<-function(data_org,n_ch) {
   trains.T.a3<-Matrix(a3_m,sparse=T)
   trains.T.a4<-Matrix(a4_m,sparse=T)
   trains.T.a5<-Matrix(a5_m,sparse=T)
+  trains.T.a6<-Matrix(a6_m,sparse=T)
   trains.T.b1<-Matrix(b1_m,sparse=T)
-  trains.T.b2<-Matrix(b2_m,sparse=T)
   
   bst.a1<-xgboost(data = trains.T.a1,label = res_m[,1],nrounds = 300,print_every_n = 300L)
   bst.a2<-xgboost(data = trains.T.a2,label = res_m[,2],nrounds = 300,print_every_n = 300L)
   bst.a3<-xgboost(data = trains.T.a3,label = res_m[,3],nrounds = 300,print_every_n = 300L)
   bst.a4<-xgboost(data = trains.T.a4,label = res_m[,4],nrounds = 300,print_every_n = 300L)
   bst.a5<-xgboost(data = trains.T.a5,label = res_m[,5],nrounds = 300,print_every_n = 300L)
-  bst.b1<-xgboost(data = trains.T.b1,label = res_m[,6],nrounds = 300,print_every_n = 300L)
-  bst.b2<-xgboost(data = trains.T.b2,label = res_m[,7],nrounds = 300,print_every_n = 300L)
+  bst.a6<-xgboost(data = trains.T.a6,label = res_m[,6],nrounds = 300,print_every_n = 300L)
+  bst.b1<-xgboost(data = trains.T.b1,label = res_m[,7],nrounds = 300,print_every_n = 300L)
   
   
   #prediect
@@ -65,8 +65,8 @@ dlt_sum_cum<-function(data_org,n_ch) {
   testPredictions.a3 <- predict(object = bst.a3,newdata = t(tests.T[,3]))
   testPredictions.a4 <- predict(object = bst.a4,newdata = t(tests.T[,4]))
   testPredictions.a5 <- predict(object = bst.a5,newdata = t(tests.T[,5]))
-  testPredictions.b1 <- predict(object = bst.b1,newdata = t(tests.T[,6]))
-  testPredictions.b2 <- predict(object = bst.b2,newdata = t(tests.T[,7]))
+  testPredictions.a6 <- predict(object = bst.a6,newdata = t(tests.T[,6]))
+  testPredictions.b1 <- predict(object = bst.b1,newdata = t(tests.T[,7]))
   
   
   pre_data<-c(round(tail(testPredictions.a1,1)),
@@ -74,9 +74,9 @@ dlt_sum_cum<-function(data_org,n_ch) {
               round(tail(testPredictions.a3,1)),
               round(tail(testPredictions.a4,1)),
               round(tail(testPredictions.a5,1)),
-              round(tail(testPredictions.b1,1)),
-              round(tail(testPredictions.b2,1)))
-  pre_data<-c(sort(pre_data[1:5]),sort(pre_data[6:7]))
+              round(tail(testPredictions.a6,1)),
+              round(tail(testPredictions.b1,1)))
+  pre_data<-c(sort(pre_data[1:6]),sort(pre_data[7]))
   return(pre_data)
   
   
