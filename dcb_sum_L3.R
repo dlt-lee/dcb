@@ -20,7 +20,7 @@ L2_159<-dcb_sum_cum(tail(dcb,720),159)
 L2_309<-dcb_sum_cum(tail(dcb,720),309)
 L2_459<-dcb_sum_cum(tail(dlt,720),459)
 L2_609<-dcb_sum_cum(tail(dcb,720),609)
-pre.data<-dcb_sum_L2(tail(dcb,609))
+pre.data<-dcb_sum_L2(tail(dcb,912))
 sum_l2_ab<-dcb_sum_L2(dcb)
 sum_l1_ab<-dcb_sum_L1(dcb)
 time_end<-Sys.time()
@@ -35,6 +35,7 @@ time_end-time_start
 
 
 cell<-c(
+  20046,04,05,16,19,29,31,08,
   20047,03,11,12,15,23,27,05,
   20048,05,09,11,22,24,28,04,
   20049,06,12,13,20,25,31,09,
