@@ -3,7 +3,7 @@ dcb_sum_L2<-function(data_org) {
   source("dcb_sum_L1.R")
   #data_org<-dcb
   rows<-dim(data_org)[1]
-  line<-rows-floor(rows/3)
+  line<-rows-floor(rows/9)*3
   j<-1
   a1_temp<-c(0,0,0,0,0,0,0,0)
   a2_temp<-c(0,0,0,0,0,0,0,0)
@@ -61,7 +61,7 @@ dcb_sum_L2<-function(data_org) {
   
   
   #prediect
-  tests<-dcb_sum_L1(tail(data_org,floor(rows/3)))
+  tests<-dcb_sum_L1(tail(data_org,floor(rows/9)*3))
   tests.T<-Matrix(as.matrix(tests),sparse=T)
   testPredictions.a1 <- predict(object = bst.a1,newdata = t(tests.T[,1]))
   testPredictions.a2 <- predict(object = bst.a2,newdata = t(tests.T[,2]))
