@@ -3,7 +3,7 @@ dcb_sum_cum<-function(data_org,n_ch) {
   
   rows<-dim(data_org)[1]
   line<-rows-n_ch
-  j<-line-15
+  j<-1
   a1_temp<-c(0,0,0,0,0,0,0,0)
   a2_temp<-c(0,0,0,0,0,0,0,0)
   a3_temp<-c(0,0,0,0,0,0,0,0)
@@ -24,7 +24,7 @@ dcb_sum_cum<-function(data_org,n_ch) {
     a6_temp<-c(a6_temp,temp$a6)
     b1_temp<-c(b1_temp,temp$b1)
     res_temp<-c(res_temp,data_org[line+1,2:8])
-    j<j+3
+    j<-j+3
     line<-line+3
     if (line>=rows) {
       break
@@ -36,8 +36,8 @@ dcb_sum_cum<-function(data_org,n_ch) {
   a3_m<-matrix(a3_temp,ncol = 8,byrow = TRUE)[-1,]
   a4_m<-matrix(a4_temp,ncol = 8,byrow = TRUE)[-1,]
   a5_m<-matrix(a5_temp,ncol = 8,byrow = TRUE)[-1,]
-  b1_m<-matrix(a6_temp,ncol = 8,byrow = TRUE)[-1,]
-  b2_m<-matrix(b1_temp,ncol = 8,byrow = TRUE)[-1,]
+  a6_m<-matrix(a6_temp,ncol = 8,byrow = TRUE)[-1,]
+  b1_m<-matrix(b1_temp,ncol = 8,byrow = TRUE)[-1,]
   res_m<-matrix(res_temp,ncol = 7,byrow = TRUE)[-1,]
   
   trains.T.a1<-Matrix(a1_m,sparse=T)
@@ -58,7 +58,7 @@ dcb_sum_cum<-function(data_org,n_ch) {
   
   
   #prediect
-  tests<-dlt_sum_L1(tail(data_org,n_ch))
+  tests<-dcb_sum_L1(tail(data_org,n_ch))
   tests.T<-Matrix(as.matrix(tests),sparse=T)
   testPredictions.a1 <- predict(object = bst.a1,newdata = t(tests.T[,1]))
   testPredictions.a2 <- predict(object = bst.a2,newdata = t(tests.T[,2]))
