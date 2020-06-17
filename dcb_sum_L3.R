@@ -27,15 +27,20 @@ record_ab<-c(
 
 time_start<-Sys.time()
 
-unit<-floor(dim(dcb)[1]/6/3)*3
+sum_l2_ab<-dcb_sum_L2(dcb)
+
+unit<-floor(dim(dcb)[1]/9/3)*3
 L2_1<-dcb_sum_cum(dcb,unit*1)
 L2_2<-dcb_sum_cum(dcb,unit*2)
 L2_3<-dcb_sum_cum(dcb,unit*3)
 L2_4<-dcb_sum_cum(dcb,unit*4)
 L2_5<-dcb_sum_cum(dcb,unit*5)
+L2_6<-dcb_sum_cum(dcb,unit*6)
+L2_7<-dcb_sum_cum(dcb,unit*7)
+L2_8<-dcb_sum_cum(dcb,unit*8)
 
 
-sum_l2_ab<-dcb_sum_L2(dcb)
+
 sum_l1_ab<-dcb_sum_L1(dcb)
 
 time_end<-Sys.time()
