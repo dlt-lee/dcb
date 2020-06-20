@@ -1,9 +1,9 @@
-dcb_sum_L2<-function(data_org) {
+dcb_sum_L2<-function(data_org,n) {
   library('xgboost')
   source("dcb_sum_L1.R")
   #data_org<-dcb
   rows<-dim(data_org)[1]
-  line<-rows-floor(rows/9)*3
+  line<-rows-floor(rows/9)*n
   j<-1
   a1_temp<-c(0,0,0,0,0,0,0,0)
   a2_temp<-c(0,0,0,0,0,0,0,0)
