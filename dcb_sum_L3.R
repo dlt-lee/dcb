@@ -28,7 +28,7 @@ L2_8<-dcb_sum_cum(dcb,unit*8)
 
 sum_l2_ab_3<-dcb_sum_L2(dcb,3)
 sum_l2_ab_6<-dcb_sum_L2(dcb,6)
-sum_l1_ab<-dlt_sum_L1(dcb)
+sum_l1_ab<-dcb_sum_L1(dcb)
 
 time_end<-Sys.time()
 
@@ -39,7 +39,7 @@ L2_1
 L2_2
 L2_3
 L2_4
-L2_5
+L2_5  
 L2_6
 L2_7
 L2_8
