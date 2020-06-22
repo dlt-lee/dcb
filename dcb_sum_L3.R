@@ -12,45 +12,45 @@ record_ab<-c(
   
 )
 
-time_start<-Sys.time()
+time_start_dcb<-Sys.time()
 
-unit<-floor(dim(dcb)[1]/9/3)*3
-L2_1<-dcb_sum_cum(dcb,unit*1)
-L2_2<-dcb_sum_cum(dcb,unit*2)
-L2_3<-dcb_sum_cum(dcb,unit*3)
-L2_4<-dcb_sum_cum(dcb,unit*4)
-L2_5<-dcb_sum_cum(dcb,unit*5)
-L2_6<-dcb_sum_cum(dcb,unit*6)
-L2_7<-dcb_sum_cum(dcb,unit*7)
-L2_8<-dcb_sum_cum(dcb,unit*8)
+unit_dcb<-floor(dim(dcb)[1]/9/3)*3
+L2_1_dcb<-dcb_sum_cum(dcb,unit_dcb*1)
+L2_2_dcb<-dcb_sum_cum(dcb,unit_dcb*2)
+L2_3_dcb<-dcb_sum_cum(dcb,unit_dcb*3)
+L2_4_dcb<-dcb_sum_cum(dcb,unit_dcb*4)
+L2_5_dcb<-dcb_sum_cum(dcb,unit_dcb*5)
+L2_6_dcb<-dcb_sum_cum(dcb,unit_dcb*6)
+L2_7_dcb<-dcb_sum_cum(dcb,unit_dcb*7)
+L2_8_dcb<-dcb_sum_cum(dcb,unit_dcb*8)
 
-sum_l2_ab_3<-dcb_sum_L2(dcb,3)
-sum_l2_ab_6<-dcb_sum_L2(dcb,6)
-sum_l1_ab<-dcb_sum_L1(dcb)
+sum_l2_dcb_3<-dcb_sum_L2(dcb,3)
+sum_l2_dcb_6<-dcb_sum_L2(dcb,6)
+sum_l1_dcb<-dcb_sum_L1(dcb)
 
-sum_l2_ab_3
-sum_l2_ab_6
+sum_l2_dcb_3
+sum_l2_dcb_6
 
-L2_1
-L2_2
-L2_3
-L2_4
-L2_5  
-L2_6
-L2_7
-L2_8
+L2_1_dcb
+L2_2_dcb
+L2_3_dcb
+L2_4_dcb
+L2_5_dcb  
+L2_6_dcb
+L2_7_dcb
+L2_8_dcb
 
-time_end<-Sys.time()
-time_dur<-time_end-time_start  
+time_end_dcb<-Sys.time()
+time_dur<-time_end_dcb-time_start_dcb
 time_dur
 
-sum_l2<-c(sum_l2_ab_3[1],L2_1[1],L2_2[1],L2_3[1],L2_4[1],L2_5[1],L2_6[1],L2_7[1],L2_8[1],sum_l2_ab_6[1],
-          sum_l2_ab_3[2],L2_1[2],L2_2[2],L2_3[2],L2_4[2],L2_5[2],L2_6[2],L2_7[2],L2_8[2],sum_l2_ab_6[2],
-          sum_l2_ab_3[3],L2_1[3],L2_2[3],L2_3[3],L2_4[3],L2_5[3],L2_6[3],L2_7[3],L2_8[3],sum_l2_ab_6[3],
-          sum_l2_ab_3[4],L2_1[4],L2_2[4],L2_3[4],L2_4[4],L2_5[4],L2_6[4],L2_7[4],L2_8[4],sum_l2_ab_6[4],
-          sum_l2_ab_3[5],L2_1[5],L2_2[5],L2_3[5],L2_4[5],L2_5[5],L2_6[5],L2_7[5],L2_8[5],sum_l2_ab_6[5],
-          sum_l2_ab_3[6],L2_1[6],L2_2[6],L2_3[6],L2_4[6],L2_5[6],L2_6[6],L2_7[6],L2_8[6],sum_l2_ab_6[6],
-          sum_l2_ab_3[7],L2_1[7],L2_2[7],L2_3[7],L2_4[7],L2_5[7],L2_6[7],L2_7[7],L2_8[7],sum_l2_ab_6[7])
-m_sum_l2<-matrix(sum_l2,ncol = 10,byrow = TRUE)
-m_sum_l2
+sum_l2_dcb<-c(sum_l2_dcb_3[1],L2_1_dcb[1],L2_2_dcb[1],L2_3_dcb[1],L2_4_dcb[1],L2_5_dcb[1],L2_6_dcb[1],L2_7_dcb[1],L2_8_dcb[1],sum_l2_dcb_6[1],
+              sum_l2_dcb_3[2],L2_1_dcb[2],L2_2_dcb[2],L2_3_dcb[2],L2_4_dcb[2],L2_5_dcb[2],L2_6_dcb[2],L2_7_dcb[2],L2_8_dcb[2],sum_l2_dcb_6[2],
+              sum_l2_dcb_3[3],L2_1_dcb[3],L2_2_dcb[3],L2_3_dcb[3],L2_4_dcb[3],L2_5_dcb[3],L2_6_dcb[3],L2_7_dcb[3],L2_8_dcb[3],sum_l2_dcb_6[3],
+              sum_l2_dcb_3[4],L2_1_dcb[4],L2_2_dcb[4],L2_3_dcb[4],L2_4_dcb[4],L2_5_dcb[4],L2_6_dcb[4],L2_7_dcb[4],L2_8_dcb[4],sum_l2_dcb_6[4],
+              sum_l2_dcb_3[5],L2_1_dcb[5],L2_2_dcb[5],L2_3_dcb[5],L2_4_dcb[5],L2_5_dcb[5],L2_6_dcb[5],L2_7_dcb[5],L2_8_dcb[5],sum_l2_dcb_6[5],
+              sum_l2_dcb_3[6],L2_1_dcb[6],L2_2_dcb[6],L2_3_dcb[6],L2_4_dcb[6],L2_5_dcb[6],L2_6_dcb[6],L2_7_dcb[6],L2_8_dcb[6],sum_l2_dcb_6[6],
+              sum_l2_dcb_3[7],L2_1_dcb[7],L2_2_dcb[7],L2_3_dcb[7],L2_4_dcb[7],L2_5_dcb[7],L2_6_dcb[7],L2_7_dcb[7],L2_8_dcb[7],sum_l2_dcb_6[7])
+m_sum_l2_dcb<-matrix(sum_l2_dcb,ncol = 10,byrow = TRUE)
+m_sum_l2_dcb
 
