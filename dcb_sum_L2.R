@@ -56,7 +56,7 @@ dcb_sum_L2<-function(data_org,n) {
   bst.a3<-xgboost(data = trains.T.a3,label = res_m[,3],nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
   bst.a4<-xgboost(data = trains.T.a4,label = res_m[,4],nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
   bst.a5<-xgboost(data = trains.T.a5,label = res_m[,5],nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
-  bst.a6<-xgboost(data = trains.T.a6,label = res_m[,6],nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
+  bst.a6<-xgboost(data = trains.T.a6,label = res_m[,6],nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
   bst.b1<-xgboost(data = trains.T.b1,label = res_m[,7],nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
   
   

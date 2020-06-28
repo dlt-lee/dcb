@@ -8,7 +8,7 @@ dcb.xgb.clu.9<-function(trains,d_o) {
   bst.a3<-xgboost(data = trains.T[,c(3,10,17,24,31,38,45,52,59)],label = trains$res.a3,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
   bst.a4<-xgboost(data = trains.T[,c(4,11,18,25,32,39,46,53,60)],label = trains$res.a4,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
   bst.a5<-xgboost(data = trains.T[,c(5,12,19,26,33,40,47,54,61)],label = trains$res.a5,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
-  bst.a6<-xgboost(data = trains.T[,c(6,13,20,27,34,41,48,55,62)],label = trains$res.a6,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
+  bst.a6<-xgboost(data = trains.T[,c(6,13,20,27,34,41,48,55,62)],label = trains$res.a6,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
   bst.b1<-xgboost(data = trains.T[,c(7,14,21,28,35,42,49,56,63)],label = trains$res.b1,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'gpu_hist'))
   
   #predoct
