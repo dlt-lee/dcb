@@ -35,7 +35,7 @@ dcb.data.reset <- function(data_org) {
   res.b1<-0
   
   j<-1
-  foreach (i=1:n, .combine=cbind) %dopar% {
+  foreach (i=1:n, .combine=cbind) %do% {
     a1.1<-c(a1.1,data[j+0,]$a1);a2.1<-c(a2.1,data[j+0,]$a2);a3.1<-c(a3.1,data[j+0,]$a3);a4.1<-c(a4.1,data[j+0,]$a4);a5.1<-c(a5.1,data[j+0,]$a5);a6.1<-c(a6.1,data[j+0,]$a6);b1.1<-c(b1.1,data[j+0,]$b1)
     a1.2<-c(a1.2,data[j+1,]$a1);a2.2<-c(a2.2,data[j+1,]$a2);a3.2<-c(a3.2,data[j+1,]$a3);a4.2<-c(a4.2,data[j+1,]$a4);a5.2<-c(a5.2,data[j+1,]$a5);a6.2<-c(a6.2,data[j+1,]$a6);b1.2<-c(b1.2,data[j+1,]$b1)
     a1.3<-c(a1.3,data[j+2,]$a1);a2.3<-c(a2.3,data[j+2,]$a2);a3.3<-c(a3.3,data[j+2,]$a3);a4.3<-c(a4.3,data[j+2,]$a4);a5.3<-c(a5.3,data[j+2,]$a5);a6.3<-c(a6.3,data[j+2,]$a6);b1.3<-c(b1.3,data[j+2,]$b1)
