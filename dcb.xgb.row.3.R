@@ -11,7 +11,7 @@ dcb.xgb.row.3<-function(trains,d_o) {
   bst.a4<-xgboost(data = trains.T,label = trains$res.a4,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist',nthread=number_of_core))
   bst.a5<-xgboost(data = trains.T,label = trains$res.a5,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist',nthread=number_of_core))
   bst.a6<-xgboost(data = trains.T,label = trains$res.a6,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist',nthread=number_of_core))
-  bst.b1<-xgboost(data = trains.T,label = trains$res.b1,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist,nthread=number_of_core'))
+  bst.b1<-xgboost(data = trains.T,label = trains$res.b1,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist',nthread=number_of_core))
   
   
   #predoct
