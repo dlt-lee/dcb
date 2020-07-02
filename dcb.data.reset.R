@@ -55,6 +55,9 @@ dcb.data.reset <- function(data_org) {
     j=j+3
     #print(j)
   }
+  #stop cluster
+  stopCluster(cl)
+  
   a1.1<-as.matrix(a1.1)[-1];a2.1<-as.matrix(a2.1)[-1];a3.1<-as.matrix(a3.1)[-1];a4.1<-as.matrix(a4.1)[-1];a5.1<-as.matrix(a5.1)[-1];a6.1<-as.matrix(a6.1)[-1];b1.1<-as.matrix(b1.1)[-1]
   a1.2<-as.matrix(a1.2)[-1];a2.2<-as.matrix(a2.2)[-1];a3.2<-as.matrix(a3.2)[-1];a4.2<-as.matrix(a4.2)[-1];a5.2<-as.matrix(a5.2)[-1];a6.2<-as.matrix(a6.2)[-1];b1.2<-as.matrix(b1.2)[-1]
   a1.3<-as.matrix(a1.3)[-1];a2.3<-as.matrix(a2.3)[-1];a3.3<-as.matrix(a3.3)[-1];a4.3<-as.matrix(a4.3)[-1];a5.3<-as.matrix(a5.3)[-1];a6.3<-as.matrix(a6.3)[-1];b1.3<-as.matrix(b1.3)[-1]
@@ -82,8 +85,7 @@ dcb.data.reset <- function(data_org) {
                      a1.8,a2.8,a3.8,a4.8,a5.8,a6.8,b1.8,
                      a1.9,a2.9,a3.9,a4.9,a5.9,a6.9,b1.9,
                      res.a1,res.a2,res.a3,res.a4,res.a5,res.a6,res.b1)
-  #stop cluster
-  stopCluster(cl)
+ 
   
   return(trains)
 }
