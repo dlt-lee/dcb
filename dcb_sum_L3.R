@@ -11,6 +11,7 @@ threads=detectCores()
 number_of_core=threads/2
 
 record_ab<-c(
+  20012,03,08,15,24,30,31,09,
   20013,04,07,17,20,20,29,05
 )
 
