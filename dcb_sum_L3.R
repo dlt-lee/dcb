@@ -11,7 +11,8 @@ threads=detectCores()
 number_of_core=threads/2
 
 record_ab<-c(
-  20070,07,11,15,20,24,28,11
+  20070,07,11,15,20,24,28,11,
+  20071,03,06,13,19,22,27,11
 )
 
 time_start_dcb<-Sys.time()
