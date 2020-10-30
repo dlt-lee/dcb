@@ -11,7 +11,17 @@ threads=detectCores()
 number_of_core=threads/2
 
 record_ab<-c(
-  
+  20070,07,11,15,20,24,28,11,
+  20071,03,06,13,19,22,27,11,
+  20072,04,06,14,21,27,30,05,
+  20073,08,11,13,19,27,29,04,
+  20074,03,09,11,18,24,26,05,
+  20075,02,08,11,20,21,29,04,
+  20076,02,06,15,19,22,28,07,
+  20077,05,07,16,17,22,29,06,
+  20078,05,14,15,17,23,31,04,
+  20079,04,12,13,14,27,28,05,
+  20080,06,11,17,21,25,31,02
 )
 
 time_start_dcb<-Sys.time()
@@ -80,7 +90,7 @@ if (threads <= 8) {
   
 }
 
-tests.T<-Matrix(as.matrix(m_sum_l2),sparse=T)
+tests.T<-Matrix(as.matrix(m_sum_l2<-matrix(sum_l2_dcb,ncol = 10,byrow = TRUE)),sparse=T)
 testPredictions.a1 <- predict(object = bst.a1,newdata = t(tests.T[1,]))
 testPredictions.a2 <- predict(object = bst.a2,newdata = t(tests.T[2,]))
 testPredictions.a3 <- predict(object = bst.a3,newdata = t(tests.T[3,]))
@@ -96,7 +106,7 @@ sum_L3_ab<-c(sort(c(round(testPredictions.a1),
                     round(testPredictions.a5),
                     round(testPredictions.a6)
                      )),
-                  round(testPredictions.b2))
+                  round(testPredictions.b1))
 
 #sum_l1_ab<-dcb_sum_L1(dcb)
 
@@ -112,7 +122,7 @@ sum_L3_ab<-c(sort(c(round(testPredictions.a1),
 #L2_7_dcb
 #L2_8_dcb
 
-sum_l2<-c(max(dcb$n)+1,sum_l2)
+sum_l2<-c(max(dcb$n)+1,sum_l2_dcb)
 m_r_ab_delta<-rbind(m_r_ab_org,sum_l2)
 write.csv(m_r_ab_delta, file = "l2_ab.csv",row.names = FALSE)
 
