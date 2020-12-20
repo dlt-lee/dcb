@@ -173,7 +173,10 @@ sum_l2<-c(max(dcb$n)+1,sum_l2_dcb)
 m_r_ab_delta<-rbind(m_r_ab_org,sum_l2)
 write.csv(m_r_ab_delta, file = "l2_ab.csv",row.names = FALSE)
 
-c(max(dcb$n)+1,sum_L3_ab)
+m_record_l3<-matrix(record_ab,ncol = 8,byrow = TRUE)
+sum_l3<-c(max(dcb$n)+1,sum_L3_ab)
+m_r_ab_delta<-rbind(m_record_l3,sum_l3)
+write.csv(m_r_ab_delta, file = "l3_ab.csv",row.names = FALSE)
 
 time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
