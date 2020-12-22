@@ -2,12 +2,15 @@ source("dcb_sum_L3.R")
 library(xgboost)
 
 m_r_ab_org<-as.matrix(read.csv(file = "l3_ab.csv", header = FALSE))[-1,]
-m_r_ab<-m_r_ab_org[,-1]
-row_result<-dim(m_r_ab)[1]-1
+m_r_ab_org<-m_r_ab_org[,-1]
+row_result<-dim(m_r_ab_org)[1]-1
+m_r_ab<-head(m_r_ab,row_result)
 result<-tail(dcb,row_result)
 
-
-trains.T.ab<-Matrix(m_r_ab[row_result,],sparse=T)
+dcb<-c(
+  20128,03,11,14,21,23,30,05
+)
+trains.T.ab<-Matrix(m_r_ab,sparse=T)
  
 if (threads <= 8) {
   bst.a1<-xgboost(data = trains.T.ab,label = result$a1,nrounds = 300,print_every_n = 300L,params = list(tree_method = 'hist'))
@@ -29,16 +32,16 @@ if (threads <= 8) {
   
 }
 
-tests.T.ab<-Matrix(tail(m_r_ab,1),sparse=T)
-testPredictions.a1 <- predict(object = bst.a1,newdata = t(tests.T.ab))
-testPredictions.a2 <- predict(object = bst.a2,newdata = t(tests.T.ab))
-testPredictions.a3 <- predict(object = bst.a3,newdata = t(tests.T.ab))
-testPredictions.a4 <- predict(object = bst.a4,newdata = t(tests.T.ab))
-testPredictions.a5 <- predict(object = bst.a5,newdata = t(tests.T.ab))
-testPredictions.a6 <- predict(object = bst.a6,newdata = t(tests.T.ab))
-testPredictions.b1 <- predict(object = bst.b1,newdata = t(tests.T.ab))
+tests.T.ab<-Matrix(tail(m_r_ab_org,1),sparse=T)
+testPredictions.a1 <- predict(object = bst.a1,newdata = tests.T.ab)
+testPredictions.a2 <- predict(object = bst.a2,newdata = tests.T.ab)
+testPredictions.a3 <- predict(object = bst.a3,newdata = tests.T.ab)
+testPredictions.a4 <- predict(object = bst.a4,newdata = tests.T.ab)
+testPredictions.a5 <- predict(object = bst.a5,newdata = tests.T.ab)
+testPredictions.a6 <- predict(object = bst.a6,newdata = tests.T.ab)
+testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T.ab)
 
-sum_L4_ab<-c(sort(c(round(testPredictions.a1),
+sum_l4_dcb<-c(sort(c(round(testPredictions.a1),
                     round(testPredictions.a2),
                     round(testPredictions.a3),
                     round(testPredictions.a4),
