@@ -1,14 +1,16 @@
+source("element.R")
 source("dcb_sum_L3.R")
 library(xgboost)
 
 m_r_ab_org<-as.matrix(read.csv(file = "l3_ab.csv", header = FALSE))[-1,]
 m_r_ab_org<-m_r_ab_org[,-1]
 row_result<-dim(m_r_ab_org)[1]-1
-m_r_ab<-head(m_r_ab,row_result)
+m_r_ab<-head(m_r_ab_org,row_result)
 result<-tail(dcb,row_result)
 
-dcb<-c(
-  20128,03,11,14,21,23,30,05
+m_record_l4<-c(
+  20128,03,11,14,21,23,30,05,
+  20129,02,11,13,21,28,30,06
 )
 trains.T.ab<-Matrix(m_r_ab,sparse=T)
  
