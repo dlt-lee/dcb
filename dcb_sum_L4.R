@@ -1,6 +1,8 @@
 source("element.R")
 source("dcb_sum_L3.R")
 library(xgboost)
+threads=detectCores()
+number_of_core=threads/2
 
 m_r_ab_org<-as.matrix(read.csv(file = "l3_ab.csv", header = FALSE))[-1,]
 m_r_ab_org<-m_r_ab_org[,-1]
@@ -11,7 +13,8 @@ result<-tail(dcb,row_result)
 m_record_l4<-c(
   20128,03,11,14,21,23,30,05,
   20129,02,11,13,21,28,30,06,
-  20130,03,07,16,20,21,27,07
+  20130,03,07,16,20,21,27,07,
+  20131,01,13,18,24,29,31,10
 )
 trains.T.ab<-Matrix(m_r_ab,sparse=T)
  
