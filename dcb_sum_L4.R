@@ -1,8 +1,9 @@
 source("element.R")
-source("dcb_sum_L3.R")
 library(xgboost)
 threads=detectCores()
 number_of_core=threads/2
+
+source("dcb_sum_L3.R")
 
 m_r_ab_org<-as.matrix(read.csv(file = "l3_ab.csv", header = FALSE))[-1,]
 m_r_ab_org<-m_r_ab_org[,-1]
