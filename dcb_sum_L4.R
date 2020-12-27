@@ -4,6 +4,7 @@ threads=detectCores()
 number_of_core=threads/2
 
 source("dcb_sum_L3.R")
+time_start<-Sys.time()
 
 m_r_ab_org<-as.matrix(read.csv(file = "l3_ab.csv", header = FALSE))[-1,]
 m_r_ab_org<-m_r_ab_org[,-1]
@@ -57,6 +58,10 @@ sum_l4_dcb<-c(sort(c(round(testPredictions.a1),
                     round(testPredictions.a6)
 )),
 round(testPredictions.b1))
+
+time_end<-Sys.time()
+time_dur<-time_end-time_start
+time_dur
 
 sum_l4_dcb<-c(max(dcb$n)+1,sum_l4_dcb)
 sum_l4_dcb
