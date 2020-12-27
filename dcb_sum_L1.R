@@ -59,13 +59,13 @@ dcb_sum_L1<-function(data) {
   a6<-c(data_clu2[6],data_clu3[6],data_clu6[6],data_clu9[6],data_row1[6],data_row3[6],data_row6[6],data_row9[6])
   b1<-c(data_clu2[7],data_clu3[7],data_clu6[7],data_clu9[7],data_row1[7],data_row3[7],data_row6[7],data_row9[7])
   
-  print(sort(table(a1)))
-  print(sort(table(a2)))
-  print(sort(table(a3)))
-  print(sort(table(a4)))
-  print(sort(table(a5)))
-  print(sort(table(a6)))
-  print(sort(table(b1)))
+  #print(sort(table(a1)))
+  #print(sort(table(a2)))
+  #print(sort(table(a3)))
+  #print(sort(table(a4)))
+  #print(sort(table(a5)))
+  #print(sort(table(a6)))
+  #print(sort(table(b1)))
   
   data_result<-data.frame(a1,a2,a3,a4,a5,a6,b1)
   
