@@ -3,8 +3,9 @@ library(xgboost)
 threads=detectCores()
 number_of_core=threads/2
 
-source("dcb_sum_L3.R")
 time_start<-Sys.time()
+source("dcb_sum_L3.R")
+
 
 m_r_ab_org<-as.matrix(read.csv(file = "l3_ab.csv", header = FALSE))[-1,]
 m_r_ab_org<-m_r_ab_org[,-1]
@@ -17,7 +18,8 @@ m_record_l4<-c(
   20129,02,11,13,21,28,30,06,
   20130,03,07,16,20,21,27,07,
   20131,02,08,12,20,26,26,08,
-  20132,10,11,12,20,24,32,10
+  20132,10,11,12,20,24,32,10,
+  20133,02,03,13,18,24,28,07
 )
 
 trains.T.ab<-Matrix(m_r_ab,sparse=T)
