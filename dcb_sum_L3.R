@@ -65,7 +65,7 @@ if (threads <= 8) {
   bst.a4<-xgboost(data = trains.T.a4,label = result$a4,nrounds = 300,verbose=0,params = list(tree_method = 'hist'))
   bst.a5<-xgboost(data = trains.T.a5,label = result$a5,nrounds = 300,verbose=0,params = list(tree_method = 'hist'))
   bst.a6<-xgboost(data = trains.T.a6,label = result$a6,nrounds = 300,verbose=0,params = list(tree_method = 'hist'))
-  bst.b1<-xgboost(data = trains.T.b1,label = result$b1,nrounds = 300,verbose=0L,params = list(tree_method = 'hist'))
+  bst.b1<-xgboost(data = trains.T.b1,label = result$b1,nrounds = 300,verbose=0,params = list(tree_method = 'hist'))
   
 }else{
   bst.a1<-xgboost(data = trains.T.a1,label = result$a1,nrounds = 300,verbose=0,params = list(tree_method = 'hist',nthread=number_of_core))
