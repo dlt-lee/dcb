@@ -2730,7 +2730,8 @@ cell_2020<-c(
 
 )
 cell_2021<-c(
-  21001,02,03,13,18,20,31,11
+  21001,02,03,13,18,20,31,11,
+  21002,06,10,13,25,26,32,11
 )
 cell_all<-c(
   cell_2003,
@@ -2751,7 +2752,8 @@ cell_all<-c(
   cell_2018,
   cell_2019,
   cell_2020,
-  cell_2021)
+  cell_2021
+  )
 m_all<-matrix(cell_all,ncol = 8,byrow = TRUE,dimnames = list(cnames,rnames))
 
 n<-m_all[,1]
