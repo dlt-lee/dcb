@@ -1,0 +1,7 @@
+﻿ssh,http,user,from,to,
+ssh -30850 root@ cloud.yunshop.pub,http://cloud.yunshop.pub:47784,miki,18152,18153,<
+,,bob,18153,19001,>
+ssh -10854 root@ cloud.yunshop.pub,http://cloud.yunshop.pub:61359,miki,17154,18001,>
+,,bob,17153,17154,<
+ssh -40354 root@ cloud.yunshop.pub,http://cloud.yunshop.pub:54574,miki,16153,17001,>
+,,bob,16152,16153,<
