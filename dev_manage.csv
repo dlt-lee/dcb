@@ -1,19 +1,21 @@
-﻿ssh,http,user,from,to,
-ssh -p 30850 root@ cloud.yunshop.pub,http://cloud.yunshop.pub:47784,miki,18152,18153,<
-,,bob,18153,19001,>
-ssh -p 10854 root@ cloud.yunshop.pub,http://cloud.yunshop.pub:61359,miki,17154,18001,>
-,,bob,17153,17154,<
-ssh -p 40354 root@ cloud.yunshop.pub,http://cloud.yunshop.pub:54574,miki,16153,17001,>
-,,bob,16152,16153,<
-ssh -p 60097 root@ cloud.yunshop.pub,http://cloud.yunshop.pub:52443,miki,15154,16001,>
-,,bob,15153,15154,<
-ssh -p 44329 root@ cloud.yunshop.pub,http://cloud.yunshop.pub:37564,miki,14152,15001,>
-,,bob,14151,14152,<
-ssh -p 12777 root@ cloud.yunshop.pub,http://cloud.yunshop.pub:19194,miki,13154,14001,>
-,,bob,13153,13154,<
-ssh -p 40840 root@ cloud.yunshop.pub,http://cloud.yunshop.pub:49764,miki,12154,13001,>
-,,bob,12153,12154,<
-ssh -p 45855 root@ cloud.yunshop.pub,http://cloud.yunshop.pub:57066,miki,11153,12001,>
-,,bob,11152,11153,<
-ssh -p 48215 root@ cloud.yunshop.pub,http://cloud.yunshop.pub:20802,miki,10153,11001,>
-,,bob,10152,10153,<
+ssh	http	user	from	to	
+ssh -p 30850 root@ cloud.yunshop.pub	http://cloud.yunshop.pub:47784	miki	18152	18153	<
+		bob	18153	19001	>
+ssh -p 10854 root@ cloud.yunshop.pub	http://cloud.yunshop.pub:61359	miki	17154	18001	>
+		bob	17153	17154	<
+ssh -p 40354 root@ cloud.yunshop.pub	http://cloud.yunshop.pub:54574	miki	16153	17001	>
+		bob	16152	16153	<
+ssh -p 60097 root@ cloud.yunshop.pub	http://cloud.yunshop.pub:52443	miki	15154	16001	>
+		bob	15153	15154	<
+ssh -p 44329 root@ cloud.yunshop.pub	http://cloud.yunshop.pub:37564	miki	14152	15001	>
+		bob	14151	14152	<
+ssh -p 12777 root@ cloud.yunshop.pub	http://cloud.yunshop.pub:19194	miki	13154	14001	>
+		bob	13153	13154	<
+ssh -p 40840 root@ cloud.yunshop.pub	http://cloud.yunshop.pub:49764	miki	12154	13001	>
+		bob	12153	12154	<
+ssh -p 45855 root@ cloud.yunshop.pub	http://cloud.yunshop.pub:57066	miki	11153	12001	>
+		bob	11152	11153	<
+ssh -p 48215 root@ cloud.yunshop.pub	http://cloud.yunshop.pub:20802	miki	10153	11001	>
+		bob	10152	10153	<
+ssh -p 54719 root@ cloud.yunshop.pub	http://cloud.yunshop.pub:39825	miki			
+		bob			
