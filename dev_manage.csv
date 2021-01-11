@@ -17,5 +17,5 @@ ssh -p 45855 root@ cloud.yunshop.pub	http://cloud.yunshop.pub:57066	miki	11153	1
 		bob	11152	11153	<
 ssh -p 48215 root@ cloud.yunshop.pub	http://cloud.yunshop.pub:20802	miki	10153	11001	>
 		bob	10152	10153	<
-ssh -p 54719 root@ cloud.yunshop.pub	http://cloud.yunshop.pub:39825	miki			
+ssh -p 54719 root@ cloud.yunshop.pub	http://cloud.yunshop.pub:39825	miki	9154	10001	>
 		bob			
