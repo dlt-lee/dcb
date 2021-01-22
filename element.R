@@ -39,6 +39,8 @@ library(depmixS4)
 library(recommenderlab)
 library(nnet)
 library(caret)
+threads=detectCores()
+number_of_core=threads/2
 
 rnames<-c("number","a1","a2","a3","a4","a5","a6","b1")
 cnames<-c()

@@ -1,7 +1,7 @@
 dcb.xgb.row.1<-function(trains,d_o) {
   library(xgboost)
-  threads=detectCores()
-  number_of_core=threads/2
+  # threads=detectCores()
+  # number_of_core=threads/2
   
   #trains<-dlt.data.reset(dlt)
   trains.T<-Matrix(as.matrix(trains[,57:63]),sparse=T)
