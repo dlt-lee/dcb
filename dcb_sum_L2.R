@@ -1,8 +1,8 @@
 dcb_sum_L2<-function(data_org,n) {
   library('xgboost')
   source("dcb_sum_L1.R")
-  threads=detectCores()
-  number_of_core=threads/2
+  # threads=detectCores()
+  # number_of_core=threads/2
   
   #data_org<-dcb
   rows<-dim(data_org)[1]

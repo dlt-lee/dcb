@@ -1,7 +1,7 @@
 source("element.R")
 library(xgboost)
-threads=detectCores()
-number_of_core=threads/2
+# threads=detectCores()
+# number_of_core=threads/2
 
 time_start<-Sys.time()
 source("dcb_sum_L3.R")

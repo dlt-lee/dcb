@@ -1,7 +1,7 @@
 dcb_sum_cum<-function(data_org,n_ch) {
   library('xgboost')
-  threads=detectCores()
-  number_of_core=threads/2
+  # threads=detectCores()
+  # number_of_core=threads/2
   
   rows<-dim(data_org)[1]
   line<-rows-n_ch
