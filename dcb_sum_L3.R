@@ -59,22 +59,22 @@ trains.T.b1<-Matrix(m_r_b1,sparse=T)
 
 
 if (threads <= 8) {
-  bst.a1<-xgboost(data = trains.T.a1,label = result$a1,nrounds = 300,verbose=0,params = list(tree_method = 'hist'))
-  bst.a2<-xgboost(data = trains.T.a2,label = result$a2,nrounds = 300,verbose=0,params = list(tree_method = 'hist'))
-  bst.a3<-xgboost(data = trains.T.a3,label = result$a3,nrounds = 300,verbose=0,params = list(tree_method = 'hist'))
-  bst.a4<-xgboost(data = trains.T.a4,label = result$a4,nrounds = 300,verbose=0,params = list(tree_method = 'hist'))
-  bst.a5<-xgboost(data = trains.T.a5,label = result$a5,nrounds = 300,verbose=0,params = list(tree_method = 'hist'))
-  bst.a6<-xgboost(data = trains.T.a6,label = result$a6,nrounds = 300,verbose=0,params = list(tree_method = 'hist'))
-  bst.b1<-xgboost(data = trains.T.b1,label = result$b1,nrounds = 300,verbose=0,params = list(tree_method = 'hist'))
+  bst.a1<-xgboost(data = trains.T.a1,label = result$a1,nrounds = 300,verbose=0,params = list(tree_method = t_m))
+  bst.a2<-xgboost(data = trains.T.a2,label = result$a2,nrounds = 300,verbose=0,params = list(tree_method = t_m))
+  bst.a3<-xgboost(data = trains.T.a3,label = result$a3,nrounds = 300,verbose=0,params = list(tree_method = t_m))
+  bst.a4<-xgboost(data = trains.T.a4,label = result$a4,nrounds = 300,verbose=0,params = list(tree_method = t_m))
+  bst.a5<-xgboost(data = trains.T.a5,label = result$a5,nrounds = 300,verbose=0,params = list(tree_method = t_m))
+  bst.a6<-xgboost(data = trains.T.a6,label = result$a6,nrounds = 300,verbose=0,params = list(tree_method = t_m))
+  bst.b1<-xgboost(data = trains.T.b1,label = result$b1,nrounds = 300,verbose=0,params = list(tree_method = t_m))
   
 }else{
-  bst.a1<-xgboost(data = trains.T.a1,label = result$a1,nrounds = 300,verbose=0,params = list(tree_method = 'hist',nthread=number_of_core))
-  bst.a2<-xgboost(data = trains.T.a2,label = result$a2,nrounds = 300,verbose=0,params = list(tree_method = 'hist',nthread=number_of_core))
-  bst.a3<-xgboost(data = trains.T.a3,label = result$a3,nrounds = 300,verbose=0,params = list(tree_method = 'hist',nthread=number_of_core))
-  bst.a4<-xgboost(data = trains.T.a4,label = result$a4,nrounds = 300,verbose=0,params = list(tree_method = 'hist',nthread=number_of_core))
-  bst.a5<-xgboost(data = trains.T.a5,label = result$a5,nrounds = 300,verbose=0,params = list(tree_method = 'hist',nthread=number_of_core))
-  bst.a6<-xgboost(data = trains.T.a6,label = result$a6,nrounds = 300,verbose=0,params = list(tree_method = 'hist',nthread=number_of_core))
-  bst.b1<-xgboost(data = trains.T.b1,label = result$b1,nrounds = 300,verbose=0,params = list(tree_method = 'hist',nthread=number_of_core))
+  bst.a1<-xgboost(data = trains.T.a1,label = result$a1,nrounds = 300,verbose=0,params = list(tree_method = t_m,nthread=number_of_core))
+  bst.a2<-xgboost(data = trains.T.a2,label = result$a2,nrounds = 300,verbose=0,params = list(tree_method = t_m,nthread=number_of_core))
+  bst.a3<-xgboost(data = trains.T.a3,label = result$a3,nrounds = 300,verbose=0,params = list(tree_method = t_m,nthread=number_of_core))
+  bst.a4<-xgboost(data = trains.T.a4,label = result$a4,nrounds = 300,verbose=0,params = list(tree_method = t_m,nthread=number_of_core))
+  bst.a5<-xgboost(data = trains.T.a5,label = result$a5,nrounds = 300,verbose=0,params = list(tree_method = t_m,nthread=number_of_core))
+  bst.a6<-xgboost(data = trains.T.a6,label = result$a6,nrounds = 300,verbose=0,params = list(tree_method = t_m,nthread=number_of_core))
+  bst.b1<-xgboost(data = trains.T.b1,label = result$b1,nrounds = 300,verbose=0,params = list(tree_method = t_m,nthread=number_of_core))
   
 }
 
