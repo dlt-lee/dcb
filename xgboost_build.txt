@@ -1,0 +1,29 @@
+https://linuxconfig.org/how-to-install-cuda-on-ubuntu-20-04-focal-fossa-linux
+sudo apt install git-all
+git clone --recursive https://github.com/dmlc/xgboost
+sudo ubuntu-drivers autoinstall
+ sudo apt install build-essential
+ apt-get install manpages-dev
+ sudo apt install gcc-8 g++-8 gcc-9 g++-9 gcc-10 g++-10
+ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 --slave /usr/bin/g++ g++ /usr/bin/g++-10 --slave /usr/bin/gcov gcov /usr/bin/gcov-10
+ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90 --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
+ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8 --slave /usr/bin/gcov gcov /usr/bin/gcov-8
+ sudo update-alternatives --config gcc
+ sudo apt-get install libboost-all-dev
+ sudo apt -y install libboost-tools-dev libboost-thread1.62-dev magics++
+ sudo apt -y install build-essential cmake libboost-system-dev libboost-program-options-dev libssl-dev
+ sudo pt-get install build-essential
+ sudo apt-get install g++ libboost-dev cmake make git-all
+ udo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libboost-all-dev libhdf5-serial-dev libgflags-dev libgoogle-glog-dev liblmdb-dev protobuf-compiler libatlas-base-dev
+ sudo apt-get install python-dev python-pip gfortran
+ sudo apt install libpthread-stubs0-dev
+ https://github.com/NVIDIA/nccl
+ git clone https://github.com/NVIDIA/nccl.git
+ cd nccl
+ make -j src.build CUDA_HOME="/usr"
+ sudo apt install build-essential devscripts debhelper fakeroot
+ make pkg.debian.build
+ cmake .. -DUSE_CUDA=ON -DUSE_NCCL=ON -DNCCL_ROOT=/home/lzh/Downloads/nccl/build
+ make -j4
+ cmake .. -DUSE_CUDA=ON -DR_LIB=ON
+ sudo make install -j$(nproc)

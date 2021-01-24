@@ -41,7 +41,7 @@ library(nnet)
 library(caret)
 
 t_m ='gpu_hist'
-t_m ='hist'
+#t_m ='hist'
 threads=detectCores()
 number_of_core=threads/2
 
