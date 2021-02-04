@@ -57,7 +57,6 @@ dcb.xgb.row.1<-function(trains,d_o) {
   testPredictions.a6 <- predict(object = bst.a6,newdata = tests.T)
   testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T)
   
-  gc(verbose = FALSE, reset=TRUE)
   
   #result
   return(c(round(tail(testPredictions.a1,1)),

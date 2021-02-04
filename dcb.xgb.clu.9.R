@@ -55,7 +55,6 @@ dcb.xgb.clu.9<-function(trains,d_o) {
   testPredictions.a6 <- predict(object = bst.a6,newdata = tests.T[,c(6,13,20,27,34,41,48,55,62)])
   testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T[,c(7,14,21,28,35,42,49,56,63)])
   
-  gc(verbose = FALSE, reset=TRUE)
   
   #result
   return(c(round(tail(testPredictions.a1,1)),

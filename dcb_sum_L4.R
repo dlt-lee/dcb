@@ -80,7 +80,7 @@ time_dur
 
 sum_l4_dcb<-c(max(dcb$n)+1,sum_l4_dcb)
 sum_l4_dcb
-gc(verbose = FALSE, reset=TRUE)
+
 
 
 

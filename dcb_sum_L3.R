@@ -111,7 +111,6 @@ time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
 time_dur
 
-gc(verbose = FALSE, reset=TRUE)
 
 #m_sum_l2_dcb
 

@@ -69,7 +69,6 @@ dcb_sum_L1<-function(data) {
   
   data_result<-data.frame(a1,a2,a3,a4,a5,a6,b1)
   
-  gc(verbose = FALSE, reset=TRUE)
   
   return(data_result)
   

@@ -86,7 +86,6 @@ dcb_sum_L2<-function(data_org,n) {
   testPredictions.a6 <- predict(object = bst.a6,newdata = t(tests.T[,6]))
   testPredictions.b1 <- predict(object = bst.b1,newdata = t(tests.T[,7]))
   
-  gc(verbose = FALSE, reset=TRUE)
   
   pre_data<-c(round(tail(testPredictions.a1,1)),
               round(tail(testPredictions.a2,1)),

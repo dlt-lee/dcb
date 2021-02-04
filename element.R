@@ -45,6 +45,9 @@ t_m ='hist'
 threads=detectCores()
 number_of_core=threads/2
 
+gcinfo(TRUE)
+gc(reset = TRUE)
+
 
 rnames<-c("number","a1","a2","a3","a4","a5","a6","b1")
 cnames<-c()
@@ -2785,7 +2788,6 @@ dsa<-c(0,diff(sa))
 dsb<-c(0,diff(b1))
 dcb<- data.frame(n,a1,a2,a3,a4,a5,a6,b1,dsa,dsb)
 
-gc(verbose = FALSE, reset=TRUE)
 #write.csv(dcb,file = "dcb.csv")
 print(tail(dcb,1))
 
