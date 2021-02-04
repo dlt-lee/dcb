@@ -46,7 +46,7 @@ threads=detectCores()
 number_of_core=threads/2
 
 gcinfo(TRUE)
-gc(reset = TRUE)
+gc(verbose = FALSE,reset = TRUE)
 
 
 rnames<-c("number","a1","a2","a3","a4","a5","a6","b1")
