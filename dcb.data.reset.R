@@ -86,7 +86,7 @@ dcb.data.reset <- function(data_org) {
                      a1.9,a2.9,a3.9,a4.9,a5.9,a6.9,b1.9,
                      res.a1,res.a2,res.a3,res.a4,res.a5,res.a6,res.b1)
  
-  
+  gc(verbose = FALSE, reset=TRUE)
   return(trains)
 }
 
