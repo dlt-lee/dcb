@@ -52,7 +52,7 @@ number_of_core=threads/2
 gc()
 gcinfo(TRUE)
 gcinfo(verbose = FALSE)
-gc(TRUE)
+#gc(TRUE)
 gc(reset=TRUE)
 
 
