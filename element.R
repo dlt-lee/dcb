@@ -40,13 +40,20 @@ library(recommenderlab)
 library(nnet)
 library(caret)
 
+
+
+
+
 #t_m ='gpu_hist'
 t_m ='hist'
 threads=detectCores()
 number_of_core=threads/2
 
+gc()
 gcinfo(TRUE)
-gc(verbose = FALSE,reset = TRUE)
+gcinfo(verbose = FALSE)
+gc(TRUE)
+gc(reset=TRUE)
 
 
 rnames<-c("number","a1","a2","a3","a4","a5","a6","b1")
@@ -2747,7 +2754,8 @@ cell_2021<-c(
   21006,06,08,22,24,25,26,01,
   21007,02,04,12,21,25,32,16,
   21008,01,05,07,14,18,33,07,
-  21009,04,08,16,17,24,30,11
+  21009,04,08,16,17,24,30,11,
+  21010,01,04,11,19,32,33,05
   
   
 )
