@@ -48,7 +48,7 @@ library(caret)
 t_m ='hist'
 threads=detectCores()
 #number_of_core=threads/2
-number_of_core=-1
+number_of_core=1
 
 gc()
 gcinfo(TRUE)
