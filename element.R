@@ -44,11 +44,11 @@ library(caret)
 
 
 
-t_m ='gpu_hist'
-#t_m ='hist'
+#t_m ='gpu_hist'
+t_m ='hist'
 threads=detectCores()
 #number_of_core=threads/2
-number_of_core=32
+number_of_core=1
 
 gc()
 gcinfo(TRUE)
