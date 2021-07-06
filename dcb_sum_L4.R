@@ -4,36 +4,16 @@ library(xgboost)
 # number_of_core=threads/2
 
 time_start<-Sys.time()
-source("dcb_sum_L3.R")
+#source("dcb_sum_L3.R")
 
-
-m_r_ab_org<-as.matrix(read.csv(file = "l3_ab.csv", header = FALSE))[-1,]
+m_record_l3<-as.matrix(read.csv(file = "dcb_data_l3.csv", header = FALSE))[-1,]
+m_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l2.csv", header = FALSE))[-1,]
 m_r_ab_org<-m_r_ab_org[,-1]
 row_result<-dim(m_r_ab_org)[1]-1
 m_r_ab<-head(m_r_ab_org,row_result)
 result<-tail(dcb,row_result)
 
-m_record_l4<-c(
-  20128,03,11,14,21,23,30,05,
-  20129,02,11,13,21,28,30,06,
-  20130,03,07,16,20,21,27,07,
-  20131,02,08,12,20,26,26,08,
-  20132,10,11,12,20,24,32,10,
-  20133,02,03,13,18,24,28,07,
-  20134,04,07,08,15,21,27,09,
-  21001,04,13,20,23,28,31,13,
-  21002,04,05,09,14,24,30,08,
-  21003,03,10,19,26,29,33,11,
-  21004,09,14,22,25,27,30,06,
-  21005,05,08,14,17,25,31,13,
-  21006,03,10,11,16,26,29,14,
-  21007,01,10,21,22,23,27,10,
-  21008,01,07,13,20,26,27,08,
-  21009,02,04,07,24,25,32,13,
-  21010,04,09,18,20,22,27,12,
-  21011,02,08,16,19,26,28,06
-  
-)
+
 
 trains.T.ab<-Matrix(m_r_ab,sparse=T)
  
@@ -71,6 +51,7 @@ time_dur
 sum_l4_dcb<-c(max(dcb$n)+1,sum_l4_dcb)
 sum_l4_dcb
 
-
+m_r_ab_delta<-rbind(m_record_l3,sum_l4_dcb)
+write.csv(m_r_ab_delta, file = "dcb_data_l3.csv",row.names = FALSE)
 
 
