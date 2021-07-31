@@ -1,9 +1,9 @@
 dcb_L4<-function(num,number_of_core) {
-  source("element.R")
+  #source("element.R")
   library(xgboost)
   #read data
-  m_record_l3<-as.matrix(read.csv(file = "dcb_data_l3.csv", header = FALSE))[-1,]
-  m_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l2.csv", header = FALSE))[-1,]
+  m_record_l3<-as.matrix(read.csv(file = "dcb_data_l4.csv", header = FALSE))[-1,]
+  m_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l3.csv", header = FALSE))[-1,]
   # filter l2_data
   sum_num<-m_r_ab_org[,1]
   m_r_ab_org<-m_r_ab_org[which(sum_num<=(num+1)),]
@@ -49,9 +49,9 @@ dcb_L4<-function(num,number_of_core) {
 
   
   sum_l4_dcb<-c(max(dcb$n)+1,sum_l4_dcb)
-  sum_l4_dcb
+ print( sum_l4_dcb)
   
   m_r_ab_delta<-rbind(m_record_l3,sum_l4_dcb)
-  write.csv(m_r_ab_delta, file = "dcb_data_l3.csv",row.names = FALSE)
+  write.csv(m_r_ab_delta, file = "dcb_data_l4.csv",row.names = FALSE)
   
 }
