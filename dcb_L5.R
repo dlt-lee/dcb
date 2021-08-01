@@ -1,10 +1,10 @@
-dcb_L4<-function(num,number_of_core) {
+dcb_L5<-function(num,number_of_core) {
   #source("element.R")
   library(xgboost)
   #read data
-  m_record_l4<-as.matrix(read.csv(file = "dcb_data_l4.csv", header = FALSE))[-1,]
-  m_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l3.csv", header = FALSE))[-1,]
-  # filter l3_data
+  m_record_l5<-as.matrix(read.csv(file = "dcb_data_l5.csv", header = FALSE))[-1,]
+  m_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l4.csv", header = FALSE))[-1,]
+  # filter l4_data
   sum_num<-m_r_ab_org[,1]
   m_r_ab_org<-m_r_ab_org[which(sum_num<=(num+1)),]
   m_r_ab_org<-m_r_ab_org[,-1]
@@ -37,7 +37,7 @@ dcb_L4<-function(num,number_of_core) {
   testPredictions.a6 <- predict(object = bst.a6,newdata = tests.T.ab)
   testPredictions.b1 <- predict(object = bst.b1,newdata = tests.T.ab)
   
-  sum_l4_dcb<-c(sort(c(round(testPredictions.a1),
+  sum_l5_dcb<-c(sort(c(round(testPredictions.a1),
                        round(testPredictions.a2),
                        round(testPredictions.a3),
                        round(testPredictions.a4),
@@ -46,11 +46,11 @@ dcb_L4<-function(num,number_of_core) {
   )),
   round(testPredictions.b1))
   
-
   
-  sum_l4_dcb<-c(max(dcb$n)+1,sum_l4_dcb)
- print(c('L4:',sum_l4_dcb))
-  m_r_ab_delta<-rbind(m_record_l4,sum_l4_dcb)
-  write.csv(m_r_ab_delta, file = "dcb_data_l4.csv",row.names = FALSE)
+  
+  sum_l5_dcb<-c(max(dcb$n)+1,sum_l5_dcb)
+  print(c('L5:',sum_l5_dcb))
+  m_r_ab_delta<-rbind(m_record_l5,sum_l5_dcb)
+  write.csv(m_r_ab_delta, file = "dcb_data_l5.csv",row.names = FALSE)
   
 }
