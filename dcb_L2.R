@@ -36,7 +36,7 @@ dcb_L2<-function(num,number_of_core) {
                 sum_l2_dcb_3[7],L2_1_dcb[7],L2_2_dcb[7],L2_3_dcb[7],L2_4_dcb[7],L2_5_dcb[7],L2_6_dcb[7],L2_7_dcb[7],L2_8_dcb[7],sum_l2_dcb_6[7])
   
   sum_l2<-c(max(dcb$n)+1,sum_l2_dcb)
-  m_r_ab_delta<-rbind(m_r_ab_org,sum_l2)
+  m_r_ab_delta<-rbind(m_record_l2,sum_l2)
   write.csv(m_r_ab_delta, file = "dcb_data_l2.csv",row.names = FALSE)
 
 }
