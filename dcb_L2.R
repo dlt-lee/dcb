@@ -1,4 +1,4 @@
-dcb_L2<-function(num,number_of_core) {
+dcb_L2<-function(num) {
   library(HMM)
   library(depmixS4)
   library(matlab)
