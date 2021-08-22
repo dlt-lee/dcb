@@ -96,6 +96,6 @@ dcb_JL<-function(num,number_of_core) {
   round(testPredictions.b1))
   sum_JL_dcb<-c(max(dcb_result$n)+1,sum_JL_dcb)
   print(c('LJ:',sum_JL_dcb))
-  m_r_ab_delta<-rbind(m_record_JL,sum_l9_dcb)
+  m_r_ab_delta<-rbind(m_record_JL,sum_JL_dcb)
   write.csv(m_r_ab_delta, file = "dcb_data_JL.csv",row.names = FALSE)
 }

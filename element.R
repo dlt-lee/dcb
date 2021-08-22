@@ -47,8 +47,8 @@ library(caret)
 #t_m ='gpu_hist'
 t_m ='hist'
 threads=detectCores()
-#number_of_core=threads/2
-number_of_core=1
+number_of_core=threads/2
+# number_of_core=4
 
 gc()
 gcinfo(TRUE)
@@ -2838,7 +2838,8 @@ cell_2021<-c(
   21091,04,06,16,24,26,33,16,
   21092,02,07,08,10,12,31,03,
   21093,05,11,15,23,28,33,03,
-  21094,09,11,24,25,28,33,15
+  21094,09,11,24,25,28,33,15,
+  21095,08,12,17,24,27,28,13
   
   
 )
