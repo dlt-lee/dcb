@@ -5,7 +5,7 @@ dcb_L5<-function(num,number_of_core) {
   m_record_l5<-as.matrix(read.csv(file = "dcb_data_l5.csv", header = FALSE))[-1,]
   m_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l4.csv", header = FALSE))[-1,]
   # filter l4_data
-  sum_num<-m_r_ab_org[,1]
+  sum_num<-as.integer(m_r_ab_org[,1])
   m_r_ab_org<-m_r_ab_org[which(sum_num<=(num+1)),]
   m_r_ab_org<-m_r_ab_org[,-1]
   #get training row

@@ -7,11 +7,11 @@ source("dcb_L6.R")
 source("dcb_L7.R")
 source("dcb_JL.R")
 
-for (i in 10001:10153) {
+for (i in 12001:12154) {
   # dcb_L2(i)
   dcb_L3(i,24)
   dcb_L4(i,24)
-  # dcb_L5(i,-1)
+  dcb_L5(i,24)
   # dcb_L6(i,-1)
   # dcb_L7(i,-1)
   # dcb_JL(i,-1)
