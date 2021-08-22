@@ -9,7 +9,7 @@ source("dcb_L8.R")
 source("dcb_L9.R")
 source("dcb_JL.R")
 
-for (i in 17001:17154) {
+for (i in 18001:18153) {
   # dcb_L2(i)
   dcb_L3(i,-1)
   dcb_L4(i,-1)
