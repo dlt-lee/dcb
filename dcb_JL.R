@@ -1,6 +1,7 @@
 dcb_JL<-function(num,number_of_core) {
   # source("element.R")
   library(xgboost)
+  m_record_JL<-as.matrix(read.csv(file = "dcb_data_JL.csv", header = FALSE))[-1,]
   m_record_l3<-as.matrix(read.csv(file = "dcb_data_l3.csv", header = FALSE))[-1,]
   m_record_l4<-as.matrix(read.csv(file = "dcb_data_l4.csv", header = FALSE))[-1,]
   m_record_l5<-as.matrix(read.csv(file = "dcb_data_l5.csv", header = FALSE))[-1,]
@@ -95,5 +96,6 @@ dcb_JL<-function(num,number_of_core) {
   round(testPredictions.b1))
   sum_JL_dcb<-c(max(dcb_result$n)+1,sum_JL_dcb)
   print(c('LJ:',sum_JL_dcb))
-  
+  m_r_ab_delta<-rbind(m_record_JL,sum_l9_dcb)
+  write.csv(m_r_ab_delta, file = "dcb_data_JL.csv",row.names = FALSE)
 }
