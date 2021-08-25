@@ -15,22 +15,27 @@ result_check<-function(num) {
     n_b=n_b+1
   }
   
-  if (n_b==1 || (n_a==1&&n_b==1) || ((n_a==2 && n_b==1))) {
-    sum_dcb<-c(num,"Sixth")
-  }else if((n_a==3 && n_b==1) || (n_a==4)) {
-    sum_dcb<-c(num,"Fifth")
-  }else if((n_a==4 && n_b==1) || (n_a==5)) {
-    sum_dcb<-c(num,"Fourth")
-  }else if(n_a==5 && n_b==1) {
-    sum_dcb<-c(num,"Third")
+   
+  
+  if(n_a==6 && n_b==1) {
+    sum_dcb<-c(num,"First",n_a,n_b)
   }else if(n_a==6) {
-    sum_dcb<-c(num,"Second")
-  }else if(n_a==6 && n_b==1) {
-    sum_dcb<-c(num,"First")
+    sum_dcb<-c(num,"Second",n_a,n_b)
+  }else if(n_a==5 && n_b==1) {
+    sum_dcb<-c(num,"Third",n_a,n_b)
+  }else if((n_a==4 && n_b==1) || (n_a==5)) {
+    sum_dcb<-c(num,"Fourth",n_a,n_b)
+  }else if((n_a==3 && n_b==1) || (n_a==4)) {
+    sum_dcb<-c(num,"Fifth",n_a,n_b)
+  }else if (n_b==1 || (n_a==1&&n_b==1) || ((n_a==2 && n_b==1))) {
+    sum_dcb<-c(num,"Sixth",n_a,n_b)
   }else {
-    sum_dcb<-c(num,"Zero")
+    sum_dcb<-c(num,"Zero",n_a,n_b)
   }
-  print(sum_dcb)
+  
+  
+  
+  print(sum_dcb,n_a,n_b)
   m_r_ab_delta<-rbind(m_record_CR,sum_dcb)
   write.csv(m_r_ab_delta, file = "dcb_data_CR.csv",row.names = FALSE)
 }
