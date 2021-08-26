@@ -8,6 +8,7 @@ source("dcb_L7.R")
 source("dcb_L8.R")
 source("dcb_L9.R")
 source("dcb_JL.R")
+source("result_check.R")
 
 # 
 # data_year = c(
@@ -90,4 +91,6 @@ dcb_L8(max_n,number_of_core)
 dcb_L9(max_n,number_of_core)
 dcb_JL(max_n,number_of_core)
 
-
+for (i in 21002:21096) {
+  result_check(i)
+}
