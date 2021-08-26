@@ -38,8 +38,7 @@ dcb_L3<-function(num,number_of_core) {
   bst.a6<-xgboost(data = trains.T.a6,label = result$a6,nrounds = 300,verbose=0,params = list(tree_method = t_m,nthread=number_of_core))
   bst.b1<-xgboost(data = trains.T.b1,label = result$b1,nrounds = 300,verbose=0,params = list(tree_method = t_m,nthread=number_of_core))
   
-  sum_l2_dcb<-m_r_ab_org[which(sum_num==(num+1)),]
-  sum_l2_dcb<-sum_l2_dcb[2:71]
+  sum_l2_dcb<-tail(m_r_ab,1)
   
   tests.T<-Matrix(as.matrix(m_sum_l2<-matrix(sum_l2_dcb,ncol = 10,byrow = TRUE)),sparse=T)
   testPredictions.a1 <- predict(object = bst.a1,newdata = t(tests.T[1,]))
