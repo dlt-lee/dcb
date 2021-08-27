@@ -114,6 +114,8 @@ for (i in 1:rows) {
 #   # dcb_JL(i,-1)
 # }
 
+time_start_dcb<-Sys.time()
+
 max_n=max(as.integer(dcb$n))
 dcb_L2(max_n)
 dcb_L3(max_n,number_of_core)
@@ -125,6 +127,12 @@ dcb_L8(max_n,number_of_core)
 dcb_L9(max_n,number_of_core)
 dcb_JL(max_n,number_of_core)
 
-for (i in 21002:21096) {
-  result_check(i)
-}
+time_end_dcb<-Sys.time()
+time_dur<-time_end_dcb-time_start_dcb
+time_dur
+
+# for (i in 21002:21096) {
+#   result_check(i)
+# }
+
+

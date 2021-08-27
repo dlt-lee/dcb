@@ -47,9 +47,9 @@ library(sjmisc)
 
 #t_m ='gpu_hist'
 t_m ='hist'
-threads=detectCores()
-number_of_core=threads/2
-# number_of_core=4
+# threads=detectCores()
+# number_of_core=threads/2
+number_of_core=4
 
 gc()
 gcinfo(TRUE)
@@ -2841,7 +2841,8 @@ cell_2021<-c(
   21093,05,11,15,23,28,33,03,
   21094,09,11,24,25,28,33,15,
   21095,08,12,17,24,27,28,13,
-  21096,01,07,11,14,15,26,11
+  21096,01,07,11,14,15,26,11,
+  21097,03,11,12,13,25,28,12
   
   
 )
