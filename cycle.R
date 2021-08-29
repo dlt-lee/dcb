@@ -97,8 +97,8 @@ time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
 time_dur
 
-# for (i in 21002:21096) {
-#   result_check(i)
-# }
+for (i in 21002:21097) {
+  result_check(i)
+}
 
 
