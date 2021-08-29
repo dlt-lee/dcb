@@ -45,7 +45,7 @@ length(data_year)
 data_year=matrix(data_year,ncol = 2,byrow = TRUE,dimnames = NULL)
 rows=dim(data_year)[1]
 
-for (i in 1:rows) {
+for (i in 16:rows) {
   for (j in data_year[i,1]:data_year[i,2]) {
     if (i>=1) {
       dcb_L3(j,number_of_core)
@@ -87,13 +87,14 @@ for (i in 1:rows) {
       dcb_L15(j,number_of_core)
     }
     if (i>=14) {
-      dcb_16(j,number_of_core)
+      dcb_L16(j,number_of_core)
     }
     if (i>=15) {
       dcb_L17(j,number_of_core)
     }
     if (i>=16) {
       dcb_L18(j,number_of_core)
+      dcb_JL(j,number_of_core)
     }
 
   }
@@ -131,8 +132,9 @@ time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
 time_dur
 
-# for (i in 21002:21096) {
-#   result_check(i)
-# }
+for (i in 21002:21097) {
+  result_check(i)
+
+}
 
 

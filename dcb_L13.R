@@ -1,4 +1,4 @@
-dcb_l13<-function(num,number_of_core) {
+dcb_L13<-function(num,number_of_core) {
   #source("element.R")
   library(xgboost)
   #read data

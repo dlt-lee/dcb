@@ -2,42 +2,58 @@ dcb_JL<-function(num,number_of_core) {
   # source("element.R")
   library(xgboost)
   m_record_JL<-as.matrix(read.csv(file = "dcb_data_JL.csv", header = FALSE))[-1,]
-  m_record_l3<-as.matrix(read.csv(file = "dcb_data_l3.csv", header = FALSE))[-1,]
-  m_record_l4<-as.matrix(read.csv(file = "dcb_data_l4.csv", header = FALSE))[-1,]
-  m_record_l5<-as.matrix(read.csv(file = "dcb_data_l5.csv", header = FALSE))[-1,]
-  m_record_l6<-as.matrix(read.csv(file = "dcb_data_l6.csv", header = FALSE))[-1,]
-  m_record_l7<-as.matrix(read.csv(file = "dcb_data_l7.csv", header = FALSE))[-1,]
-  m_record_l8<-as.matrix(read.csv(file = "dcb_data_l8.csv", header = FALSE))[-1,]
-  m_record_l9<-as.matrix(read.csv(file = "dcb_data_l9.csv", header = FALSE))[-1,]
-  sum_num<-m_record_l9[,1]
-  m_record_l3<-m_record_l3[which(sum_num<=(num+1)),]
-  m_record_l4<-m_record_l4[which(sum_num<=(num+1)),]
-  m_record_l5<-m_record_l5[which(sum_num<=(num+1)),]
-  m_record_l6<-m_record_l6[which(sum_num<=(num+1)),]
-  m_record_l7<-m_record_l7[which(sum_num<=(num+1)),]
-  m_record_l8<-m_record_l8[which(sum_num<=(num+1)),]
-  m_record_l9<-m_record_l9[which(sum_num<=(num+1)),]
+  f_record_l3<-as.data.frame(read.csv(file = "dcb_data_l3.csv", header = FALSE))[-1,]
+  f_record_l8<-as.data.frame(read.csv(file = "dcb_data_l8.csv", header = FALSE))[-1,]
+  f_record_l9<-as.data.frame(read.csv(file = "dcb_data_l9.csv", header = FALSE))[-1,]
+  f_record_l10<-as.data.frame(read.csv(file = "dcb_data_l10.csv", header = FALSE))[-1,]
+  f_record_l11<-as.data.frame(read.csv(file = "dcb_data_l11.csv", header = FALSE))[-1,]
+  f_record_l15<-as.data.frame(read.csv(file = "dcb_data_l15.csv", header = FALSE))[-1,]
+  f_record_l16<-as.data.frame(read.csv(file = "dcb_data_l16.csv", header = FALSE))[-1,]
+  f_record_l17<-as.data.frame(read.csv(file = "dcb_data_l17.csv", header = FALSE))[-1,]
+  f_record_l18<-as.data.frame(read.csv(file = "dcb_data_l18.csv", header = FALSE))[-1,]
+  
+  
+  m_record_l3<-as.matrix(f_record_l3[f_record_l3$V1<=(num+1),])
+  m_record_l8<-as.matrix(f_record_l8[f_record_l8$V1<=(num+1),])
+  m_record_l9<-as.matrix(f_record_l9[f_record_l9$V1<=(num+1),])
+  m_record_l10<-as.matrix(f_record_l10[f_record_l10$V1<=(num+1),])
+  m_record_l11<-as.matrix(f_record_l11[f_record_l11$V1<=(num+1),])
+  m_record_l15<-as.matrix(f_record_l15[f_record_l15$V1<=(num+1),])
+  m_record_l16<-as.matrix(f_record_l16[f_record_l16$V1<=(num+1),])
+  m_record_l17<-as.matrix(f_record_l17[f_record_l17$V1<=(num+1),])
+  # m_record_l18<-as.matrix(f_record_l18[f_record_l18$V1<=(num+1),])
   dcb_result<-dcb[dcb$n<=num,]
   
-  num_row<-dim(m_record_l9)[1]
+  # num_row<-dim(m_record_l18)[1]
+  num_row<-dim(m_record_l17)[1]
   dcb_result<-tail(dcb_result,(num_row-1))
   
   #training data
-  m_record_l3<-tail(m_record_l3,num_row)[,-1]
-  m_record_l4<-tail(m_record_l4,num_row)[,-1]
-  m_record_l5<-tail(m_record_l5,num_row)[,-1]
-  m_record_l6<-tail(m_record_l6,num_row)[,-1]
-  m_record_l7<-tail(m_record_l7,num_row)[,-1]
-  m_record_l8<-tail(m_record_l8,num_row)[,-1]
-  m_record_l9<-tail(m_record_l9,num_row)[,-1]
+  m_record_l3<-tail(m_record_l3,num_row)
+  m_record_l8<-tail(m_record_l8,num_row)
+  m_record_l9<-tail(m_record_l9,num_row)
+  m_record_l10<-tail(m_record_l10,num_row)
+  m_record_l11<-tail(m_record_l11,num_row)
+  m_record_l15<-tail(m_record_l15,num_row)
+  m_record_l16<-tail(m_record_l16,num_row)
+  m_record_l17<-tail(m_record_l17,num_row)
+  # m_record_l18<-tail(m_record_l18,num_row)
   
-  m_record_a1<-cbind(m_record_l3[,1],m_record_l4[,1],m_record_l5[,1],m_record_l6[,1],m_record_l7[,1],m_record_l8[,1],m_record_l9[,1])
-  m_record_a2<-cbind(m_record_l3[,2],m_record_l4[,2],m_record_l5[,2],m_record_l6[,2],m_record_l7[,2],m_record_l8[,1],m_record_l9[,1])
-  m_record_a3<-cbind(m_record_l3[,3],m_record_l4[,3],m_record_l5[,3],m_record_l6[,3],m_record_l7[,3],m_record_l8[,1],m_record_l9[,1])
-  m_record_a4<-cbind(m_record_l3[,4],m_record_l4[,4],m_record_l5[,4],m_record_l6[,4],m_record_l7[,4],m_record_l8[,1],m_record_l9[,1])
-  m_record_a5<-cbind(m_record_l3[,5],m_record_l4[,5],m_record_l5[,5],m_record_l6[,5],m_record_l7[,5],m_record_l8[,1],m_record_l9[,1])
-  m_record_a6<-cbind(m_record_l3[,6],m_record_l4[,6],m_record_l5[,6],m_record_l6[,6],m_record_l7[,6],m_record_l8[,1],m_record_l9[,1])
-  m_record_b1<-cbind(m_record_l3[,7],m_record_l4[,7],m_record_l5[,7],m_record_l6[,7],m_record_l7[,7],m_record_l8[,1],m_record_l9[,1])
+  # m_record_a1<-cbind(m_record_l3[,1],m_record_l8[,1],m_record_l9[,1],m_record_l10[,1],m_record_l11[,1],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1],m_record_l18[,1])
+  # m_record_a2<-cbind(m_record_l3[,2],m_record_l8[,2],m_record_l9[,2],m_record_l10[,2],m_record_l11[,2],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1],m_record_l18[,1])
+  # m_record_a3<-cbind(m_record_l3[,3],m_record_l8[,3],m_record_l9[,3],m_record_l10[,3],m_record_l11[,3],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1],m_record_l18[,1])
+  # m_record_a4<-cbind(m_record_l3[,4],m_record_l8[,4],m_record_l9[,4],m_record_l10[,4],m_record_l11[,4],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1],m_record_l18[,1])
+  # m_record_a5<-cbind(m_record_l3[,5],m_record_l8[,5],m_record_l9[,5],m_record_l10[,5],m_record_l11[,5],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1],m_record_l18[,1])
+  # m_record_a6<-cbind(m_record_l3[,6],m_record_l8[,6],m_record_l9[,6],m_record_l10[,6],m_record_l11[,6],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1],m_record_l18[,1])
+  # m_record_b1<-cbind(m_record_l3[,7],m_record_l8[,7],m_record_l9[,7],m_record_l10[,7],m_record_l11[,7],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1],m_record_l18[,1])
+  # 
+  m_record_a1<-cbind(m_record_l3[,1],m_record_l8[,1],m_record_l9[,1],m_record_l10[,1],m_record_l11[,1],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1])
+  m_record_a2<-cbind(m_record_l3[,2],m_record_l8[,2],m_record_l9[,2],m_record_l10[,2],m_record_l11[,2],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1])
+  m_record_a3<-cbind(m_record_l3[,3],m_record_l8[,3],m_record_l9[,3],m_record_l10[,3],m_record_l11[,3],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1])
+  m_record_a4<-cbind(m_record_l3[,4],m_record_l8[,4],m_record_l9[,4],m_record_l10[,4],m_record_l11[,4],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1])
+  m_record_a5<-cbind(m_record_l3[,5],m_record_l8[,5],m_record_l9[,5],m_record_l10[,5],m_record_l11[,5],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1])
+  m_record_a6<-cbind(m_record_l3[,6],m_record_l8[,6],m_record_l9[,6],m_record_l10[,6],m_record_l11[,6],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1])
+  m_record_b1<-cbind(m_record_l3[,7],m_record_l8[,7],m_record_l9[,7],m_record_l10[,7],m_record_l11[,7],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1])
   
   p_a1<-tail(m_record_a1,1)
   p_a2<-tail(m_record_a2,1)
@@ -94,7 +110,7 @@ dcb_JL<-function(num,number_of_core) {
                        round(testPredictions.a6)
   )),
   round(testPredictions.b1))
-  sum_JL_dcb<-c(max(dcb_result$n)+1,sum_JL_dcb)
+  sum_JL_dcb<-c(num+1,sum_JL_dcb)
   print(c('LJ:',sum_JL_dcb))
   m_r_ab_delta<-rbind(m_record_JL,sum_JL_dcb)
   write.csv(m_r_ab_delta, file = "dcb_data_JL.csv",row.names = FALSE)
