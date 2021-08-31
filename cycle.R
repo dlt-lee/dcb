@@ -20,88 +20,6 @@ source("dcb_L17.R")
 source("dcb_L18.R")
 
 
-data_year = c(
-  06001,06154,
-  07001,07153,
-  08001,08153,
-  09001,09154,
-  10001,10153,
-  11001,11153,
-  12001,12154,
-  13001,13154,
-  14001,14152,
-  15001,15154,
-  16001,16153,
-  17001,17154,
-  18001,18153,
-  19001,19151,
-  20001,20134,
-  21001,21097
-
-  
-)
-length(data_year)
-
-data_year=matrix(data_year,ncol = 2,byrow = TRUE,dimnames = NULL)
-rows=dim(data_year)[1]
-
-for (i in 1:rows) {
-  for (j in data_year[i,1]:data_year[i,2]) {
-    if (i>=1) {
-      dcb_L3(j,number_of_core)
-    }
-    if (i>=2) {
-      dcb_L4(j,number_of_core)
-    }
-    if (i>=3) {
-      dcb_L5(j,number_of_core)
-    }
-    if (i>=4) {
-      dcb_L6(j,number_of_core)
-    }
-    if (i>=5) {
-      dcb_L7(j,number_of_core)
-    }
-    if (i>=6) {
-      dcb_L8(j,number_of_core)
-    }
-    if (i>=7) {
-      dcb_L9(j,number_of_core)
-    }
-    if (i>=8) {
-      dcb_L10(j,number_of_core)
-    }
-    if (i>=9) {
-      dcb_L11(j,number_of_core)
-    }
-    if (i>=10) {
-      dcb_L12(j,number_of_core)
-    }
-    if (i>=11) {
-      dcb_L13(j,number_of_core)
-    }
-    if (i>=12) {
-      dcb_L14(j,number_of_core)
-    }
-    if (i>=13) {
-      dcb_L15(j,number_of_core)
-    }
-    if (i>=14) {
-      dcb_16(j,number_of_core)
-    }
-    if (i>=15) {
-      dcb_L17(j,number_of_core)
-    }
-    if (i>=16) {
-      dcb_L18(j,number_of_core)
-    }
-
-  }
-
-}
-
-<<<<<<< 365268c0ab4b04ac33f0d1fe95393a3f5dba1293
-=======
 
 data_year = c(
   07001,07153,
@@ -158,7 +76,6 @@ for (i in 1:rows) {
 
 }
 
->>>>>>> 21098
 
 # 
 # for (i in 19001:19151) {
@@ -186,18 +103,18 @@ dcb_L8(max_n,number_of_core)
 dcb_L9(max_n,number_of_core)
 dcb_JL(max_n,number_of_core)
 
-<<<<<<< 365268c0ab4b04ac33f0d1fe95393a3f5dba1293
+
 time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
 time_dur
 
-for (i in 21002:21097) {
-  result_check(i)
-}
+# for (i in 21002:21097) {
+#   result_check(i)
+# }
 
-=======
+
 # for (i in 21002:21096) {
 #   result_check(i)
 # }
->>>>>>> 21098
+
 
