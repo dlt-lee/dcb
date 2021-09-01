@@ -103,17 +103,17 @@ source("dcb_L18.R")
 
 
 
-for (i in 21001:21098) {
-  # dcb_L2(i)
-  # dcb_L3(i,-1)
-  # dcb_L4(i,-1)
-  # dcb_L5(i,-1)
-  # dcb_L6(i,-1)
-  # dcb_L7(i,-1)
-  # dcb_L8(i,-1)
-  # dcb_L9(i,-1)
-  dcb_JL(i,-1)
-}
+# for (i in 21001:21098) {
+#   dcb_L2(i)
+#   dcb_L3(i,-1)
+#   dcb_L4(i,-1)
+#   dcb_L5(i,-1)
+#   dcb_L6(i,-1)
+#   dcb_L7(i,-1)
+#   dcb_L8(i,-1)
+#   dcb_L9(i,-1)
+#   dcb_JL(i,-1)
+# }
 
 time_start_dcb<-Sys.time()
 
@@ -131,6 +131,8 @@ dcb_JL(max_n,number_of_core)
 time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
 time_dur
+
+
 
 # for (i in 21002:21097) {
 #   result_check(i)
