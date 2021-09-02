@@ -8,7 +8,7 @@ source("dcb_L7.R")
 source("dcb_L8.R")
 source("dcb_L9.R")
 source("dcb_JL.R")
-source("result_check.R")
+source("result_check_JL.R")
 source("dcb_L10.R")
 source("dcb_L11.R")
 source("dcb_L12.R")
@@ -19,7 +19,7 @@ source("dcb_L16.R")
 source("dcb_L17.R")
 source("dcb_L18.R")
 
-# 
+
 # data_year = c(
 #   06001,06154,
 #   07001,07153,
@@ -134,9 +134,9 @@ time_dur
 
 
 
-# for (i in 21002:21097) {
-#   result_check(i)
-# 
-# }
+for (i in 21001:21097) {
+  result_check_JL.R(i)
+
+}
 
 

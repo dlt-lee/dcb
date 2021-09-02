@@ -1,9 +1,9 @@
-result_check<-function(num) {
+result_check_JL<-function(num) {
   library(sjmisc)
   data_result=dcb[which(dcb$n==num),]
   data_pre=as.data.frame(read.csv(file = "dcb_data_JL.csv", header = FALSE))
   data_pre=data_pre[which(data_pre$V1==num),]
-  m_record_CR=as.matrix(read.csv(file = "dcb_data_CR.csv", header = FALSE))[-1,]
+  m_record_CR=as.matrix(read.csv(file = "dcb_data_CR_JL.csv", header = FALSE))[-1,]
   
   n_a=0
   n_b=0
@@ -36,7 +36,7 @@ result_check<-function(num) {
   
   
   print(sum_dcb,n_a,n_b)
-  m_r_ab_delta<-rbind(m_record_CR,sum_dcb)
-  write.csv(m_r_ab_delta, file = "dcb_data_CR.csv",row.names = FALSE)
+  m_r_ab_delta<-rbind(m_record_CR,sum_dcb,fre_a)
+  write.csv(m_r_ab_delta, file = "dcb_data_CR_JL.csv",row.names = FALSE)
 }
 
