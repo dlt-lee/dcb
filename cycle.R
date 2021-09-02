@@ -134,7 +134,7 @@ time_dur
 
 
 
-for (i in 21001:21097) {
+for (i in 21002:21097) {
   result_check_JL(i)
 
 }
