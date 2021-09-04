@@ -3,7 +3,7 @@ dcb_L18<-function(num,number_of_core) {
   library(xgboost)
   #read data
   m_record_l18<-as.matrix(read.csv(file = "dcb_data_l18.csv", header = FALSE))[-1,]
-  m_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l16.csv", header = FALSE))[-1,]
+  m_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l17.csv", header = FALSE))[-1,]
   # filter l5_data
   sum_num<-as.integer(m_r_ab_org[,1])
   m_r_ab_org<-m_r_ab_org[which(sum_num<=(num+1)),]
