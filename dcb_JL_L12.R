@@ -1,4 +1,4 @@
-dcb_JL_L4<-function(num,number_of_core) {
+dcb_JL_L12<-function(num,number_of_core) {
   source("element.R")
   library(xgboost)
   
@@ -52,7 +52,7 @@ dcb_JL_L4<-function(num,number_of_core) {
   m_record_JL_L15<-as.matrix(f_record_JL_L15[f_record_JL_L15$V1<=(num+1),])[,-1]
   m_record_JL_L16<-as.matrix(f_record_JL_L16[f_record_JL_L16$V1<=(num+1),])[,-1]
   m_record_JL_L17<-as.matrix(f_record_JL_L17[f_record_JL_L17$V1<=(num+1),])[,-1]
-
+  
   m_record_l3<-as.matrix(f_record_l3[f_record_l3$V1<=(num+1),])[,-1]
   m_record_l4<-as.matrix(f_record_l4[f_record_l4$V1<=(num+1),])[,-1]
   m_record_l5<-as.matrix(f_record_l5[f_record_l5$V1<=(num+1),])[,-1]
@@ -73,7 +73,7 @@ dcb_JL_L4<-function(num,number_of_core) {
   dcb_result<-dcb[dcb$n<=num,]
   
   # num_row<-dim(m_record_l18)[1]
-  num_row<-dim(m_record_l4)[1]
+  num_row<-dim(m_record_l12)[1]
   dcb_result<-tail(dcb_result,(num_row-1))
   
   #training data
@@ -109,20 +109,20 @@ dcb_JL_L4<-function(num,number_of_core) {
   m_record_l17<-tail(m_record_l17,num_row)
   m_record_l18<-tail(m_record_l18,num_row)
   
-  m_record_a1<-cbind(m_record_l3[,1],m_record_l4[,1]
-                     )
-  m_record_a2<-cbind(m_record_l3[,2],m_record_l4[,2]
-                     )
-  m_record_a3<-cbind(m_record_l3[,3],m_record_l4[,3]
-                     )
-  m_record_a4<-cbind(m_record_l3[,4],m_record_l4[,4]
-                     )
-  m_record_a5<-cbind(m_record_l3[,5],m_record_l4[,5]
-                     )
-  m_record_a6<-cbind(m_record_l3[,6],m_record_l4[,6]
-                     )
-  m_record_b1<-cbind(m_record_l3[,7],m_record_l4[,7]
-                     )
+  m_record_a1<-cbind(m_record_l3[,1],m_record_l4[,1],m_record_l5[,1],m_record_l6[,1],m_record_l7[,1],m_record_l7[,1],m_record_l8[,1],m_record_l9[,1],m_record_l10[,1],m_record_l11[,1],m_record_l12[,1],
+                     m_record_JL_L4[,1],m_record_JL_L5[,1],m_record_JL_L6[,1],m_record_JL_L6[,1],m_record_JL_L7[,1],m_record_JL_L8[,1],m_record_JL_L9[,1],m_record_JL_L10[,1],m_record_JL_L11[,1])
+  m_record_a2<-cbind(m_record_l3[,2],m_record_l4[,2],m_record_l5[,2],m_record_l6[,2],m_record_l7[,2],m_record_l7[,1],m_record_l8[,2],m_record_l9[,2],m_record_l10[,2],m_record_l11[,2],m_record_l12[,2],
+                     m_record_JL_L4[,2],m_record_JL_L5[,2],m_record_JL_L6[,2],m_record_JL_L6[,1],m_record_JL_L7[,2],m_record_JL_L8[,2],m_record_JL_L9[,2],m_record_JL_L10[,2],m_record_JL_L11[,1])
+  m_record_a3<-cbind(m_record_l3[,3],m_record_l4[,3],m_record_l5[,3],m_record_l6[,3],m_record_l7[,3],m_record_l7[,1],m_record_l8[,3],m_record_l9[,3],m_record_l10[,3],m_record_l11[,3],m_record_l12[,3],
+                     m_record_JL_L4[.3],m_record_JL_L5[,3],m_record_JL_L6[,3],m_record_JL_L6[,1],m_record_JL_L7[,3],m_record_JL_L8[,3],m_record_JL_L9[,3],m_record_JL_L10[,3],m_record_JL_L11[,1])
+  m_record_a4<-cbind(m_record_l3[,4],m_record_l4[,4],m_record_l5[,4],m_record_l6[,4],m_record_l7[,4],m_record_l7[,1],m_record_l8[,4],m_record_l9[,4],m_record_l10[,4],m_record_l11[,4],m_record_l12[,4],
+                     m_record_JL_L4[,4],m_record_JL_L5[,4],m_record_JL_L6[,4],m_record_JL_L6[,1],m_record_JL_L7[,4],m_record_JL_L8[,4],m_record_JL_L9[,4],m_record_JL_L10[,4],m_record_JL_L11[,1])
+  m_record_a5<-cbind(m_record_l3[,5],m_record_l4[,5],m_record_l5[,5],m_record_l6[,5],m_record_l7[,5],m_record_l7[,1],m_record_l8[,5],m_record_l9[,5],m_record_l10[,5],m_record_l11[,5],m_record_l12[,5],
+                     m_record_JL_L4[,5],m_record_JL_L5[,5],m_record_JL_L6[,5],m_record_JL_L6[,1],m_record_JL_L7[,5],m_record_JL_L8[,5],m_record_JL_L9[,5],m_record_JL_L10[,5],m_record_JL_L11[,1])
+  m_record_a6<-cbind(m_record_l3[,6],m_record_l4[,6],m_record_l5[,6],m_record_l6[,6],m_record_l7[,6],m_record_l7[,1],m_record_l8[,6],m_record_l9[,6],m_record_l10[,6],m_record_l11[,6],m_record_l12[,6],
+                     m_record_JL_L4[,6],m_record_JL_L5[,6],m_record_JL_L6[,6],m_record_JL_L6[,1],m_record_JL_L7[,6],m_record_JL_L8[,6],m_record_JL_L9[,6],m_record_JL_L10[,6],m_record_JL_L11[,1])
+  m_record_b1<-cbind(m_record_l3[,7],m_record_l4[,7],m_record_l5[,7],m_record_l6[,7],m_record_l7[,7],m_record_l7[,1],m_record_l8[,7],m_record_l9[,7],m_record_l10[,7],m_record_l11[,7],m_record_l12[,7],
+                     m_record_JL_L4[,7],m_record_JL_L5[,7],m_record_JL_L6[,7],m_record_JL_L6[,1],m_record_JL_L7[,7],m_record_JL_L8[,7],m_record_JL_L9[,7],m_record_JL_L10[,7],m_record_JL_L11[,1])
   
   p_a1<-tail(m_record_a1,1)
   p_a2<-tail(m_record_a2,1)
@@ -180,8 +180,8 @@ dcb_JL_L4<-function(num,number_of_core) {
   )),
   round(testPredictions.b1))
   sum_JL_dcb<-c(num+1,sum_JL_dcb)
-  print(c('LJ_L4:',sum_JL_dcb))
-  m_record_JL<-as.data.frame(read.csv(file = "dcb_data_JL_L4.csv", header = FALSE))[-1,]
+  print(c('LJ_L12:',sum_JL_dcb))
+  m_record_JL<-as.data.frame(read.csv(file = "dcb_data_JL_L12.csv", header = FALSE))[-1,]
   m_r_ab_delta<-rbind(m_record_JL,sum_JL_dcb)
-  write.csv(m_r_ab_delta, file = "dcb_data_JL_L4.csv",row.names = FALSE)
+  write.csv(m_r_ab_delta, file = "dcb_data_JL_L12.csv",row.names = FALSE)
 }
