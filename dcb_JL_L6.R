@@ -1,5 +1,5 @@
 dcb_JL_L6<-function(num,number_of_core) {
-  source("element.R")
+  # source("element.R")
   library(xgboost)
   
   m_record_JL<-as.matrix(read.csv(file = "dcb_data_JL.csv", header = FALSE))[-1,]
@@ -37,6 +37,37 @@ dcb_JL_L6<-function(num,number_of_core) {
   f_record_l17<-as.data.frame(read.csv(file = "dcb_data_l17.csv", header = FALSE))[-1,]
   f_record_l18<-as.data.frame(read.csv(file = "dcb_data_l18.csv", header = FALSE))[-1,]
   
+  f_record_JL_L4$V1= as.integer(f_record_JL_L4$V1)
+  f_record_JL_L5$V1= as.integer(f_record_JL_L5$V1)
+  f_record_JL_L6$V1= as.integer(f_record_JL_L6$V1)
+  f_record_JL_L7$V1= as.integer(f_record_JL_L7$V1)
+  f_record_JL_L8$V1= as.integer(f_record_JL_L8$V1)
+  f_record_JL_L9$V1= as.integer(f_record_JL_L9$V1)
+  f_record_JL_L10$V1= as.integer(f_record_JL_L10$V1)
+  f_record_JL_L11$V1= as.integer(f_record_JL_L11$V1)
+  f_record_JL_L12$V1= as.integer(f_record_JL_L12$V1)
+  f_record_JL_L13$V1= as.integer(f_record_JL_L13$V1)
+  f_record_JL_L14$V1= as.integer(f_record_JL_L14$V1)
+  f_record_JL_L15$V1= as.integer(f_record_JL_L15$V1)
+  f_record_JL_L16$V1= as.integer(f_record_JL_L16$V1)
+  f_record_JL_L17$V1= as.integer(f_record_JL_L17$V1)
+  
+  f_record_l3$V1=as.integer(f_record_l3$V1)
+  f_record_l4$V1=as.integer(f_record_l4$V1)
+  f_record_l5$V1=as.integer(f_record_l5$V1)
+  f_record_l6$V1=as.integer(f_record_l6$V1)
+  f_record_l7$V1=as.integer(f_record_l7$V1)
+  f_record_l8$V1=as.integer(f_record_l8$V1)
+  f_record_l9$V1=as.integer(f_record_l9$V1)
+  f_record_l10$V1=as.integer(f_record_l10$V1)
+  f_record_l11$V1=as.integer(f_record_l11$V1)
+  f_record_l12$V1=as.integer(f_record_l12$V1)
+  f_record_l13$V1=as.integer(f_record_l13$V1)
+  f_record_l14$V1=as.integer(f_record_l14$V1)
+  f_record_l15$V1=as.integer(f_record_l15$V1)
+  f_record_l16$V1=as.integer(f_record_l16$V1)
+  f_record_l17$V1=as.integer(f_record_l17$V1)
+  f_record_l18$V1=as.integer(f_record_l18$V1)
   
   m_record_JL_L4<-as.matrix(f_record_JL_L4[f_record_JL_L4$V1<=(num+1),])[,-1]
   m_record_JL_L5<-as.matrix(f_record_JL_L5[f_record_JL_L5$V1<=(num+1),])[,-1]
