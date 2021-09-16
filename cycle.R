@@ -67,7 +67,7 @@ source("dcb_JL_L17.R")
 #   18001,18153,
 #   19001,19151,
 #   20001,20134,
-#   21001,21103
+#   21001,21104
 # 
 # 
 # )
@@ -76,7 +76,7 @@ source("dcb_JL_L17.R")
 # data_year=matrix(data_year,ncol = 2,byrow = TRUE,dimnames = NULL)
 # rows=dim(data_year)[1]
 # 
-# for (i in 5:rows) {
+# for (i in 1:rows) {
 #   for (j in data_year[i,1]:data_year[i,2]) {
 #     if (i>=1) {
 #       dcb_L3(j,number_of_core)
@@ -139,6 +139,7 @@ source("dcb_JL_L17.R")
 #     if (i>=16) {
 #       dcb_L18(j,number_of_core)
 #       dcb_JL_L17(j,number_of_core)
+#       dcb_JL(j,number_of_core)
 #     }
 # 
 #   }
@@ -171,53 +172,54 @@ source("dcb_JL_L17.R")
 time_start_dcb<-Sys.time()
 
 max_n=max(as.integer(dcb$n))
+
 dcb_L2(max_n)
+
 dcb_L3(max_n,number_of_core)
 dcb_L4(max_n,number_of_core)
 
 dcb_L5(max_n,number_of_core)
-dcb_JL_L4(n,number_of_core)
+dcb_JL_L4(max_n,number_of_core)
 
 dcb_L6(max_n,number_of_core)
-dcb_JL_L5(n,number_of_core)
+dcb_JL_L5(max_n,number_of_core)
 
 dcb_L7(max_n,number_of_core)
-dcb_JL_L6(n,number_of_core)
+dcb_JL_L6(max_n,number_of_core)
 
 dcb_L8(max_n,number_of_core)
-dcb_JL_L7(n,number_of_core)
+dcb_JL_L7(max_n,number_of_core)
 
 dcb_L9(max_n,number_of_core)
-dcb_JL_L8(n,number_of_core)
+dcb_JL_L8(max_n,number_of_core)
 
 dcb_L10(max_n,number_of_core)
-dcb_JL_L9(n,number_of_core)
+dcb_JL_L9(max_n,number_of_core)
 
 dcb_L11(max_n,number_of_core)
-dcb_JL_L10(n,number_of_core)
+dcb_JL_L10(max_n,number_of_core)
 
 dcb_L12(max_n,number_of_core)
-dcb_JL_L11(n,number_of_core)
+dcb_JL_L11(max_n,number_of_core)
 
 dcb_L13(max_n,number_of_core)
-dcb_JL_L12(n,number_of_core)
+dcb_JL_L12(max_n,number_of_core)
 
 dcb_L14(max_n,number_of_core)
-dcb_JL_L13(n,number_of_core)
+dcb_JL_L13(max_n,number_of_core)
 
 dcb_L15(max_n,number_of_core)
-dcb_JL_L14(n,number_of_core)
+dcb_JL_L14(max_n,number_of_core)
 
 dcb_L16(max_n,number_of_core)
-dcb_JL_L15(n,number_of_core)
+dcb_JL_L15(max_n,number_of_core)
 
 dcb_L17(max_n,number_of_core)
-dcb_JL_L16(n,number_of_core)
+dcb_JL_L16(max_n,number_of_core)
 
 dcb_L18(max_n,number_of_core)
-dcb_JL_L17(n,number_of_core)
-
-# dcb_JL(max_n,number_of_core)
+dcb_JL_L17(max_n,number_of_core)
+dcb_JL(max_n,number_of_core)
 
 time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
