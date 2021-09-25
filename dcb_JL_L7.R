@@ -142,16 +142,22 @@ dcb_JL_L7<-function(num,number_of_core) {
   
   m_record_a1<-cbind(m_record_l3[,1],m_record_l4[,1],m_record_l5[,1],m_record_l6[,1],m_record_l7[,1],
                      m_record_JL_L4[,1],m_record_JL_L5[,1],m_record_JL_L6[,1])
+  
   m_record_a2<-cbind(m_record_l3[,2],m_record_l4[,2],m_record_l5[,2],m_record_l6[,2],m_record_l7[,2],
                      m_record_JL_L4[,2],m_record_JL_L5[,2],m_record_JL_L6[,2])
+  
   m_record_a3<-cbind(m_record_l3[,3],m_record_l4[,3],m_record_l5[,3],m_record_l6[,3],m_record_l7[,3],
-                     m_record_JL_L4[.3],m_record_JL_L5[,3],m_record_JL_L6[,3])
+                     m_record_JL_L4[,3],m_record_JL_L5[,3],m_record_JL_L6[,3])
+  
   m_record_a4<-cbind(m_record_l3[,4],m_record_l4[,4],m_record_l5[,4],m_record_l6[,4],m_record_l7[,4],
                      m_record_JL_L4[,4],m_record_JL_L5[,4],m_record_JL_L6[,4])
+  
   m_record_a5<-cbind(m_record_l3[,5],m_record_l4[,5],m_record_l5[,5],m_record_l6[,5],m_record_l7[,5],
                      m_record_JL_L4[,5],m_record_JL_L5[,5],m_record_JL_L6[,5])
+  
   m_record_a6<-cbind(m_record_l3[,6],m_record_l4[,6],m_record_l5[,6],m_record_l6[,6],m_record_l7[,6],
                      m_record_JL_L4[,6],m_record_JL_L5[,6],m_record_JL_L6[,6])
+  
   m_record_b1<-cbind(m_record_l3[,7],m_record_l4[,7],m_record_l5[,7],m_record_l6[,7],m_record_l7[,7],
                      m_record_JL_L4[,7],m_record_JL_L5[,7],m_record_JL_L6[,7])
   
