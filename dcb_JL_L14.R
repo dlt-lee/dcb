@@ -152,7 +152,7 @@ dcb_JL_L14<-function(num,number_of_core) {
   
   m_record_a3<-cbind(m_record_l3[,3],m_record_l4[,3],m_record_l5[,3],m_record_l6[,3],m_record_l7[,3],m_record_l8[,3],m_record_l9[,3],m_record_l10[,3],
                      m_record_l11[,3],m_record_l12[,3],m_record_l13[,3],m_record_l14[,3],
-                     m_record_JL_L4[.3],m_record_JL_L5[,3],m_record_JL_L6[,3],m_record_JL_L7[,3],m_record_JL_L8[,3],m_record_JL_L9[,3],m_record_JL_L10[,3],
+                     m_record_JL_L4[,3],m_record_JL_L5[,3],m_record_JL_L6[,3],m_record_JL_L7[,3],m_record_JL_L8[,3],m_record_JL_L9[,3],m_record_JL_L10[,3],
                      m_record_JL_L11[,3],m_record_JL_L12[,3],m_record_JL_L13[,3])
   
   m_record_a4<-cbind(m_record_l3[,4],m_record_l4[,4],m_record_l5[,4],m_record_l6[,4],m_record_l7[,4],m_record_l8[,4],m_record_l9[,4],m_record_l10[,4],
