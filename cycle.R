@@ -282,8 +282,9 @@ for (i in 21002:21111) {
   result_check_JL_L5(i)
   result_check_L6(i)
   
-  result_check_JL_L4()
+  result_check_JL_L4(i)
   result_check_L5(i)
+  
   result_check_L4(i)
   result_check_L3(i)
 
