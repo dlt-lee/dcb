@@ -241,21 +241,48 @@ time_dur
 
 
 
-for (i in 21002:21100) {
+for (i in 21002:21111) {
+  result_check_JL_L17(i)
   result_check_JL(i)
   result_check_L18(i)
+  
+  result_check_JL_L16(i)
   result_check_L17(i)
+  
+  result_check_JL_L15(i)
   result_check_L16(i)
+  
+  result_check_JL_L14(i)
   result_check_L15(i)
+  
+  result_check_JL_L13(i)
   result_check_L14(i)
+  
+  result_check_JL_L12(i)
   result_check_L13(i)
+  
+  result_check_JL_L11(i)
   result_check_L12(i)
+  
+  result_check_JL_L10(i)
   result_check_L11(i)
+  
+  result_check_JL_L9(i)
   result_check_L10(i)
+  
+  result_check_JL_L8(i)
   result_check_L9(i)
+  
+  result_check_JL_L7(i)
   result_check_L8(i)
+  
+  result_check_JL_L6(i)
   result_check_L7(i)
+  
+  result_check_JL_L5(i)
   result_check_L6(i)
+  
+  result_check_JL_L4()
   result_check_L5(i)
   result_check_L4(i)
   result_check_L3(i)
