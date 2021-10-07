@@ -86,7 +86,8 @@ Fre_L9=c(
          as.integer(table(f_record_l9$V7)[2]),
          as.integer(table(f_record_l9$V8)[2]),
          as.integer(table(f_record_l9$V9)[2]),
-         as.integer(table(f_record_l9$V10)[2]))
+         as.integer(table(f_record_l9$V10)[2]),
+         as.integer(table(f_record_l9$V4)[2]))
 Fre_L10=c(
          as.integer(table(f_record_l10$V5)[2]),
          as.integer(table(f_record_l10$V6)[2]),
