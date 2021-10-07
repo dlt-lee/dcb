@@ -208,6 +208,9 @@ time_dur<-time_end_dcb-time_start_dcb
 time_dur
 
 
+for (i in  21001:211111) {
+  dcb_JL(j,number_of_core)
+}
 
 for (i in 21002:21112) {
   result_check_JL_L17(i)
