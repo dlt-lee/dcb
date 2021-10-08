@@ -36,6 +36,7 @@ dcb_JL<-function(num,number_of_core) {
   m_record_l16<-as.matrix(f_record_l16[f_record_l16$V1<=(num+1),])[,-1]
   m_record_l17<-as.matrix(f_record_l17[f_record_l17$V1<=(num+1),])[,-1]
   m_record_l18<-as.matrix(f_record_l18[f_record_l18$V1<=(num+1),])[,-1]
+  
   dcb_result<-dcb[dcb$n<=num,]
   
   # num_row<-dim(m_record_l18)[1]
