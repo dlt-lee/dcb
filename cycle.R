@@ -65,7 +65,6 @@ source("result_check_JL_L17.R")
 
 
 
-
 # data_year = c(
 #   06001,06154,
 #   07001,07153,
@@ -82,7 +81,7 @@ source("result_check_JL_L17.R")
 #   18001,18153,
 #   19001,19151,
 #   20001,20134,
-#   21001,21113
+#   21001,21111
 # 
 # 
 # )
@@ -93,60 +92,73 @@ source("result_check_JL_L17.R")
 # 
 # for (i in 1:rows) {
 #   for (j in data_year[i,1]:data_year[i,2]) {
-#     if (i>=1) {
-#       dcb_L3(j,number_of_core)
-#     }
-#     if (i>=2) {
-#       dcb_L4(j,number_of_core)
-#     }
-#     if (i>=3) {
-#       dcb_L5(j,number_of_core)
-#     }
-#     if (i>=4) {
-#       dcb_L6(j,number_of_core)
-#     }
-#     if (i>=5) {
-#       dcb_L7(j,number_of_core)
-#     }
-#     if (i>=6) {
-#       dcb_L8(j,number_of_core)
-#     }
-#     if (i>=7) {
-#       dcb_L9(j,number_of_core)
-#     }
-#     if (i>=8) {
-#       dcb_L10(j,number_of_core)
-#     }
-#     if (i>=9) {
-#       dcb_L11(j,number_of_core)
-#     }
-#     if (i>=10) {
-#       dcb_L12(j,number_of_core)
-#     }
-#     if (i>=11) {
-#       dcb_L13(j,number_of_core)
-#     }
-#     if (i>=12) {
-#       dcb_L14(j,number_of_core)
-#     }
-#     if (i>=13) {
-#       dcb_L15(j,number_of_core)
-#     }
-#     if (i>=14) {
-#       dcb_L16(j,number_of_core)
-#     }
-#     if (i>=15) {
-#       dcb_L17(j,number_of_core)
-#     }
-#     if (i>=16) {
-#       dcb_L18(j,number_of_core)
-#       dcb_JL(j,number_of_core)
-#     }
+    # if (i>=1) {
+    #   dcb_L3(j,number_of_core)
+    # }
+    # if (i>=2) {
+    #   dcb_L4(j,number_of_core)
+    # }
+    # if (i>=3) {
+    #   dcb_L5(j,number_of_core)
+    #   dcb_JL_L4(j,number_of_core)
+    # }
+    # if (i>=4) {
+    #   dcb_L6(j,number_of_core)
+    #   dcb_JL_L5(j,number_of_core)
+    # }
+    # if (i>=5) {
+    #   dcb_L7(j,number_of_core)
+    #   dcb_JL_L6(j,number_of_core)
+    # }
+    # if (i>=6) {
+    #   dcb_L8(j,number_of_core)
+    #   dcb_JL_L7(j,number_of_core)
+    # }
+    # if (i>=7) {
+    #   dcb_L9(j,number_of_core)
+    #   dcb_JL_L8(j,number_of_core)
+    # }
+    # if (i>=8) {
+    #   dcb_L10(j,number_of_core)
+    #   dcb_JL_L9(j,number_of_core)
+    # }
+    # if (i>=9) {
+    #   dcb_L11(j,number_of_core)
+    #   dcb_JL_L10(j,number_of_core)
+    # }
+    # if (i>=10) {
+    #   dcb_L12(j,number_of_core)
+    #   dcb_JL_L11(j,number_of_core)
+    # }
+    # if (i>=11) {
+    #   dcb_L13(j,number_of_core)
+    #   dcb_JL_L12(j,number_of_core)
+    # }
+    # if (i>=12) {
+    #   dcb_L14(j,number_of_core)
+    #   dcb_JL_L13(j,number_of_core)
+    # }
+    # if (i>=13) {
+    #   dcb_L15(j,number_of_core)
+    #   dcb_JL_L14(j,number_of_core)
+    # }
+    # if (i>=14) {
+    #   dcb_L16(j,number_of_core)
+    #   dcb_JL_L15(j,number_of_core)
+    # }
+    # if (i>=15) {
+    #   dcb_L17(j,number_of_core)
+    #   dcb_JL_L16(j,number_of_core)
+    # }
+    # if (i>=16) {
+    #   dcb_L18(j,number_of_core)
+    #   dcb_JL_L17(j,number_of_core)
+    #   dcb_JL(j,number_of_core)
+    # }
 # 
 #   }
 # 
 # }
-
 
 
 
@@ -208,11 +220,11 @@ time_dur<-time_end_dcb-time_start_dcb
 time_dur
 
 
-for (i in  21003:211113) {
+for (i in  21001:211111) {
   dcb_JL(j,number_of_core)
 }
 
-for (i in 21013:21113) {
+for (i in 21002:21111) {
   result_check_JL_L17(i)
   result_check_JL(i)
   result_check_L18(i)
@@ -258,7 +270,7 @@ for (i in 21013:21113) {
   
   result_check_L4(i)
   result_check_L3(i)
-
+  
 }
 
 
