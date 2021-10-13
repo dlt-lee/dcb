@@ -234,4 +234,6 @@ dcb_JL_L16<-function(num,number_of_core) {
   m_record_JL<-as.data.frame(read.csv(file = "dcb_data_JL_L16.csv", header = FALSE))[-1,]
   m_r_ab_delta<-rbind(m_record_JL,sum_JL_dcb)
   write.csv(m_r_ab_delta, file = "dcb_data_JL_L16.csv",row.names = FALSE)
+  
+  return(sum_JL_dcb)
 }

@@ -53,4 +53,5 @@ dcb_L17<-function(num,number_of_core) {
   m_r_ab_delta<-rbind(m_record_l17,sum_l17_dcb)
   write.csv(m_r_ab_delta, file = "dcb_data_l17.csv",row.names = FALSE)
   
+  return(sum_l17_dcb)
 }

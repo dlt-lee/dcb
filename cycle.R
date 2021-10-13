@@ -169,51 +169,51 @@ max_n=max(as.integer(dcb$n))
 
 dcb_L2(max_n)
 
-dcb_L3(max_n,number_of_core)
-dcb_L4(max_n,number_of_core)
+result=dcb_L3(max_n,number_of_core)
+result=c(result,dcb_L4(max_n,number_of_core))
 
-dcb_L5(max_n,number_of_core)
-dcb_JL_L4(max_n,number_of_core)
+result=c(result,dcb_L5(max_n,number_of_core))
+result=c(result,dcb_JL_L4(max_n,number_of_core))
 
-dcb_L6(max_n,number_of_core)
-dcb_JL_L5(max_n,number_of_core)
+result=c(result,dcb_L6(max_n,number_of_core))
+result=c(result,dcb_JL_L5(max_n,number_of_core))
 
-dcb_L7(max_n,number_of_core)
-dcb_JL_L6(max_n,number_of_core)
+result=c(result,dcb_L7(max_n,number_of_core))
+result=c(result,dcb_JL_L6(max_n,number_of_core))
 
-dcb_L8(max_n,number_of_core)
-dcb_JL_L7(max_n,number_of_core)
+result=c(result,dcb_L8(max_n,number_of_core))
+result=c(result,dcb_JL_L7(max_n,number_of_core))
 
-dcb_L9(max_n,number_of_core)
-dcb_JL_L8(max_n,number_of_core)
+result=c(result,dcb_L9(max_n,number_of_core))
+result=c(result,dcb_JL_L8(max_n,number_of_core))
 
-dcb_L10(max_n,number_of_core)
-dcb_JL_L9(max_n,number_of_core)
+result=c(result,dcb_L10(max_n,number_of_core))
+result=c(result,dcb_JL_L9(max_n,number_of_core))
 
-dcb_L11(max_n,number_of_core)
-dcb_JL_L10(max_n,number_of_core)
+result=c(result,dcb_L11(max_n,number_of_core))
+result=c(result,dcb_JL_L10(max_n,number_of_core))
 
-dcb_L12(max_n,number_of_core)
-dcb_JL_L11(max_n,number_of_core)
+result=c(result,dcb_L12(max_n,number_of_core))
+result=c(result,dcb_JL_L11(max_n,number_of_core))
 
-dcb_L13(max_n,number_of_core)
-dcb_JL_L12(max_n,number_of_core)
+result=c(result,dcb_L13(max_n,number_of_core))
+result=c(result,dcb_JL_L12(max_n,number_of_core))
 
-dcb_L14(max_n,number_of_core)
-dcb_JL_L13(max_n,number_of_core)
+result=c(result,dcb_L14(max_n,number_of_core))
+result=c(result,dcb_JL_L13(max_n,number_of_core))
 
-dcb_L15(max_n,number_of_core)
-dcb_JL_L14(max_n,number_of_core)
+result=c(result,dcb_L15(max_n,number_of_core))
+result=c(result,dcb_JL_L14(max_n,number_of_core))
 
-dcb_L16(max_n,number_of_core)
-dcb_JL_L15(max_n,number_of_core)
+result=c(result,dcb_L16(max_n,number_of_core))
+result=c(result,dcb_JL_L15(max_n,number_of_core))
 
-dcb_L17(max_n,number_of_core)
-dcb_JL_L16(max_n,number_of_core)
+result=c(result,dcb_L17(max_n,number_of_core))
+result=c(result,dcb_JL_L16(max_n,number_of_core))
 
-dcb_L18(max_n,number_of_core)
-dcb_JL_L17(max_n,number_of_core)
-dcb_JL(max_n,number_of_core)
+result=c(result,dcb_L18(max_n,number_of_core))
+result=c(result,dcb_JL_L17(max_n,number_of_core))
+result=c(result,dcb_JL(max_n,number_of_core))
 
 time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
