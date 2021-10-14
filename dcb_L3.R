@@ -61,10 +61,11 @@ dcb_L3<-function(num,number_of_core) {
   
   
   sum_l3<-c(num+1,sum_L3_ab)
-  print(c('L3:',sum_l3))
+  # print(c('L3:',sum_l3))
   m_r_ab_delta<-rbind(m_record_l3,sum_l3)
   write.csv(m_r_ab_delta, file = "dcb_data_l3.csv",row.names = FALSE)
   
-  return(sum_l3)
+  # return(sum_l3)
+  return(c('L3:',sum_l3))
   
 }

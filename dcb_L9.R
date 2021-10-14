@@ -49,9 +49,10 @@ dcb_L9<-function(num,number_of_core) {
   
   
   sum_l9_dcb<-c(max(dcb$n)+1,sum_l9_dcb)
-  print(c('L9:',sum_l9_dcb))
+  #print(c('L9:',sum_l9_dcb))
   m_r_ab_delta<-rbind(m_record_l9,sum_l9_dcb)
   write.csv(m_r_ab_delta, file = "dcb_data_l9.csv",row.names = FALSE)
   
-  return(sum_l9_dcb)
+  # return(sum_l9_dcb)
+  return(c('L9:',sum_l9_dcb))
 }

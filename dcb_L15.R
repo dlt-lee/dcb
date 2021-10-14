@@ -49,9 +49,10 @@ dcb_L15<-function(num,number_of_core) {
   
   
   sum_l15_dcb<-c(max(dcb$n)+1,sum_l15_dcb)
-  print(c('L15:',sum_l15_dcb))
+  # print(c('L15:',sum_l15_dcb))
   m_r_ab_delta<-rbind(m_record_l15,sum_l15_dcb)
   write.csv(m_r_ab_delta, file = "dcb_data_l15.csv",row.names = FALSE)
   
-  return(sum_l15_dcb)
+  # return(sum_l15_dcb)
+  return(c('L15:',sum_l15_dcb))
 }
