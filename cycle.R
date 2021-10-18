@@ -215,9 +215,13 @@ result=c(result,dcb_L18(max_n,number_of_core))
 result=c(result,dcb_JL_L17(max_n,number_of_core))
 result=c(result,dcb_JL(max_n,number_of_core))
 
+m_result<-matrix(result,ncol = 9,byrow = TRUE)
+write.csv(m_result,file = "result.csv")
+
 time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
 time_dur
+
 
 
 for (i in  21001:211111) {
