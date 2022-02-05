@@ -16,6 +16,7 @@ source("dcb_L15.R")
 source("dcb_L16.R")
 source("dcb_L17.R")
 source("dcb_L18.R")
+source("dcb_L19.R")
 source("dcb_JL.R")
 source("result_check_JL.R")
 source("result_check_L18.R")
@@ -48,6 +49,7 @@ source("dcb_JL_L14.R")
 source("dcb_JL_L15.R")
 source("dcb_JL_L16.R")
 source("dcb_JL_L17.R")
+source("dcb_JL_L18.R")
 source("result_check_JL_L4.R")
 source("result_check_JL_L5.R")
 source("result_check_JL_L6.R")
@@ -214,6 +216,9 @@ result=c(result,dcb_JL_L16(max_n,number_of_core))
 
 result=c(result,dcb_L18(max_n,number_of_core))
 result=c(result,dcb_JL_L17(max_n,number_of_core))
+
+result=c(result,dcb_L19(max_n,number_of_core))
+result=c(result,dcb_JL_L18(max_n,number_of_core))
 result=c(result,dcb_JL(max_n,number_of_core))
 
 m_result<-matrix(result,ncol = 9,byrow = TRUE)
@@ -229,7 +234,7 @@ for (i in  21001:211111) {
   dcb_JL(j,number_of_core)
 }
 
-for (i in 21002:21111) {
+for (i in 21002:21150) {
   result_check_JL_L17(i)
   result_check_JL(i)
   result_check_L18(i)
