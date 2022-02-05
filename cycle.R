@@ -172,8 +172,9 @@ max_n=max(as.integer(dcb$n))
 
 dcb_L2(max_n)
 
+L4=dcb_L4(max_n,number_of_core)
 result=dcb_L3(max_n,number_of_core)
-result=c(result,dcb_L4(max_n,number_of_core))
+result=c(result,L4)
 
 result=c(result,dcb_L5(max_n,number_of_core))
 result=c(result,dcb_JL_L4(max_n,number_of_core))
@@ -193,8 +194,10 @@ result=c(result,dcb_JL_L8(max_n,number_of_core))
 result=c(result,dcb_L10(max_n,number_of_core))
 result=c(result,dcb_JL_L9(max_n,number_of_core))
 
-result=c(result,dcb_L11(max_n,number_of_core))
-result=c(result,dcb_JL_L10(max_n,number_of_core))
+JL_L10=dcb_JL_L10(max_n,number_of_core)
+L11=dcb_L11(max_n,number_of_core)
+result=c(result,L11)
+result=c(result,JL_L10)
 
 result=c(result,dcb_L12(max_n,number_of_core))
 result=c(result,dcb_JL_L11(max_n,number_of_core))
@@ -211,11 +214,13 @@ result=c(result,dcb_JL_L14(max_n,number_of_core))
 result=c(result,dcb_L16(max_n,number_of_core))
 result=c(result,dcb_JL_L15(max_n,number_of_core))
 
+JL_L16=dcb_JL_L16(max_n,number_of_core)
 result=c(result,dcb_L17(max_n,number_of_core))
-result=c(result,dcb_JL_L16(max_n,number_of_core))
+result=c(result,JL_L16)
 
+JL_L7=dcb_JL_L17(max_n,number_of_core)
 result=c(result,dcb_L18(max_n,number_of_core))
-result=c(result,dcb_JL_L17(max_n,number_of_core))
+result=c(result,JL_L7)
 
 result=c(result,dcb_L19(max_n,number_of_core))
 result=c(result,dcb_JL_L18(max_n,number_of_core))
@@ -223,6 +228,9 @@ result=c(result,dcb_JL(max_n,number_of_core))
 
 m_result<-matrix(result,ncol = 9,byrow = TRUE)
 write.csv(m_result,file = "result.csv")
+
+#L11.a1,
+print(c(L11$v3,L4$v4,JL_L16$v5,JL_L7$v6,JL_L10$v7,JL_L16$v8,L16$v9))
 
 time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
