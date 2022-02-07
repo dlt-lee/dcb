@@ -298,5 +298,14 @@ Fre_m=data.frame(Fre_sum_l2_dcb_3,Fre_sum_l2_dcb_6,
                  )
 
 
+print(c(tail(f_L2_3_dcb,1)$a1,
+        tail(f_sum_l2_dcb_3,1)$a2,
+        tail(f_L2_5_dcb,1)$a3,
+        tail(f_L2_5_dcb,1)$a4,
+        tail(f_L2_5_dcb,1)$a5,
+        tail(f_L2_6_dcb,1)$a6,
+        tail(f_L2_4_dcb,1)$b1))
+
+
 
 
