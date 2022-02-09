@@ -308,4 +308,13 @@ print(c(tail(f_L2_3_dcb,1)$a1,
 
 
 
-
+print(c(tail(f_L2_3_dcb,1)$a1,
+        L4[4],
+        JL_L16[5],tail(f_L2_5_dcb,1)$a3,
+        JL_L7[6],
+        JL_L10[7],
+        tail(f_L2_6_dcb,1)$a6,
+        L16[9]
+        
+  
+))
