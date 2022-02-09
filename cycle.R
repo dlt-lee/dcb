@@ -230,7 +230,7 @@ m_result<-matrix(result,ncol = 9,byrow = TRUE)
 write.csv(m_result,file = "result.csv")
 
 #L11.a1,
-print(c(L11$v3,L4$v4,JL_L16$v5,JL_L7$v6,JL_L10$v7,JL_L16$v8,L16$v9))
+print(c(L11[3],L4[4],JL_L16[5],JL_L7[6],JL_L10[7],JL_L16[8],JL_L16[9]))
 
 time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
