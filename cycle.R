@@ -173,66 +173,96 @@ max_n=max(as.integer(dcb$n))
 dcb_L2(max_n)
 
 L3=dcb_L3(max_n,number_of_core)
-L4=dcb_L4(max_n,number_of_core)
 result=L3
+L4=dcb_L4(max_n,number_of_core)
 result=c(result,L4)
 
-result=c(result,dcb_L5(max_n,number_of_core))
-result=c(result,dcb_JL_L4(max_n,number_of_core))
+L5=dcb_L5(max_n,number_of_core)
+result=c(result,result)
+JL_L4=dcb_JL_L4(max_n,number_of_core)
+result=c(result,JL_L4)
 
-result=c(result,dcb_L6(max_n,number_of_core))
-result=c(result,dcb_JL_L5(max_n,number_of_core))
+L6=dcb_L6(max_n,number_of_core)
+result=c(result,L6)
+JL_L5=dcb_JL_L5(max_n,number_of_core)
+result=c(result,JL_L5)
 
-result=c(result,dcb_L7(max_n,number_of_core))
-result=c(result,dcb_JL_L6(max_n,number_of_core))
+L7=dcb_L7(max_n,number_of_core)
+result=c(result,L7)
+JL_L6=dcb_JL_L6(max_n,number_of_core)
+result=c(result,JL_L6)
 
-result=c(result,dcb_L8(max_n,number_of_core))
-result=c(result,dcb_JL_L7(max_n,number_of_core))
+L8=dcb_L8(max_n,number_of_core)
+result=c(result,L8)
+JL_L7=dcb_JL_L7(max_n,number_of_core)
+result=c(result,JL_L7)
 
-result=c(result,dcb_L9(max_n,number_of_core))
-result=c(result,dcb_JL_L8(max_n,number_of_core))
+L9=dcb_L9(max_n,number_of_core)
+result=c(result,L9)
+JL_L8=dcb_JL_L8(max_n,number_of_core)
+result=c(result,JL_L8)
 
-result=c(result,dcb_L10(max_n,number_of_core))
-result=c(result,dcb_JL_L9(max_n,number_of_core))
+L10=dcb_L10(max_n,number_of_core)
+result=c(result,L10)
+JL_L9=dcb_JL_L9(max_n,number_of_core)
+result=c(result,JL_L9)
 
-JL_L10=dcb_JL_L10(max_n,number_of_core)
 L11=dcb_L11(max_n,number_of_core)
 result=c(result,L11)
+JL_L10=dcb_JL_L10(max_n,number_of_core)
 result=c(result,JL_L10)
 
-result=c(result,dcb_L12(max_n,number_of_core))
-result=c(result,dcb_JL_L11(max_n,number_of_core))
+L12=dcb_L12(max_n,number_of_core)
+result=c(result,L12)
+JL_L11=dcb_JL_L11(max_n,number_of_core)
+result=c(result,JL_L11)
 
-result=c(result,dcb_L13(max_n,number_of_core))
-result=c(result,dcb_JL_L12(max_n,number_of_core))
+L13=dcb_L13(max_n,number_of_core)
+result=c(result,L13)
+JL_L12=dcb_JL_L12(max_n,number_of_core)
+result=c(result,JL_L12)
 
-result=c(result,dcb_L14(max_n,number_of_core))
-result=c(result,dcb_JL_L13(max_n,number_of_core))
+L14=dcb_L14(max_n,number_of_core)
+result=c(result,L14)
+JL_L13=dcb_JL_L13(max_n,number_of_core)
+result=c(result,JL_L13)
 
-result=c(result,dcb_L15(max_n,number_of_core))
-result=c(result,dcb_JL_L14(max_n,number_of_core))
+L15=dcb_L15(max_n,number_of_core)
+result=c(result,L15)
+JL_L14=dcb_JL_L14(max_n,number_of_core)
+result=c(result,JL_L14)
 
 L16=dcb_L16(max_n,number_of_core)
 result=c(result,L16)
-result=c(result,dcb_JL_L15(max_n,number_of_core))
+JL_L15=dcb_JL_L15(max_n,number_of_core)
+result=c(result,JL_L15)
 
+L17=dcb_L17(max_n,number_of_core)
+result=c(result,L17)
 JL_L16=dcb_JL_L16(max_n,number_of_core)
-result=c(result,dcb_L17(max_n,number_of_core))
 result=c(result,JL_L16)
 
+L18=dcb_L18(max_n,number_of_core)
+result=c(result,L18)
 JL_L7=dcb_JL_L17(max_n,number_of_core)
-result=c(result,dcb_L18(max_n,number_of_core))
 result=c(result,JL_L7)
 
-result=c(result,dcb_L19(max_n,number_of_core))
-result=c(result,dcb_JL_L18(max_n,number_of_core))
-result=c(result,dcb_JL(max_n,number_of_core))
+L19=dcb_L19(max_n,number_of_core)
+result=c(result,L19)
+JL_L18=dcb_JL_L18(max_n,number_of_core)
+result=c(result,JL_L18)
+
+JL=dcb_JL(max_n,number_of_core)
+result=c(result,JL)
 
 m_result<-matrix(result,ncol = 9,byrow = TRUE)
 write.csv(m_result,file = "result.csv")
 
+source("Fre_L2.R")
+
 #L11.a1,
 print(c(L11[3],L4[4],JL_L16[5],JL_L7[6],JL_L10[7],L3[8],L16[9]))
+
 
 time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
