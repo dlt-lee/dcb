@@ -322,5 +322,3 @@ for (i in 21002:21150) {
   result_check_L3(i)
   
 }
-
-
