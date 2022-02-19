@@ -286,7 +286,7 @@ Fre_L2_8_dcb=c(
 
 
 
-Fre_m=data.frame(Fre_sum_l2_dcb_3,Fre_sum_l2_dcb_6,
+fre_m=data.frame(Fre_sum_l2_dcb_3,Fre_sum_l2_dcb_6,
                  Fre_L2_1_dcb,
                  Fre_L2_2_dcb,
                  Fre_L2_3_dcb,
@@ -299,7 +299,7 @@ Fre_m=data.frame(Fre_sum_l2_dcb_3,Fre_sum_l2_dcb_6,
 
 
 print(c(tail(f_L2_3_dcb,1)$a1,
-        tail(f_sum_l2_dcb_3,1)$a2,
+        tail(f_sum_l2_dcb_3,1)$a2,        ,
         tail(f_L2_5_dcb,1)$a3,
         tail(f_L2_5_dcb,1)$a4,
         tail(f_L2_5_dcb,1)$a5,
@@ -309,11 +309,24 @@ print(c(tail(f_L2_3_dcb,1)$a1,
 
 
 print(c(tail(f_L2_3_dcb,1)$a1,
+        tail(f_sum_l2_dcb_3,1)$a1,
+        
         L4[4],
-        JL_L16[5],tail(f_L2_5_dcb,1)$a3,
+        JL_L14[4],
+        JL_L16[4],
+        
+        JL_L16[5],
+        tail(f_L2_5_dcb,1)$a3,
+        
         JL_L7[6],
+        L13[5],
+        
         JL_L10[7],
+        JL_L9[7],
+        
         tail(f_L2_6_dcb,1)$a6,
+        tail(f_sum_l2_dcb_3,1)$a6,
+        
         L16[9]
         
   
