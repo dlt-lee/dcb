@@ -307,27 +307,40 @@ print(c(tail(f_L2_3_dcb,1)$a1,
         tail(f_L2_4_dcb,1)$b1))
 
 
+next_n=max(as.integer(dcb$n))+1
+pre_dcb=c(next_n,
+         
+         tail(f_L2_3_dcb,1)$a1,
+         tail(f_sum_l2_dcb_3,1)$a1,
+         
+         L4[4],
+         JL_L14[4],
+         JL_L16[4],
+         
+         JL_L16[5],
+         tail(f_L2_5_dcb,1)$a3,
+         
+         JL_L7[6],
+         L13[5],
+         
+         JL_L10[7],
+         JL_L9[7],
+         
+         tail(f_L2_6_dcb,1)$a6,
+         tail(f_sum_l2_dcb_3,1)$a6,
+         
+         L16[9]
+)
 
-print(c(tail(f_L2_3_dcb,1)$a1,
-        tail(f_sum_l2_dcb_3,1)$a1,
-        
+write.csv(pre_dcb,file = "pre_dcb.csv")
+print(pre_dcb)
+print(c(next_n,
+  tail(f_L2_3_dcb,1)$a1,
         L4[4],
-        JL_L14[4],
-        JL_L16[4],
-        
-        JL_L16[5],
-        tail(f_L2_5_dcb,1)$a3,
-        
+        JL_L16[5],tail(f_L2_5_dcb,1)$a3,
         JL_L7[6],
-        L13[5],
-        
         JL_L10[7],
-        JL_L9[7],
-        
         tail(f_L2_6_dcb,1)$a6,
-        tail(f_sum_l2_dcb_3,1)$a6,
-        
         L16[9]
-        
-  
 ))
+        
