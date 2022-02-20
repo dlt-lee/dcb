@@ -332,7 +332,7 @@ pre_dcb=c(next_n,
          L16[9]
 )
 
-write.csv(pre_dcb,file = "pre_dcb.csv")
+write.csv(as.matrix(pre_dcb,ncol = 15,byrow = TRUE),file = "pre_dcb.csv",append = TRUE)
 print(pre_dcb)
 print(c(next_n,
   tail(f_L2_3_dcb,1)$a1,
