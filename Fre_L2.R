@@ -332,7 +332,7 @@ pre_dcb=c(next_n,
          L16[9]
 )
 
-write.table(t(as.matrix(pre_dcb,nrow(1))),file = "pre_dcb.csv",append = TRUE,col.names = FALSE)
+write.table(t(as.matrix(pre_dcb,nrow(1))),file = "pre_dcb.csv",append = TRUE,col.names = FALSE,quote=TRUE, sep=",")
 
 print(pre_dcb)
 
