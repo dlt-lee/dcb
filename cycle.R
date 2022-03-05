@@ -261,7 +261,7 @@ write.csv(m_result,file = "result.csv")
 source("Fre_L2.R")
 
 #L11.a1,
-print(c(max_n,
+print(c(max_n+1,
         L18[3],
         L8[4],JL_L16[4],
         JL_L11[5],
