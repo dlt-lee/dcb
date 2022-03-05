@@ -290,5 +290,5 @@ Fre_m=data.frame(Fre_L3,Fre_L4,Fre_L5,Fre_L6,Fre_L7,Fre_L8,Fre_L9,
                  Fre_JL_L16,Fre_JL_L17
                  )
 
-
+Fre_m[is.na(Fre_m)] <- 0
 

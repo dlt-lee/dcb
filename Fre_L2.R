@@ -160,7 +160,7 @@ r_L2_5_dcb=c()
 r_L2_6_dcb=c()
 r_L2_7_dcb=c()
 r_L2_8_dcb=c()
-for (k in 21002:21150) {
+for (k in 22002:22023) {
   r_sum_l2_dcb_3=c(r_sum_l2_dcb_3,f_sum_l2_dcb_3[f_sum_l2_dcb_3$n==k,2:7]%in%dcb[dcb$n==k,2:7],f_sum_l2_dcb_3[f_sum_l2_dcb_3$n==k,8]%in%dcb[dcb$n==k,8])
   r_sum_l2_dcb_6=c(r_sum_l2_dcb_6,f_sum_l2_dcb_6[f_sum_l2_dcb_6$n==k,2:7]%in%dcb[dcb$n==k,2:7],f_sum_l2_dcb_6[f_sum_l2_dcb_6$n==k,8]%in%dcb[dcb$n==k,8])
   r_L2_1_dcb=c(r_L2_1_dcb,f_L2_1_dcb[f_L2_1_dcb$n==k,2:7]%in%dcb[dcb$n==k,2:7],f_L2_1_dcb[f_L2_1_dcb$n==k,8]%in%dcb[dcb$n==k,8])
@@ -296,6 +296,7 @@ fre_m=data.frame(Fre_sum_l2_dcb_3,Fre_sum_l2_dcb_6,
                  Fre_L2_7_dcb,
                  Fre_L2_8_dcb
                  )
+fre_m[is.na(fre_m)] <- 0
 
 
 print(c(tail(f_L2_3_dcb,1)$a1,

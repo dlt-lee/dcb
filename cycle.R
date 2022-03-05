@@ -261,7 +261,14 @@ write.csv(m_result,file = "result.csv")
 source("Fre_L2.R")
 
 #L11.a1,
-print(c(L11[3],L4[4],JL_L16[5],JL_L7[6],JL_L10[7],L3[8],L16[9]))
+print(c(max_n,
+        L18[3],
+        L8[4],JL_L16[4],
+        JL_L11[5],
+        L13[6],
+        L8[7],L13[7],
+        L8[8],JL[8],
+        L9[9],L13[9],L16[9],L18[9],JL_L8[9],JL_L13[9]))
 
 
 time_end_dcb<-Sys.time()
@@ -274,7 +281,7 @@ for (i in  21001:211111) {
   dcb_JL(j,number_of_core)
 }
 
-for (i in 21002:21150) {
+for (i in 22002:22023) {
   result_check_JL_L17(i)
   result_check_JL(i)
   result_check_L18(i)
