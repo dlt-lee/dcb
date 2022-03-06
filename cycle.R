@@ -270,7 +270,7 @@ source("Fre_L2.R")
              L8[8],JL[8],
              L9[9],L13[9],L16[9],L18[9],JL_L8[9],JL_L13[9]))
 
-write.table(t(as.matrix(2022_Sync,nrow(1))),file = "2022_Sync.csv",append = TRUE,col.names = FALSE,quote=TRUE, sep=",")
+write.table(t(as.matrix(2022_Sync,nrow(1))),file = "2022_Sync.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
 
 time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
