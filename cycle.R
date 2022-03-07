@@ -261,16 +261,16 @@ write.csv(m_result,file = "result.csv")
 source("Fre_L2.R")
 
 #L11.a1,
-2022_Sync<-c(max_n+1,
+Sync_2022=c((max_n+1),
              L18[3],
              L8[4],JL_L16[4],
              JL_L11[5],
              L13[6],
              L8[7],L13[7],
              L8[8],JL[8],
-             L9[9],L13[9],L16[9],L18[9],JL_L8[9],JL_L13[9]))
+             L9[9],L13[9],L16[9],L18[9],JL_L8[9],JL_L13[9])
 
-write.table(t(as.matrix(2022_Sync,nrow(1))),file = "2022_Sync.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
+write.table(t(as.matrix(Sync_2022,nrow(1))),file = "2022_Sync.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
 
 time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
