@@ -561,7 +561,7 @@ h_result=c(max(f_JL_L17_dcb$n),f_a1$a1,f_a2$a2,f_a3$a3,f_a4$a4,f_a5$a5,f_a6$a6,f
 print(h_result)
 write.table(t(as.matrix(h_result,nrow(1))),file = "h_result.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
 
-
+write.xlsx(t(as.matrix(h_result,nrow(1))),file = "h_result.xlsx",append = TRUE,col.names = FALSE,row.names = FALSE)
 
 
 
