@@ -1,4 +1,5 @@
 source("element.R")
+source("cycle.R")
 
 # Prepare data L2
 m_record_l2<-as.matrix(read.csv(file = "dcb_data_l2.csv", header = FALSE))[-1,]
