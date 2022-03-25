@@ -75,6 +75,6 @@ dcb_L3<-function(num,number_of_core) {
   write.table(t(as.matrix(sum_L3_dcb,nrow(1))),file = "dcb_data_l3.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
 
   # return(sum_l3)
-  return(c('L3:',sum_l3))
+  return(c('L3:',sum_L3_dcb))
   
 }
