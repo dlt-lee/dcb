@@ -2,12 +2,11 @@ dcb_L8<-function(num,number_of_core) {
   #source("element.R")
   library(xgboost)
   #read data
-  m_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l7.csv", header = FALSE))[-1,]
-  m_r_ab_org<-as.integer(m_r_ab_org)
-  # filter l5_data
-  sum_num<-as.integer(m_r_ab_org[,1])
-  m_r_ab_org<-m_r_ab_org[which(sum_num<=(num+1)),]
-  m_r_ab_org<-m_r_ab_org[,-1]
+  f_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l7.csv", header = TRUE))
+  f_r_ab_org<-transform(f_r_ab_org,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  
+  # filter l3_data
+  m_r_ab_org<-data.matrix(f_r_ab_org[f_r_ab_org$n<=(num+1),])[,-1]
   #get training row
   row_result<-dim(m_r_ab_org)[1]-1
   #get training data
