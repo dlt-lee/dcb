@@ -2,8 +2,8 @@ dcb_L9<-function(num,number_of_core) {
   #source("element.R")
   library(xgboost)
   #read data
-  m_record_l9<-as.matrix(read.csv(file = "dcb_data_l9.csv", header = FALSE))[-1,]
   m_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l8.csv", header = FALSE))[-1,]
+  m_r_ab_org<-as.integer(m_r_ab_org)
   # filter l5_data
   sum_num<-as.integer(m_r_ab_org[,1])
   m_r_ab_org<-m_r_ab_org[which(sum_num<=(num+1)),]
@@ -49,10 +49,9 @@ dcb_L9<-function(num,number_of_core) {
   
   
   sum_l9_dcb<-c(max(dcb$n)+1,sum_l9_dcb)
-  #print(c('L9:',sum_l9_dcb))
-  m_r_ab_delta<-rbind(m_record_l9,sum_l9_dcb)
-  write.csv(m_r_ab_delta, file = "dcb_data_l9.csv",row.names = FALSE)
-  
+  # print(c('L9:',sum_l9_dcb))
+  write.table(t(as.matrix(sum_l9_dcb,nrow(1))),file = "dcb_data_l9.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
+ 
   # return(sum_l9_dcb)
   return(c('L9:',sum_l9_dcb))
 }

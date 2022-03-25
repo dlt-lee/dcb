@@ -2,8 +2,8 @@ dcb_L16<-function(num,number_of_core) {
   #source("element.R")
   library(xgboost)
   #read data
-  m_record_l16<-as.matrix(read.csv(file = "dcb_data_l16.csv", header = FALSE))[-1,]
   m_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l15.csv", header = FALSE))[-1,]
+  m_r_ab_org<-as.integer(m_r_ab_org)
   # filter l5_data
   sum_num<-as.integer(m_r_ab_org[,1])
   m_r_ab_org<-m_r_ab_org[which(sum_num<=(num+1)),]
@@ -50,8 +50,7 @@ dcb_L16<-function(num,number_of_core) {
   
   sum_l16_dcb<-c(max(dcb$n)+1,sum_l16_dcb)
   # print(c('L16:',sum_l16_dcb))
-  m_r_ab_delta<-rbind(m_record_l16,sum_l16_dcb)
-  write.csv(m_r_ab_delta, file = "dcb_data_l16.csv",row.names = FALSE)
+  write.table(t(as.matrix(sum_l16_dcb,nrow(1))),file = "dcb_data_l16.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
   
   # return(sum_l16_dcb)
   return(c('L16:',sum_l16_dcb))

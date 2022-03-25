@@ -2,104 +2,100 @@ dcb_JL_L11<-function(num,number_of_core) {
   # source("element.R")
   library(xgboost)
   
-  m_record_JL<-as.matrix(read.csv(file = "dcb_data_JL.csv", header = FALSE))[-1,]
-  f_record_JL_L4<-as.data.frame(read.csv(file = "dcb_data_JL_L4.csv", header = FALSE))[-1,]
-  f_record_JL_L5<-as.data.frame(read.csv(file = "dcb_data_JL_L5.csv", header = FALSE))[-1,]
-  f_record_JL_L6<-as.data.frame(read.csv(file = "dcb_data_JL_L6.csv", header = FALSE))[-1,]
-  f_record_JL_L7<-as.data.frame(read.csv(file = "dcb_data_JL_L7.csv", header = FALSE))[-1,]
-  f_record_JL_L8<-as.data.frame(read.csv(file = "dcb_data_JL_L8.csv", header = FALSE))[-1,]
-  f_record_JL_L9<-as.data.frame(read.csv(file = "dcb_data_JL_L9.csv", header = FALSE))[-1,]
-  f_record_JL_L10<-as.data.frame(read.csv(file = "dcb_data_JL_L10.csv", header = FALSE))[-1,]
-  f_record_JL_L11<-as.data.frame(read.csv(file = "dcb_data_JL_L11.csv", header = FALSE))[-1,]
-  f_record_JL_L12<-as.data.frame(read.csv(file = "dcb_data_JL_L12.csv", header = FALSE))[-1,]
-  f_record_JL_L13<-as.data.frame(read.csv(file = "dcb_data_JL_L13.csv", header = FALSE))[-1,]
-  f_record_JL_L14<-as.data.frame(read.csv(file = "dcb_data_JL_L14.csv", header = FALSE))[-1,]
-  f_record_JL_L15<-as.data.frame(read.csv(file = "dcb_data_JL_L15.csv", header = FALSE))[-1,]
-  f_record_JL_L16<-as.data.frame(read.csv(file = "dcb_data_JL_L16.csv", header = FALSE))[-1,]
-  f_record_JL_L17<-as.data.frame(read.csv(file = "dcb_data_JL_L17.csv", header = FALSE))[-1,]
+  f_record_JL_L4<-as.data.frame(read.csv(file = "dcb_data_JL_L4.csv", header = TRUE))
+  f_record_JL_L5<-as.data.frame(read.csv(file = "dcb_data_JL_L5.csv", header = TRUE))
+  f_record_JL_L6<-as.data.frame(read.csv(file = "dcb_data_JL_L6.csv", header = TRUE))
+  f_record_JL_L7<-as.data.frame(read.csv(file = "dcb_data_JL_L7.csv", header = TRUE))
+  f_record_JL_L8<-as.data.frame(read.csv(file = "dcb_data_JL_L8.csv", header = TRUE))
+  f_record_JL_L9<-as.data.frame(read.csv(file = "dcb_data_JL_L9.csv", header = TRUE))
+  f_record_JL_L10<-as.data.frame(read.csv(file = "dcb_data_JL_L10.csv", header = TRUE))
+  f_record_JL_L11<-as.data.frame(read.csv(file = "dcb_data_JL_L11.csv", header = TRUE))
+  f_record_JL_L12<-as.data.frame(read.csv(file = "dcb_data_JL_L12.csv", header = TRUE))
+  f_record_JL_L13<-as.data.frame(read.csv(file = "dcb_data_JL_L13.csv", header = TRUE))
+  f_record_JL_L14<-as.data.frame(read.csv(file = "dcb_data_JL_L14.csv", header = TRUE))
+  f_record_JL_L15<-as.data.frame(read.csv(file = "dcb_data_JL_L15.csv", header = TRUE))
+  f_record_JL_L16<-as.data.frame(read.csv(file = "dcb_data_JL_L16.csv", header = TRUE))
+  f_record_JL_L17<-as.data.frame(read.csv(file = "dcb_data_JL_L17.csv", header = TRUE))
+  f_record_l3<-as.data.frame(read.csv(file = "dcb_data_l3.csv", header = TRUE))
+  f_record_l4<-as.data.frame(read.csv(file = "dcb_data_l4.csv", header = TRUE))
+  f_record_l5<-as.data.frame(read.csv(file = "dcb_data_l5.csv", header = TRUE))
+  f_record_l6<-as.data.frame(read.csv(file = "dcb_data_l6.csv", header = TRUE))
+  f_record_l7<-as.data.frame(read.csv(file = "dcb_data_l7.csv", header = TRUE))
+  f_record_l8<-as.data.frame(read.csv(file = "dcb_data_l8.csv", header = TRUE))
+  f_record_l9<-as.data.frame(read.csv(file = "dcb_data_l9.csv", header = TRUE))
+  f_record_l10<-as.data.frame(read.csv(file = "dcb_data_l10.csv", header = TRUE))
+  f_record_l11<-as.data.frame(read.csv(file = "dcb_data_l11.csv", header = TRUE))
+  f_record_l12<-as.data.frame(read.csv(file = "dcb_data_l12.csv", header = TRUE))
+  f_record_l13<-as.data.frame(read.csv(file = "dcb_data_l13.csv", header = TRUE))
+  f_record_l14<-as.data.frame(read.csv(file = "dcb_data_l14.csv", header = TRUE))
+  f_record_l15<-as.data.frame(read.csv(file = "dcb_data_l15.csv", header = TRUE))
+  f_record_l16<-as.data.frame(read.csv(file = "dcb_data_l16.csv", header = TRUE))
+  f_record_l17<-as.data.frame(read.csv(file = "dcb_data_l17.csv", header = TRUE))
+  f_record_l18<-as.data.frame(read.csv(file = "dcb_data_l18.csv", header = TRUE))
+  
+  f_record_JL_L4<-transform(f_record_JL_L4,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_JL_L5<-transform(f_record_JL_L5,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_JL_L6<-transform(f_record_JL_L6,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_JL_L7<-transform(f_record_JL_L7,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_JL_L8<-transform(f_record_JL_L8,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_JL_L9<-transform(f_record_JL_L9,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_JL_L10<-transform(f_record_JL_L10,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_JL_L11<-transform(f_record_JL_L11,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_JL_L12<-transform(f_record_JL_L12,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_JL_L13<-transform(f_record_JL_L13,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_JL_L14<-transform(f_record_JL_L14,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_JL_L15<-transform(f_record_JL_L15,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_JL_L16<-transform(f_record_JL_L16,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_JL_L17<-transform(f_record_JL_L17,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l3<-transform(f_record_l3,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l4<-transform(f_record_l4,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l5<-transform(f_record_l5,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l6<-transform(f_record_l6,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l7<-transform(f_record_l7,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l8<-transform(f_record_l8,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l9<-transform(f_record_l9,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l10<-transform(f_record_l10,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l11<-transform(f_record_l11,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l12<-transform(f_record_l12,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l13<-transform(f_record_l13,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l14<-transform(f_record_l14,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l15<-transform(f_record_l15,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l16<-transform(f_record_l16,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l17<-transform(f_record_l17,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  f_record_l18<-transform(f_record_l18,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
   
   
   
-  f_record_l3<-as.data.frame(read.csv(file = "dcb_data_l3.csv", header = FALSE))[-1,]
-  f_record_l4<-as.data.frame(read.csv(file = "dcb_data_l4.csv", header = FALSE))[-1,]
-  f_record_l5<-as.data.frame(read.csv(file = "dcb_data_l5.csv", header = FALSE))[-1,]
-  f_record_l6<-as.data.frame(read.csv(file = "dcb_data_l6.csv", header = FALSE))[-1,]
-  f_record_l7<-as.data.frame(read.csv(file = "dcb_data_l7.csv", header = FALSE))[-1,]
-  f_record_l8<-as.data.frame(read.csv(file = "dcb_data_l8.csv", header = FALSE))[-1,]
-  f_record_l9<-as.data.frame(read.csv(file = "dcb_data_l9.csv", header = FALSE))[-1,]
-  f_record_l10<-as.data.frame(read.csv(file = "dcb_data_l10.csv", header = FALSE))[-1,]
-  f_record_l11<-as.data.frame(read.csv(file = "dcb_data_l11.csv", header = FALSE))[-1,]
-  f_record_l12<-as.data.frame(read.csv(file = "dcb_data_l12.csv", header = FALSE))[-1,]
-  f_record_l13<-as.data.frame(read.csv(file = "dcb_data_l13.csv", header = FALSE))[-1,]
-  f_record_l14<-as.data.frame(read.csv(file = "dcb_data_l14.csv", header = FALSE))[-1,]
-  f_record_l15<-as.data.frame(read.csv(file = "dcb_data_l15.csv", header = FALSE))[-1,]
-  f_record_l16<-as.data.frame(read.csv(file = "dcb_data_l16.csv", header = FALSE))[-1,]
-  f_record_l17<-as.data.frame(read.csv(file = "dcb_data_l17.csv", header = FALSE))[-1,]
-  f_record_l18<-as.data.frame(read.csv(file = "dcb_data_l18.csv", header = FALSE))[-1,]
-  
-  f_record_JL_L4$V1= as.integer(f_record_JL_L4$V1)
-  f_record_JL_L5$V1= as.integer(f_record_JL_L5$V1)
-  f_record_JL_L6$V1= as.integer(f_record_JL_L6$V1)
-  f_record_JL_L7$V1= as.integer(f_record_JL_L7$V1)
-  f_record_JL_L8$V1= as.integer(f_record_JL_L8$V1)
-  f_record_JL_L9$V1= as.integer(f_record_JL_L9$V1)
-  f_record_JL_L10$V1= as.integer(f_record_JL_L10$V1)
-  f_record_JL_L11$V1= as.integer(f_record_JL_L11$V1)
-  f_record_JL_L12$V1= as.integer(f_record_JL_L12$V1)
-  f_record_JL_L13$V1= as.integer(f_record_JL_L13$V1)
-  f_record_JL_L14$V1= as.integer(f_record_JL_L14$V1)
-  f_record_JL_L15$V1= as.integer(f_record_JL_L15$V1)
-  f_record_JL_L16$V1= as.integer(f_record_JL_L16$V1)
-  f_record_JL_L17$V1= as.integer(f_record_JL_L17$V1)
-  
-  f_record_l3$V1=as.integer(f_record_l3$V1)
-  f_record_l4$V1=as.integer(f_record_l4$V1)
-  f_record_l5$V1=as.integer(f_record_l5$V1)
-  f_record_l6$V1=as.integer(f_record_l6$V1)
-  f_record_l7$V1=as.integer(f_record_l7$V1)
-  f_record_l8$V1=as.integer(f_record_l8$V1)
-  f_record_l9$V1=as.integer(f_record_l9$V1)
-  f_record_l10$V1=as.integer(f_record_l10$V1)
-  f_record_l11$V1=as.integer(f_record_l11$V1)
-  f_record_l12$V1=as.integer(f_record_l12$V1)
-  f_record_l13$V1=as.integer(f_record_l13$V1)
-  f_record_l14$V1=as.integer(f_record_l14$V1)
-  f_record_l15$V1=as.integer(f_record_l15$V1)
-  f_record_l16$V1=as.integer(f_record_l16$V1)
-  f_record_l17$V1=as.integer(f_record_l17$V1)
-  f_record_l18$V1=as.integer(f_record_l18$V1)
-  
-  m_record_JL_L4<-as.matrix(f_record_JL_L4[f_record_JL_L4$V1<=(num+1),])[,-1]
-  m_record_JL_L5<-as.matrix(f_record_JL_L5[f_record_JL_L5$V1<=(num+1),])[,-1]
-  m_record_JL_L6<-as.matrix(f_record_JL_L6[f_record_JL_L6$V1<=(num+1),])[,-1]
-  m_record_JL_L7<-as.matrix(f_record_JL_L7[f_record_JL_L7$V1<=(num+1),])[,-1]
-  m_record_JL_L8<-as.matrix(f_record_JL_L8[f_record_JL_L8$V1<=(num+1),])[,-1]
-  m_record_JL_L9<-as.matrix(f_record_JL_L9[f_record_JL_L9$V1<=(num+1),])[,-1]
-  m_record_JL_L10<-as.matrix(f_record_JL_L10[f_record_JL_L10$V1<=(num+1),])[,-1]
-  m_record_JL_L11<-as.matrix(f_record_JL_L11[f_record_JL_L11$V1<=(num+1),])[,-1]
-  m_record_JL_L12<-as.matrix(f_record_JL_L12[f_record_JL_L12$V1<=(num+1),])[,-1]
-  m_record_JL_L13<-as.matrix(f_record_JL_L13[f_record_JL_L13$V1<=(num+1),])[,-1]
-  m_record_JL_L14<-as.matrix(f_record_JL_L14[f_record_JL_L14$V1<=(num+1),])[,-1]
-  m_record_JL_L15<-as.matrix(f_record_JL_L15[f_record_JL_L15$V1<=(num+1),])[,-1]
-  m_record_JL_L16<-as.matrix(f_record_JL_L16[f_record_JL_L16$V1<=(num+1),])[,-1]
-  m_record_JL_L17<-as.matrix(f_record_JL_L17[f_record_JL_L17$V1<=(num+1),])[,-1]
-  
-  m_record_l3<-as.matrix(f_record_l3[f_record_l3$V1<=(num+1),])[,-1]
-  m_record_l4<-as.matrix(f_record_l4[f_record_l4$V1<=(num+1),])[,-1]
-  m_record_l5<-as.matrix(f_record_l5[f_record_l5$V1<=(num+1),])[,-1]
-  m_record_l6<-as.matrix(f_record_l6[f_record_l6$V1<=(num+1),])[,-1]
-  m_record_l7<-as.matrix(f_record_l7[f_record_l7$V1<=(num+1),])[,-1]
-  m_record_l8<-as.matrix(f_record_l8[f_record_l8$V1<=(num+1),])[,-1]
-  m_record_l9<-as.matrix(f_record_l9[f_record_l9$V1<=(num+1),])[,-1]
-  m_record_l10<-as.matrix(f_record_l10[f_record_l10$V1<=(num+1),])[,-1]
-  m_record_l11<-as.matrix(f_record_l11[f_record_l11$V1<=(num+1),])[,-1]
-  m_record_l12<-as.matrix(f_record_l12[f_record_l12$V1<=(num+1),])[,-1]
-  m_record_l13<-as.matrix(f_record_l13[f_record_l13$V1<=(num+1),])[,-1]
-  m_record_l14<-as.matrix(f_record_l14[f_record_l14$V1<=(num+1),])[,-1]
-  m_record_l15<-as.matrix(f_record_l15[f_record_l15$V1<=(num+1),])[,-1]
-  m_record_l16<-as.matrix(f_record_l16[f_record_l16$V1<=(num+1),])[,-1]
-  m_record_l17<-as.matrix(f_record_l17[f_record_l17$V1<=(num+1),])[,-1]
-  m_record_l18<-as.matrix(f_record_l18[f_record_l18$V1<=(num+1),])[,-1]
+  m_record_JL_L4<-data.matrix(f_record_JL_L4[f_record_JL_L4$n<=(num+1),])[,-1]
+  m_record_JL_L5<-data.matrix(f_record_JL_L5[f_record_JL_L5$n<=(num+1),])[,-1]
+  m_record_JL_L6<-data.matrix(f_record_JL_L6[f_record_JL_L6$n<=(num+1),])[,-1]
+  m_record_JL_L7<-data.matrix(f_record_JL_L7[f_record_JL_L7$n<=(num+1),])[,-1]
+  m_record_JL_L8<-data.matrix(f_record_JL_L8[f_record_JL_L8$n<=(num+1),])[,-1]
+  m_record_JL_L9<-data.matrix(f_record_JL_L9[f_record_JL_L9$n<=(num+1),])[,-1]
+  m_record_JL_L10<-data.matrix(f_record_JL_L10[f_record_JL_L10$n<=(num+1),])[,-1]
+  m_record_JL_L11<-data.matrix(f_record_JL_L11[f_record_JL_L11$n<=(num+1),])[,-1]
+  m_record_JL_L12<-data.matrix(f_record_JL_L12[f_record_JL_L12$n<=(num+1),])[,-1]
+  m_record_JL_L13<-data.matrix(f_record_JL_L13[f_record_JL_L13$n<=(num+1),])[,-1]
+  m_record_JL_L14<-data.matrix(f_record_JL_L14[f_record_JL_L14$n<=(num+1),])[,-1]
+  m_record_JL_L15<-data.matrix(f_record_JL_L15[f_record_JL_L15$n<=(num+1),])[,-1]
+  m_record_JL_L16<-data.matrix(f_record_JL_L16[f_record_JL_L16$n<=(num+1),])[,-1]
+  m_record_JL_L17<-data.matrix(f_record_JL_L17[f_record_JL_L17$n<=(num+1),])[,-1]
+  m_record_l3<-data.matrix(f_record_l3[f_record_l3$n<=(num+1),])[,-1]
+  m_record_l4<-data.matrix(f_record_l4[f_record_l4$n<=(num+1),])[,-1]
+  m_record_l5<-data.matrix(f_record_l5[f_record_l5$n<=(num+1),])[,-1]
+  m_record_l6<-data.matrix(f_record_l6[f_record_l6$n<=(num+1),])[,-1]
+  m_record_l7<-data.matrix(f_record_l7[f_record_l7$n<=(num+1),])[,-1]
+  m_record_l8<-data.matrix(f_record_l8[f_record_l8$n<=(num+1),])[,-1]
+  m_record_l9<-data.matrix(f_record_l9[f_record_l9$n<=(num+1),])[,-1]
+  m_record_l10<-data.matrix(f_record_l10[f_record_l10$n<=(num+1),])[,-1]
+  m_record_l11<-data.matrix(f_record_l11[f_record_l11$n<=(num+1),])[,-1]
+  m_record_l12<-data.matrix(f_record_l12[f_record_l12$n<=(num+1),])[,-1]
+  m_record_l13<-data.matrix(f_record_l13[f_record_l13$n<=(num+1),])[,-1]
+  m_record_l14<-data.matrix(f_record_l14[f_record_l14$n<=(num+1),])[,-1]
+  m_record_l15<-data.matrix(f_record_l15[f_record_l15$n<=(num+1),])[,-1]
+  m_record_l16<-data.matrix(f_record_l16[f_record_l16$n<=(num+1),])[,-1]
+  m_record_l17<-data.matrix(f_record_l17[f_record_l17$n<=(num+1),])[,-1]
+  m_record_l18<-data.matrix(f_record_l18[f_record_l18$n<=(num+1),])[,-1]
   
   dcb_result<-dcb[dcb$n<=num,]
   
@@ -225,9 +221,7 @@ dcb_JL_L11<-function(num,number_of_core) {
   round(testPredictions.b1))
   sum_JL_dcb<-c(num+1,sum_JL_dcb)
   # print(c('LJ_L11:',sum_JL_dcb))
-  m_record_JL<-as.data.frame(read.csv(file = "dcb_data_JL_L11.csv", header = FALSE))[-1,]
-  m_r_ab_delta<-rbind(m_record_JL,sum_JL_dcb)
-  write.csv(m_r_ab_delta, file = "dcb_data_JL_L11.csv",row.names = FALSE)
+  write.table(t(as.matrix(sum_JL_dcb,nrow(1))),file = "dcb_data_JL_L11.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
   
   # return(sum_JL_dcb)
   return(c('LJ_L11:',sum_JL_dcb))
