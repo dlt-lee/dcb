@@ -49,7 +49,7 @@ dcb_L7<-function(num,number_of_core) {
   
   sum_l7_dcb<-c(max(dcb$n)+1,sum_l7_dcb)
   # print(c('L7:',sum_l7_dcb))
-  write.table(t(as.matrix(sum_l7_dcb,nrow(1))),file = "sum_l7_dcb",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
+  write.table(t(as.matrix(sum_l7_dcb,nrow(1))),file = "dcb_data_l7.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
 
   # return(sum_l7_dcb)
   return(c('L7:',sum_l7_dcb))
