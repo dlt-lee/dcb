@@ -2,7 +2,7 @@ dcb_L16<-function(num,number_of_core) {
   #source("element.R")
   library(xgboost)
   #read data
-  f_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l5.csv", header = TRUE))
+  f_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l15.csv", header = TRUE))
   f_r_ab_org<-transform(f_r_ab_org,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
   
   # filter l3_data

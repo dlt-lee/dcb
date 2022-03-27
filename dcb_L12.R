@@ -7,6 +7,8 @@ dcb_L12<-function(num,number_of_core) {
   
   # filter l3_data
   m_r_ab_org<-data.matrix(f_r_ab_org[f_r_ab_org$n<=(num+1),])[,-1]
+  #get training row
+  row_result<-dim(m_r_ab_org)[1]-1
   #get training data
   m_r_ab<-head(m_r_ab_org,row_result)
   #get result data

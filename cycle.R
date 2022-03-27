@@ -84,7 +84,7 @@ data_year = c(
   19001,19151,
   20001,20134,
   21001,21150,
-  22001,22031
+  22001,22032
 
 
 )
@@ -93,7 +93,7 @@ length(data_year)
 data_year=matrix(data_year,ncol = 2,byrow = TRUE,dimnames = NULL)
 rows=dim(data_year)[1]
 
-for (i in 1:rows) {
+for (i in 12:rows) {
   for (j in data_year[i,1]:data_year[i,2]) {
 if (i>=1) {
   dcb_L3(j,number_of_core)

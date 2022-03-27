@@ -5,16 +5,19 @@ dcb_L19<-function(num,number_of_core) {
   f_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l18.csv", header = TRUE))
   f_r_ab_org<-transform(f_r_ab_org,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
   
+  #read data
+  f_r_ab_org<-as.matrix(read.csv(file = "dcb_data_l18.csv", header = TRUE))
+  f_r_ab_org<-transform(f_r_ab_org,n=as.integer(n),a1=as.integer(a1),a2=as.integer(a2),a3=as.integer(a3),a4=as.integer(a4),a5=as.integer(a5),a6=as.integer(a6),b1=as.integer(b1))
+  
   # filter l3_data
   m_r_ab_org<-data.matrix(f_r_ab_org[f_r_ab_org$n<=(num+1),])[,-1]
+  #get training row
+  row_result<-dim(m_r_ab_org)[1]-1
   #get training data
   m_r_ab<-head(m_r_ab_org,row_result)
   #get result data
   dcb<-dcb[dcb$n<=num,]
   result<-tail(dcb,row_result)
-  
-  
-  trains.T.ab<-Matrix(m_r_ab,sparse=T)
   
   
   bst.a1<-xgboost(data = trains.T.ab,label = result$a1,nrounds = 300,verbose=0,params = list(tree_method = t_m,nthread=number_of_core))
@@ -47,8 +50,7 @@ dcb_L19<-function(num,number_of_core) {
   
   sum_l19_dcb<-c(max(dcb$n)+1,sum_l19_dcb)
   # print(c('L19:',sum_l19_dcb))
-  m_r_ab_delta<-rbind(m_record_l19,sum_l19_dcb)
-  write.csv(m_r_ab_delta, file = "dcb_data_l19.csv",row.names = FALSE)
+  write.table(t(as.matrix(sum_l19_dcb,nrow(1))),file = "dcb_data_l14.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
   
   # return(sum_l19_dcb)
   return(c('L19:',sum_l19_dcb))
