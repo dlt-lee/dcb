@@ -118,7 +118,7 @@ dcb_JL_L18<-function(num,number_of_core) {
   m_record_JL_L15<-tail(m_record_JL_L15,num_row)
   m_record_JL_L16<-tail(m_record_JL_L16,num_row)
   m_record_JL_L17<-tail(m_record_JL_L17,num_row)
-  m_record_JL_L18<-tail(m_record_JL_L18,num_row)
+  # m_record_JL_L18<-tail(m_record_JL_L18,num_row)
   
   m_record_l3<-tail(m_record_l3,num_row)
   m_record_l4<-tail(m_record_l4,num_row)
@@ -136,7 +136,7 @@ dcb_JL_L18<-function(num,number_of_core) {
   m_record_l16<-tail(m_record_l16,num_row)
   m_record_l17<-tail(m_record_l17,num_row)
   m_record_l18<-tail(m_record_l18,num_row)
-  m_record_l19<-tail(m_record_l19,num_row)
+  # m_record_l19<-tail(m_record_l19,num_row)
   
   m_record_a1<-cbind(m_record_l3[,1],m_record_l4[,1],m_record_l5[,1],m_record_l6[,1],m_record_l7[,1],m_record_l8[,1],m_record_l9[,1],m_record_l10[,1],
                      m_record_l11[,1],m_record_l12[,1],m_record_l13[,1],m_record_l14[,1],m_record_l15[,1],m_record_l16[,1],m_record_l17[,1],m_record_l18[,1],
