@@ -66,110 +66,110 @@ source("result_check_JL_L16.R")
 source("result_check_JL_L17.R")
 
 
-
-data_year = c(
-  06001,06154,
-  07001,07153,
-  08001,08153,
-  09001,09154,
-  10001,10153,
-  11001,11153,
-  12001,12154,
-  13001,13154,
-  14001,14152,
-  15001,15154,
-  16001,16153,
-  17001,17154,
-  18001,18153,
-  19001,19151,
-  20001,20134,
-  21001,21150,
-  22001,22032
-
-
-)
-
-
-length(data_year)
-
-data_year=matrix(data_year,ncol = 2,byrow = TRUE,dimnames = NULL)
-rows=dim(data_year)[1]
-
-for (i in 17:rows) {
-  for (j in data_year[i,1]:data_year[i,2]) {
-if (i>=1) {
-  dcb_L3(j,number_of_core)
-}
-if (i>=2) {
-  dcb_L4(j,number_of_core)
-}
-if (i>=3) {
-  dcb_L5(j,number_of_core)
-  dcb_JL_L4(j,number_of_core)
-}
-if (i>=4) {
-  dcb_L6(j,number_of_core)
-  dcb_JL_L5(j,number_of_core)
-}
-if (i>=5) {
-  dcb_L7(j,number_of_core)
-  dcb_JL_L6(j,number_of_core)
-}
-if (i>=6) {
-  dcb_L8(j,number_of_core)
-  dcb_JL_L7(j,number_of_core)
-}
-if (i>=7) {
-  dcb_L9(j,number_of_core)
-  dcb_JL_L8(j,number_of_core)
-}
-if (i>=8) {
-  dcb_L10(j,number_of_core)
-  dcb_JL_L9(j,number_of_core)
-}
-if (i>=9) {
-  dcb_L11(j,number_of_core)
-  dcb_JL_L10(j,number_of_core)
-}
-if (i>=10) {
-  dcb_L12(j,number_of_core)
-  dcb_JL_L11(j,number_of_core)
-}
-if (i>=11) {
-  dcb_L13(j,number_of_core)
-  dcb_JL_L12(j,number_of_core)
-}
-if (i>=12) {
-  dcb_L14(j,number_of_core)
-  dcb_JL_L13(j,number_of_core)
-}
-if (i>=13) {
-  dcb_L15(j,number_of_core)
-  dcb_JL_L14(j,number_of_core)
-}
-if (i>=14) {
-  dcb_L16(j,number_of_core)
-  dcb_JL_L15(j,number_of_core)
-}
-if (i>=15) {
-  dcb_L17(j,number_of_core)
-  dcb_JL_L16(j,number_of_core)
-}
-if (i>=16) {
-  dcb_L18(j,number_of_core)
-  dcb_JL_L17(j,number_of_core)
-
-}
-    if (i>=17) {
-      dcb_L19(j,number_of_core)
-      dcb_JL_L18(j,number_of_core)
-      # dcb_JL(j,number_of_core)
-    }
-
-  }
-
-}
-
+# 
+# data_year = c(
+#   06001,06154,
+#   07001,07153,
+#   08001,08153,
+#   09001,09154,
+#   10001,10153,
+#   11001,11153,
+#   12001,12154,
+#   13001,13154,
+#   14001,14152,
+#   15001,15154,
+#   16001,16153,
+#   17001,17154,
+#   18001,18153,
+#   19001,19151,
+#   20001,20134,
+#   21001,21150,
+#   22001,22032
+# 
+# 
+# )
+# 
+# 
+# length(data_year)
+# 
+# data_year=matrix(data_year,ncol = 2,byrow = TRUE,dimnames = NULL)
+# rows=dim(data_year)[1]
+# 
+# for (i in 1:rows) {
+#   for (j in data_year[i,1]:data_year[i,2]) {
+# if (i>=1) {
+#   dcb_L3(j,number_of_core)
+# }
+# if (i>=2) {
+#   dcb_L4(j,number_of_core)
+# }
+# if (i>=3) {
+#   dcb_L5(j,number_of_core)
+#   dcb_JL_L4(j,number_of_core)
+# }
+# if (i>=4) {
+#   dcb_L6(j,number_of_core)
+#   dcb_JL_L5(j,number_of_core)
+# }
+# if (i>=5) {
+#   dcb_L7(j,number_of_core)
+#   dcb_JL_L6(j,number_of_core)
+# }
+# if (i>=6) {
+#   dcb_L8(j,number_of_core)
+#   dcb_JL_L7(j,number_of_core)
+# }
+# if (i>=7) {
+#   dcb_L9(j,number_of_core)
+#   dcb_JL_L8(j,number_of_core)
+# }
+# if (i>=8) {
+#   dcb_L10(j,number_of_core)
+#   dcb_JL_L9(j,number_of_core)
+# }
+# if (i>=9) {
+#   dcb_L11(j,number_of_core)
+#   dcb_JL_L10(j,number_of_core)
+# }
+# if (i>=10) {
+#   dcb_L12(j,number_of_core)
+#   dcb_JL_L11(j,number_of_core)
+# }
+# if (i>=11) {
+#   dcb_L13(j,number_of_core)
+#   dcb_JL_L12(j,number_of_core)
+# }
+# if (i>=12) {
+#   dcb_L14(j,number_of_core)
+#   dcb_JL_L13(j,number_of_core)
+# }
+# if (i>=13) {
+#   dcb_L15(j,number_of_core)
+#   dcb_JL_L14(j,number_of_core)
+# }
+# if (i>=14) {
+#   dcb_L16(j,number_of_core)
+#   dcb_JL_L15(j,number_of_core)
+# }
+# if (i>=15) {
+#   dcb_L17(j,number_of_core)
+#   dcb_JL_L16(j,number_of_core)
+# }
+# if (i>=16) {
+#   dcb_L18(j,number_of_core)
+#   dcb_JL_L17(j,number_of_core)
+# 
+# }
+#     if (i>=17) {
+#       dcb_L19(j,number_of_core)
+#       dcb_JL_L18(j,number_of_core)
+#       # dcb_JL(j,number_of_core)
+#     }
+# 
+#   }
+# 
+# }
+# 
 
 
 
@@ -265,18 +265,18 @@ result=c(result,JL)
 m_result<-matrix(result,ncol = 9,byrow = TRUE)
 write.csv(m_result,file = "result.csv")
 
-source("Fre_L2.R")
-
-Sync_2022=c((max_n+1),
-             L18[3],
-             L8[4],JL_L16[4],
-             JL_L11[5],
-             L13[6],
-             L8[7],L13[7],
-             L8[8],JL[8],
-             L9[9],L13[9],L16[9],L18[9],JL_L8[9],JL_L13[9])
-
-write.table(t(as.matrix(Sync_2022,nrow(1))),file = "2022_Sync.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
+# source("Fre_L2.R")
+# 
+# Sync_2022=c((max_n+1),
+#              L18[3],
+#              L8[4],JL_L16[4],
+#              JL_L11[5],
+#              L13[6],
+#              L8[7],L13[7],
+#              L8[8],JL[8],
+#              L9[9],L13[9],L16[9],L18[9],JL_L8[9],JL_L13[9])
+# 
+# write.table(t(as.matrix(Sync_2022,nrow(1))),file = "2022_Sync.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
 
 time_end_dcb<-Sys.time()
 time_dur<-time_end_dcb-time_start_dcb
@@ -284,55 +284,55 @@ time_dur
 
 
 
-for (i in  21001:211111) {
-  dcb_JL(j,number_of_core)
-}
-
-for (i in 22002:22023) {
-  result_check_JL_L17(i)
-  result_check_JL(i)
-  result_check_L18(i)
-  
-  result_check_JL_L16(i)
-  result_check_L17(i)
-  
-  result_check_JL_L15(i)
-  result_check_L16(i)
-  
-  result_check_JL_L14(i)
-  result_check_L15(i)
-  
-  result_check_JL_L13(i)
-  result_check_L14(i)
-  
-  result_check_JL_L12(i)
-  result_check_L13(i)
-  
-  result_check_JL_L11(i)
-  result_check_L12(i)
-  
-  result_check_JL_L10(i)
-  result_check_L11(i)
-  
-  result_check_JL_L9(i)
-  result_check_L10(i)
-  
-  result_check_JL_L8(i)
-  result_check_L9(i)
-  
-  result_check_JL_L7(i)
-  result_check_L8(i)
-  
-  result_check_JL_L6(i)
-  result_check_L7(i)
-  
-  result_check_JL_L5(i)
-  result_check_L6(i)
-  
-  result_check_JL_L4(i)
-  result_check_L5(i)
-  
-  result_check_L4(i)
-  result_check_L3(i)
-  
-}
+# for (k in  22001:22034) {
+#   dcb_JL(k,number_of_core)
+# }
+# 
+# for (i in 22002:22023) {
+#   result_check_JL_L17(i)
+#   result_check_JL(i)
+#   result_check_L18(i)
+#   
+#   result_check_JL_L16(i)
+#   result_check_L17(i)
+#   
+#   result_check_JL_L15(i)
+#   result_check_L16(i)
+#   
+#   result_check_JL_L14(i)
+#   result_check_L15(i)
+#   
+#   result_check_JL_L13(i)
+#   result_check_L14(i)
+#   
+#   result_check_JL_L12(i)
+#   result_check_L13(i)
+#   
+#   result_check_JL_L11(i)
+#   result_check_L12(i)
+#   
+#   result_check_JL_L10(i)
+#   result_check_L11(i)
+#   
+#   result_check_JL_L9(i)
+#   result_check_L10(i)
+#   
+#   result_check_JL_L8(i)
+#   result_check_L9(i)
+#   
+#   result_check_JL_L7(i)
+#   result_check_L8(i)
+#   
+#   result_check_JL_L6(i)
+#   result_check_L7(i)
+#   
+#   result_check_JL_L5(i)
+#   result_check_L6(i)
+#   
+#   result_check_JL_L4(i)
+#   result_check_L5(i)
+#   
+#   result_check_L4(i)
+#   result_check_L3(i)
+#   
+# }

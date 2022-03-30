@@ -280,7 +280,7 @@ r_JL_L17_dcb=c()
 
 
 for (k in data_dcb$n) {
-  if (k==22001) {
+  if (k==22001| k==21001) {
     break
   }
   r_sum_l2_dcb_3=c(r_sum_l2_dcb_3,f_sum_l2_dcb_3[f_sum_l2_dcb_3$n==k,2:7]%in%dcb[dcb$n==k,2:7],f_sum_l2_dcb_3[f_sum_l2_dcb_3$n==k,8]%in%dcb[dcb$n==k,8])
