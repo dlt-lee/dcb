@@ -421,127 +421,127 @@ Max_b1=max(fre_m[7,])
 
 Get_result <- function(Max_value,m) {
   Temp_Result<-c()
-  if (Max_value=="Fre_sum_l2_dcb_3") {
+  if ("Fre_sum_l2_dcb_3" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_sum_l2_dcb_3,1)[m]))
   }
-  if (Max_value=="Fre_sum_l2_dcb_6") {
+  if ("Fre_sum_l2_dcb_6" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_sum_l2_dcb_6,1)[m]))
   }
-  if (Max_value=="Fre_L2_1_dcb") {
+  if ("Fre_L2_1_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_1_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L2_2_dcb") {
+  if ("Fre_L2_2_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_2_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L2_3_dcb") {
+  if ("Fre_L2_3_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_3_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L2_4_dcb") {
+  if ("Fre_L2_4_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_4_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L2_5_dcb") {
+  if ("Fre_L2_5_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_5_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L2_6_dcb") {
+  if ("Fre_L2_6_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_6_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L2_6_dcb") {
+  if ("Fre_L2_6_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_6_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L2_7_dcb") {
+  if ("Fre_L2_7_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_7_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L2_8_dcb") {
+  if ("Fre_L2_8_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_8_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L3_dcb") {
+  if ("Fre_L3_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l3_dcb,1)[m]))
   }
   if (Max_value=="Fre_L4_dcb") {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l4_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L5_dcb") {
+  if ("Fre_L5_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l5_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L6_dcb") {
+  if ("Fre_L6_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l6_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L7_dcb") {
+  if ("Fre_L7_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l7_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L8_dcb") {
+  if ("Fre_L8_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l8_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L9_dcb") {
+  if ("Fre_L9_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l9_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L10_dcb") {
+  if ("Fre_L10_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l10_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L11_dcb") {
+  if ("Fre_L11_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l11_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L12_dcb") {
+  if ("Fre_L12_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l12_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L13_dcb") {
+  if ("Fre_L13_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l13_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L14_dcb") {
+  if ("Fre_L14_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l14_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L15_dcb") {
+  if ("Fre_L15_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l15_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L16_dcb") {
+  if ("Fre_L16_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l16_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L17_dcb") {
+  if ("Fre_L17_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l17_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L18_dcb") {
+  if ("Fre_L18_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l18_dcb,1)[m]))
   }
-  if (Max_value=="Fre_JL_L4_dcb") {
+  if ("Fre_JL_L4_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L4_dcb,1)[m]))
   }
-  if (Max_value=="Fre_JL_L5_dcb") {
+  if ("Fre_JL_L5_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L5_dcb,1)[m]))
   }
-  if (Max_value=="Fre_JL_L6_dcb") {
+  if ("Fre_JL_L6_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L6_dcb,1)[m]))
   }
-  if (Max_value=="Fre_JL_L7_dcb") {
+  if ("Fre_JL_L7_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L7_dcb,1)[m]))
   }
-  if (Max_value=="Fre_JL_L8_dcb") {
+  if ("Fre_JL_L8_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L8_dcb,1)[m]))
   }
-  if (Max_value=="Fre_JL_L9_dcb") {
+  if ("Fre_JL_L9_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L9_dcb,1)[m]))
   }
-  if (Max_value=="Fre_JL_L10_dcb") {
+  if ("Fre_JL_L10_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L10_dcb,1)[m]))
   }
-  if (Max_value=="Fre_JL_L11_dcb") {
+  if ("Fre_JL_L11_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L11_dcb,1)[m]))
   }
-  if (Max_value=="Fre_JL_L12_dcb") {
+  if ("Fre_JL_L12_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L12_dcb,1)[m]))
   }
-  if (Max_value=="Fre_JL_L13_dcb") {
+  if ("Fre_JL_L13_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L13_dcb,1)[m]))
   }
-  if (Max_value=="Fre_JL_L14_dcb") {
+  if ("Fre_JL_L14_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L14_dcb,1)[m]))
   }
-  if (Max_value=="Fre_JL_L15_dcb") {
+  if ("Fre_JL_L15_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L15_dcb,1)[m]))
   }
-  if (Max_value=="Fre_JL_L16_dcb") {
+  if ("Fre_JL_L16_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L16_dcb,1)[m]))
   }
-  if (Max_value=="Fre_JL_L17_dcb") {
+  if ("Fre_JL_L17_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L17_dcb,1)[m]))
   }
   return(Temp_Result)
