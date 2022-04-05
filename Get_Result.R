@@ -265,17 +265,41 @@ F_fre <- function(ln) {
   
   
   Get_Fre <- function(mr) {
-    return(
-      c(
-        as.integer(table(mr[,1])[2]),
-        as.integer(table(mr[,2])[2]),
-        as.integer(table(mr[,3])[2]),
-        as.integer(table(mr[,4])[2]),
-        as.integer(table(mr[,5])[2]),
-        as.integer(table(mr[,6])[2]),
-        as.integer(table(mr[,7])[2]))
-    )
+    f_t_a1<-as.data.frame(table(mr[,1]))
+    f_t_a2<-as.data.frame(table(mr[,2]))
+    f_t_a3<-as.data.frame(table(mr[,3]))
+    f_t_a4<-as.data.frame(table(mr[,4]))
+    f_t_a5<-as.data.frame(table(mr[,5]))
+    f_t_a6<-as.data.frame(table(mr[,6]))
+    f_t_b1<-as.data.frame(table(mr[,7]))
+
+    t_tesut<-c(0,0,0,0,0,0,0)
+    if (length(f_t_a1[f_t_a1$Var1=='TRUE',2]) !=0) {
+      t_tesut[1]<-as.integer(f_t_a1[f_t_a1$Var1=='TRUE',2])
+    }
+    if (length(f_t_a2[f_t_a2$Var1=='TRUE',2]) != 0) {
+      t_tesut[2]<-as.integer(f_t_a2[f_t_a2$Var1=='TRUE',2])
+    }
+    if (length(f_t_a3[f_t_a3$Var1=='TRUE',2]) != 0) {
+      t_tesut[3]<-as.integer(f_t_a3[f_t_a3$Var1=='TRUE',2])
+    }
+    if (length(f_t_a4[f_t_a4$Var1=='TRUE',2]) != 0) {
+      t_tesut[4]<-as.integer(f_t_a4[f_t_a4$Var1=='TRUE',2])
+    }
+    if (length(f_t_a5[f_t_a5$Var1=='TRUE',2]) != 0) {
+      t_tesut[5]<-as.integer(f_t_a5[f_t_a5$Var1=='TRUE',2])
+    }
+    if (length(f_t_a6[f_t_a6$Var1=='TRUE',2]) != 0) {
+      t_tesut[6]<-as.integer(f_t_a6[f_t_a6$Var1=='TRUE',2])
+    }
+    if (length(f_t_b1[f_t_b1$Var1=='TRUE',2]) != 0) {
+      t_tesut[7]<-as.integer(f_t_b1[f_t_b1$Var1=='TRUE',2])
+    }
+    
+
+    return(t_tesut)
   }
+  
   Fre_sum_l2_dcb_3<-Get_Fre(mr_sum_l2_dcb_3)
   Fre_sum_l2_dcb_6<-Get_Fre(mr_sum_l2_dcb_6)
   Fre_L2_1_dcb<-Get_Fre(mr_L2_1_dcb)
@@ -360,7 +384,7 @@ F_fre <- function(ln) {
                    Fre_JL_L17_dcb
                    
   )
-  fre_m[is.na(fre_m)] <- 0
+  # fre_m[is.na(fre_m)] <- 0
   
   Max_a1=max(fre_m[1,])
   Max_a2=max(fre_m[2,])
@@ -370,7 +394,7 @@ F_fre <- function(ln) {
   Max_a6=max(fre_m[6,])
   Max_b1=max(fre_m[7,])
   
-  # print(c(ln,Max_a1,Max_a2,Max_a3,Max_a4,Max_a5,Max_a6,Max_b1))
+  print(c(ln,Max_a1,Max_a2,Max_a3,Max_a4,Max_a5,Max_a6,Max_b1))
   
   return(fre_m)
 }
