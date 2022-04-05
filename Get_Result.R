@@ -393,6 +393,13 @@ F_fre <- function(ln) {
   Max_a5=max(fre_m[5,])
   Max_a6=max(fre_m[6,])
   Max_b1=max(fre_m[7,])
+  Max_a1=Max_a1[!duplicated(Max_a1)]
+  Max_a2=Max_a2[!duplicated(Max_a2)]
+  Max_a3=Max_a3[!duplicated(Max_a3)]
+  Max_a4=Max_a4[!duplicated(Max_a4)]
+  Max_a5=Max_a5[!duplicated(Max_a5)]
+  Max_a6=Max_a6[!duplicated(Max_a6)]
+  Max_b1=Max_b1[!duplicated(Max_b1)]
   
   print(c(ln,Max_a1,Max_a2,Max_a3,Max_a4,Max_a5,Max_a6,Max_b1))
   
@@ -428,9 +435,6 @@ Get_series <- function(Max_value,m) {
   if ("Fre_L2_6_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_6_dcb,1)[m]))
   }
-  if ("Fre_L2_6_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_6_dcb,1)[m]))
-  }
   if ("Fre_L2_7_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_7_dcb,1)[m]))
   }
@@ -440,7 +444,7 @@ Get_series <- function(Max_value,m) {
   if ("Fre_L3_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l3_dcb,1)[m]))
   }
-  if (Max_value=="Fre_L4_dcb") {
+  if ("Fre_L4_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l4_dcb,1)[m]))
   }
   if ("Fre_L5_dcb" %in% Max_value) {
@@ -485,6 +489,9 @@ Get_series <- function(Max_value,m) {
   if ("Fre_L18_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_l18_dcb,1)[m]))
   }
+  if ("Fre_JL_dcb" %in% Max_value) {
+    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_dcb,1)[m]))
+  }
   if ("Fre_JL_L4_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L4_dcb,1)[m]))
   }
@@ -527,37 +534,94 @@ Get_series <- function(Max_value,m) {
   if ("Fre_JL_L17_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L17_dcb,1)[m]))
   }
-  return(Temp_Result)
+  return(Temp_Result[!duplicated(Temp_Result)])
 }
 
 
 get_result <- function(fre_m) {
-  f_a1=Get_series(names(fre_m[1,])[max.col(fre_m[1,])],2)
-  f_a2=Get_series(names(fre_m[1,])[max.col(fre_m[2,])],3)
-  f_a3=Get_series(names(fre_m[1,])[max.col(fre_m[3,])],4)
-  f_a4=Get_series(names(fre_m[1,])[max.col(fre_m[4,])],5)
-  f_a5=Get_series(names(fre_m[1,])[max.col(fre_m[5,])],6)
-  f_a6=Get_series(names(fre_m[1,])[max.col(fre_m[6,])],7)
-  f_b1=Get_series(names(fre_m[1,])[max.col(fre_m[7,])],8)
+  M_a1=max(fre_m[1,])
+  M_a2=max(fre_m[2,])
+  M_a3=max(fre_m[3,])
+  M_a4=max(fre_m[4,])
+  M_a5=max(fre_m[5,])
+  M_a6=max(fre_m[6,])
+  M_b1=max(fre_m[7,])
+  if (M_a1!=0) {
+    name_a1=names(fre_m[1,][fre_m[1,] %in% M_a1])
+  }
+  if (M_a2!=0) {
+    name_a2=names(fre_m[1,][fre_m[2,] %in% M_a2])
+  }
+  if (M_a3!=0) {
+    name_a3=names(fre_m[1,][fre_m[3,] %in% M_a3])
+  }
+  if (M_a4!=0) {
+    name_a4=names(fre_m[1,][fre_m[4,] %in% M_a4])
+  }
+  if (M_a5!=0) {
+    name_a5=names(fre_m[1,][fre_m[5,] %in% M_a5])
+  }
+  if (M_a6!=0) {
+    name_a6=names(fre_m[1,][fre_m[6,] %in% M_a6])
+  }
+  if (M_b1!=0) {
+    name_b1=names(fre_m[1,][fre_m[7,] %in% M_b1])
+  }
+  f_a1<-c()
+  f_a2<-c()
+  f_a3<-c()
+  f_a4<-c()
+  f_a5<-c()
+  f_a6<-c()
+  f_b1<-c()
+  if (length(name_a1) != 0) {
+    f_a1=Get_series(name_a1,2)
+  }
+  if (length(name_a2) != 0) {
+    f_a2=Get_series(name_a2,3)
+  }
+  if (length(name_a3) != 0) {
+    f_a3=Get_series(name_a3,4)
+  }
+  if (length(name_a4) != 0) {
+    f_a4=Get_series(name_a4,5)
+  }
+  if (length(name_a5) != 0) {
+    f_a5=Get_series(name_a5,6)
+  }
+  if (length(name_a6) != 0) {
+    f_a6=Get_series(name_a6,7)
+  }
+  if (length(name_b1) != 0) {
+    f_b1=Get_series(name_b1,8)
+  }
   
+  a_result=c(f_a1,f_a2,f_a3,f_a4,f_a5,f_a6)
+  a_result=a_result[!duplicated(a_result)]
+  a_result=sort(a_result)
+  f_b1=f_b1[!duplicated(f_b1)]
+  f_b1=sort(f_b1)
   
-  h_result=c(max(f_JL_L17_dcb$n),sort(c(f_a1,f_a2,f_a3,f_a4,f_a5,f_a6)),f_b1)
+  h_result=c(max(f_JL_L17_dcb$n),c(a_result,f_b1))
   # print(h_result)
   return(h_result)
 }
 
 
-get_result(F_fre(10))
-get_result(F_fre(9))
-get_result(F_fre(8))
-get_result(F_fre(7))
-get_result(F_fre(6))
-get_result(F_fre(5))
-get_result(F_fre(4))
-get_result(F_fre(3))
-get_result(F_fre(2))
+# get_result(F_fre(10))
+# get_result(F_fre(9))
+# get_result(F_fre(8))
+# get_result(F_fre(7))
+# get_result(F_fre(6))
+# get_result(F_fre(5))
+# get_result(F_fre(4))
+# get_result(F_fre(3))
+# get_result(F_fre(2))
+# get_result(F_fre(1))
 
-
+for (i in seq(9, 219, 5)) {
+  print(get_result(F_fre(i)))
+}
 
 
 write.table(t(as.matrix(h_result,nrow(1))),file = "h_result.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
