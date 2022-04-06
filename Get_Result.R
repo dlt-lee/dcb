@@ -1,5 +1,5 @@
 source("element.R")
-# source("cycle.R")
+source("cycle.R")
 
 # Prepare data L2
 m_record_l2<-as.matrix(read.csv(file = "dcb_data_l2.csv", header = FALSE))[-1,]
@@ -619,7 +619,7 @@ get_result <- function(fre_m) {
 # get_result(F_fre(2))
 # get_result(F_fre(1))
 
-for (i in seq(9, 219, 5)) {
+for (i in 5:187) {
   print(get_result(F_fre(i)))
 }
 
