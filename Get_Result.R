@@ -538,89 +538,41 @@ Get_series <- function(Max_value,m) {
 }
 
 
-get_result <- function(fre_m) {
-  M_a1=max(fre_m[1,])
-  M_a2=max(fre_m[2,])
-  M_a3=max(fre_m[3,])
-  M_a4=max(fre_m[4,])
-  M_a5=max(fre_m[5,])
-  M_a6=max(fre_m[6,])
-  M_b1=max(fre_m[7,])
-  if (M_a1!=0) {
-    name_a1=names(fre_m[1,][fre_m[1,] %in% M_a1])
+get_element <- function(fre_m,m) {
+  M_ab=max(fre_m[m,])
+  if (M_ab!=0) {
+    name_ab=names(fre_m[1,][fre_m[m,] %in% M_ab])
   }
-  if (M_a2!=0) {
-    name_a2=names(fre_m[1,][fre_m[2,] %in% M_a2])
+  f_ab<-c()
+  if (length(name_ab) != 0) {
+    f_ab=Get_series(name_ab,m+1)
   }
-  if (M_a3!=0) {
-    name_a3=names(fre_m[1,][fre_m[3,] %in% M_a3])
-  }
-  if (M_a4!=0) {
-    name_a4=names(fre_m[1,][fre_m[4,] %in% M_a4])
-  }
-  if (M_a5!=0) {
-    name_a5=names(fre_m[1,][fre_m[5,] %in% M_a5])
-  }
-  if (M_a6!=0) {
-    name_a6=names(fre_m[1,][fre_m[6,] %in% M_a6])
-  }
-  if (M_b1!=0) {
-    name_b1=names(fre_m[1,][fre_m[7,] %in% M_b1])
-  }
-  f_a1<-c()
-  f_a2<-c()
-  f_a3<-c()
-  f_a4<-c()
-  f_a5<-c()
-  f_a6<-c()
-  f_b1<-c()
-  if (length(name_a1) != 0) {
-    f_a1=Get_series(name_a1,2)
-  }
-  if (length(name_a2) != 0) {
-    f_a2=Get_series(name_a2,3)
-  }
-  if (length(name_a3) != 0) {
-    f_a3=Get_series(name_a3,4)
-  }
-  if (length(name_a4) != 0) {
-    f_a4=Get_series(name_a4,5)
-  }
-  if (length(name_a5) != 0) {
-    f_a5=Get_series(name_a5,6)
-  }
-  if (length(name_a6) != 0) {
-    f_a6=Get_series(name_a6,7)
-  }
-  if (length(name_b1) != 0) {
-    f_b1=Get_series(name_b1,8)
-  }
-  
-  a_result=c(f_a1,f_a2,f_a3,f_a4,f_a5,f_a6)
-  a_result=a_result[!duplicated(a_result)]
-  a_result=sort(a_result)
-  f_b1=f_b1[!duplicated(f_b1)]
-  f_b1=sort(f_b1)
-  
-  h_result=c(max(f_JL_L17_dcb$n),c(a_result,f_b1))
+
+  f_ab=f_ab[!duplicated(f_ab)]
+  f_ab=sort(f_ab)
+
+
   # print(h_result)
-  return(h_result)
+  return(f_ab)
 }
 
 
-# get_result(F_fre(10))
-# get_result(F_fre(9))
-# get_result(F_fre(8))
-# get_result(F_fre(7))
-# get_result(F_fre(6))
-# get_result(F_fre(5))
-# get_result(F_fre(4))
-# get_result(F_fre(3))
-# get_result(F_fre(2))
-# get_result(F_fre(1))
+a1<-c()
+a2<-c()
+a3<-c()
+a4<-c()
+a5<-c()
+a6<-c()
+b1<-c()
 
 for (i in 5:187) {
-  print(get_result(F_fre(i)))
+  a1<-c(a1,get_element(F_fre(i),1))
+  a2<-c(a2,get_element(F_fre(i),2))
+  a3<-c(a3,get_element(F_fre(i),3))
+  a4<-c(a4,get_element(F_fre(i),4))
+  a5<-c(a5,get_element(F_fre(i),5))
+  a6<-c(a6,get_element(F_fre(i),6))
+  b1<-c(b1,get_element(F_fre(i),7))
 }
 
 
