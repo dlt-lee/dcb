@@ -619,7 +619,7 @@ get_result <- function(fre_m) {
 # get_result(F_fre(2))
 # get_result(F_fre(1))
 
-for (i in 1:dim(f_JL_L17_dcb)[1]) {
+for (i in 5:187) {
   print(get_result(F_fre(i)))
 }
 
