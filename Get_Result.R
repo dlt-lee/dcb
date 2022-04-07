@@ -1,5 +1,5 @@
 source("element.R")
-source("cycle.R")
+# source("cycle.R")
 
 # Prepare data L2
 m_record_l2<-as.matrix(read.csv(file = "dcb_data_l2.csv", header = FALSE))[-1,]
@@ -565,7 +565,7 @@ a5<-c()
 a6<-c()
 b1<-c()
 
-for (i in 5:187) {
+for (i in 1:dim(f_JL_L17_dcb)[1]) {
   a1<-c(a1,get_element(F_fre(i),1))
   a2<-c(a2,get_element(F_fre(i),2))
   a3<-c(a3,get_element(F_fre(i),3))
