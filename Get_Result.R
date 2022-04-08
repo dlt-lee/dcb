@@ -534,7 +534,8 @@ Get_series <- function(Max_value,m) {
   if ("Fre_JL_L17_dcb" %in% Max_value) {
     Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L17_dcb,1)[m]))
   }
-  return(Temp_Result[!duplicated(Temp_Result)])
+  # return(Temp_Result[!duplicated(Temp_Result)])
+  return(Temp_Result)
 }
 
 
@@ -565,7 +566,7 @@ a5<-c()
 a6<-c()
 b1<-c()
 
-for (i in 1:dim(f_JL_L17_dcb)[1]) {
+for (i in 1:153) {
   a1<-c(a1,get_element(F_fre(i),1))
   a2<-c(a2,get_element(F_fre(i),2))
   a3<-c(a3,get_element(F_fre(i),3))
@@ -575,7 +576,10 @@ for (i in 1:dim(f_JL_L17_dcb)[1]) {
   b1<-c(b1,get_element(F_fre(i),7))
 }
 
-
+a<-c(a1,a2,a3,a4,a5,a6)
+sort(-table(a))
+sort(a[duplicated(a)])
+sort(-table(b1))
 write.table(t(as.matrix(h_result,nrow(1))),file = "h_result.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
 
 # write.xlsx(t(as.matrix(h_result,nrow(1))),file = "h_result.xlsx",append = TRUE,col.names = FALSE,row.names = FALSE)
