@@ -1,9 +1,4 @@
 dcb_L2<-function(num) {
-  library(HMM)
-  library(depmixS4)
-  library(matlab)
-  library(quantmod)
-  library(xgboost)
   #source("element.R")
   source("dcb_sum_L2.R")
   source("dcb_sum_L1.R")

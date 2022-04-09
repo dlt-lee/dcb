@@ -42,6 +42,15 @@ library(caret)
 library(sjmisc)
 library(dplyr)
 library(xlsx)
+library(HMM)
+library(depmixS4)
+library(matlab)
+library(quantmod)
+library(xgboost)
+library(depmixS4)
+library(matlab)
+library(quantmod)
+library(xgboost)
 
 
 
