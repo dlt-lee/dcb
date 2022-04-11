@@ -540,19 +540,17 @@ Get_series <- function(Max_value,m) {
 
 
 get_element <- function(fre_m,m) {
+  f_ab<-c()
   M_ab=max(fre_m[m,])
   if (M_ab!=0) {
     name_ab=names(fre_m[1,][fre_m[m,] %in% M_ab])
+    if (length(name_ab) != 0) {
+      f_ab=Get_series(name_ab,m+1)
+      # f_ab=f_ab[!duplicated(f_ab)]
+      f_ab=sort(f_ab)
+    }
   }
-  f_ab<-c()
-  if (length(name_ab) != 0) {
-    f_ab=Get_series(name_ab,m+1)
-  }
-
-  # f_ab=f_ab[!duplicated(f_ab)]
-  f_ab=sort(f_ab)
-
-
+  
   # print(h_result)
   return(f_ab)
 }
