@@ -549,7 +549,7 @@ get_element <- function(fre_m,m) {
     f_ab=Get_series(name_ab,m+1)
   }
 
-  f_ab=f_ab[!duplicated(f_ab)]
+  # f_ab=f_ab[!duplicated(f_ab)]
   f_ab=sort(f_ab)
 
 
