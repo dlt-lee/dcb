@@ -409,143 +409,143 @@ F_fre <- function(ln) {
 
 
 
-Get_series <- function(Max_value,m) {
+Get_series <- function(Max_value,m,ma) {
   Temp_Result<-c()
   if ("Fre_sum_l2_dcb_3" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_sum_l2_dcb_3,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_sum_l2_dcb_3[f_sum_l2_dcb_3$n==ma,m]))
   }
   if ("Fre_sum_l2_dcb_6" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_sum_l2_dcb_6,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_sum_l2_dcb_6[f_sum_l2_dcb_6$n==ma,m]))
   }
   if ("Fre_L2_1_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_1_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_L2_1_dcb[f_L2_1_dcb$n==ma,m]))
   }
   if ("Fre_L2_2_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_2_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_L2_2_dcb[f_L2_2_dcb$n==ma,m]))
   }
   if ("Fre_L2_3_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_3_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_L2_3_dcb[f_L2_3_dcb$n==ma,m]))
   }
   if ("Fre_L2_4_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_4_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_L2_4_dcb[f_L2_4_dcb$n==ma,m]))
   }
   if ("Fre_L2_5_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_5_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_L2_5_dcb[f_L2_5_dcb$n==ma,m]))
   }
   if ("Fre_L2_6_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_6_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_L2_6_dcb[f_L2_6_dcb$n==ma,m]))
   }
   if ("Fre_L2_7_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_7_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_L2_7_dcb[f_L2_7_dcb$n==ma,m]))
   }
   if ("Fre_L2_8_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_L2_8_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_L2_8_dcb[f_L2_8_dcb$n==ma,m]))
   }
   if ("Fre_L3_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l3_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l3_dcb[f_l3_dcb$n==ma,m]))
   }
   if ("Fre_L4_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l4_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l4_dcb[f_l4_dcb$n==ma,m]))
   }
   if ("Fre_L5_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l5_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l5_dcb[f_l5_dcb$n==ma,m]))
   }
   if ("Fre_L6_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l6_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l6_dcb[f_l6_dcb$n==ma,m]))
   }
   if ("Fre_L7_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l7_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l7_dcb[f_l7_dcb$n==ma,m]))
   }
   if ("Fre_L8_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l8_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l8_dcb[f_l8_dcb$n==ma,m]))
   }
   if ("Fre_L9_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l9_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l9_dcb[f_l9_dcb$n==ma,m]))
   }
   if ("Fre_L10_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l10_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l10_dcb[f_l10_dcb$n==ma,m]))
   }
   if ("Fre_L11_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l11_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l11_dcb[f_l11_dcb$n==ma,m]))
   }
   if ("Fre_L12_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l12_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l12_dcb[f_l12_dcb$n==ma,m]))
   }
   if ("Fre_L13_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l13_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l13_dcb[f_l13_dcb$n==ma,m]))
   }
   if ("Fre_L14_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l14_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l14_dcb[f_l14_dcb$n==ma,m]))
   }
   if ("Fre_L15_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l15_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l15_dcb[f_l15_dcb$n==ma,m]))
   }
   if ("Fre_L16_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l16_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l16_dcb[f_l16_dcb$n==ma,m]))
   }
   if ("Fre_L17_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l17_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l17_dcb[f_l17_dcb$n==ma,m]))
   }
   if ("Fre_L18_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_l18_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_l18_dcb[f_l18_dcb$n==ma,m]))
   }
   if ("Fre_JL_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_dcb[f_JL_dcb$n==ma,m]))
   }
   if ("Fre_JL_L4_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L4_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_L4_dcb[f_JL_L4_dcb$n==ma,m]))
   }
   if ("Fre_JL_L5_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L5_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_L5_dcb[f_JL_L5_dcb$n==ma,m]))
   }
   if ("Fre_JL_L6_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L6_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_L6_dcb[f_JL_L6_dcb$n==ma,m]))
   }
   if ("Fre_JL_L7_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L7_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_L7_dcb[f_JL_L7_dcb$n==ma,m]))
   }
   if ("Fre_JL_L8_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L8_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_L8_dcb[f_JL_L8_dcb$n==ma,m]))
   }
   if ("Fre_JL_L9_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L9_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_L9_dcb[f_JL_L9_dcb$n==ma,m]))
   }
   if ("Fre_JL_L10_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L10_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_L10_dcb[f_JL_L10_dcb$n==ma,m]))
   }
   if ("Fre_JL_L11_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L11_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_L11_dcb[f_JL_L11_dcb$n==ma,m]))
   }
   if ("Fre_JL_L12_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L12_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_L12_dcb[f_JL_L12_dcb$n==ma,m]))
   }
   if ("Fre_JL_L13_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L13_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_L13_dcb[f_JL_L13_dcb$n==ma,m]))
   }
   if ("Fre_JL_L14_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L14_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_L14_dcb[f_JL_L14_dcb$n==ma,m]))
   }
   if ("Fre_JL_L15_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L15_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_L15_dcb[f_JL_L15_dcb$n==ma,m]))
   }
   if ("Fre_JL_L16_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L16_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_L16_dcb[f_JL_L16_dcb$n==ma,m]))
   }
   if ("Fre_JL_L17_dcb" %in% Max_value) {
-    Temp_Result<-c(Temp_Result,as.integer(tail(f_JL_L17_dcb,1)[m]))
+    Temp_Result<-c(Temp_Result,as.integer(f_JL_L17_dcb[f_JL_L17_dcb$n==ma,m]))
   }
   # return(Temp_Result[!duplicated(Temp_Result)])
   return(Temp_Result)
 }
 
 
-get_element <- function(fre_m,m) {
+get_element <- function(fre_m,m,ma) {
   f_ab<-c()
   M_ab=max(fre_m[m,])
   if (M_ab!=0) {
     name_ab=names(fre_m[1,][fre_m[m,] %in% M_ab])
     if (length(name_ab) != 0) {
-      f_ab=Get_series(name_ab,m+1)
+      f_ab=Get_series(name_ab,m+1,ma)
       # f_ab=f_ab[!duplicated(f_ab)]
       f_ab=sort(f_ab)
     }
@@ -563,21 +563,22 @@ a4<-c()
 a5<-c()
 a6<-c()
 b1<-c()
-
+ma<-max(dcb$n)+1
 for (i in 1:154) {
-  a1<-c(a1,get_element(F_fre(i),1))
-  a2<-c(a2,get_element(F_fre(i),2))
-  a3<-c(a3,get_element(F_fre(i),3))
-  a4<-c(a4,get_element(F_fre(i),4))
-  a5<-c(a5,get_element(F_fre(i),5))
-  a6<-c(a6,get_element(F_fre(i),6))
-  b1<-c(b1,get_element(F_fre(i),7))
+  a1<-c(a1,get_element(F_fre(i),1,ma))
+  a2<-c(a2,get_element(F_fre(i),2,ma))
+  a3<-c(a3,get_element(F_fre(i),3,ma))
+  a4<-c(a4,get_element(F_fre(i),4,ma))
+  a5<-c(a5,get_element(F_fre(i),5,ma))
+  a6<-c(a6,get_element(F_fre(i),6,ma))
+  b1<-c(b1,get_element(F_fre(i),7,ma))
 }
 
 a<-c(a1,a2,a3,a4,a5,a6)
 sort(-table(a))
 sort(a[!duplicated(a)])
 sort(-table(b1))
+sort(b1[!duplicated(b1)])
 
 write.table(t(as.matrix(h_result,nrow(1))),file = "h_result.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
 
