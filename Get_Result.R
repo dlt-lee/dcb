@@ -566,7 +566,7 @@ a5<-c()
 a6<-c()
 b1<-c()
 
-for (i in 1:153) {
+for (i in 1:154) {
   a1<-c(a1,get_element(F_fre(i),1))
   a2<-c(a2,get_element(F_fre(i),2))
   a3<-c(a3,get_element(F_fre(i),3))
