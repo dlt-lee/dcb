@@ -575,10 +575,11 @@ for (i in 1:154) {
 }
 
 a<-c(a1,a2,a3,a4,a5,a6)
-sort(-table(a))
+sort(table(a))
 sort(a[!duplicated(a)])
-sort(-table(b1))
+sort(table(b1))
 sort(b1[!duplicated(b1)])
+
 
 write.table(t(as.matrix(h_result,nrow(1))),file = "h_result.csv",append = TRUE,col.names = FALSE,row.names = FALSE,quote=TRUE, sep=",")
 
