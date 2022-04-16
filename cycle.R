@@ -64,7 +64,8 @@ source("result_check_JL_L14.R")
 source("result_check_JL_L15.R")
 source("result_check_JL_L16.R")
 source("result_check_JL_L17.R")
-source("Check_Result.R")
+source("Check_Result_file.R")
+source("Check_Result_df.R")
 
 
 data_year = c(
