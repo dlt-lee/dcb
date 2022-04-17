@@ -506,9 +506,9 @@ Get_ab<-function(n){
 }
 
 #Get summary for one year
-dcb_temp<-tail(dcb,151)
+dcb_temp<-tail(dcb,150)
 sum_ab<-c()
-dcb_temp<-head(dcb_temp,150)
+# dcb_temp<-head(dcb_temp,150)
 for (j in dcb_temp$n) {
   G_ab<-Get_ab((j))
   tab_a=data.frame(table(G_ab[1]))
