@@ -1,5 +1,5 @@
 source("element.R")
-# source("cycle.R")
+source("cycle.R")
 source("Check_Result_df.R")
 
 # Prepare data L2
@@ -64,42 +64,15 @@ f_sum_l2_dcb_6<-Get_frame(sum_l2_dcb_6)
 
 
 
-# data_year = c(
-#   06001,06154,
-#   07001,07153,
-#   08001,08153,
-#   09001,09154,
-#   10001,10153,
-#   11001,11153,
-#   12001,12154,
-#   13001,13154,
-#   14001,14152,
-#   15001,15154,
-#   16001,16153,
-#   17001,17154,
-#   18001,18153,
-#   19001,19151,
-#   20001,20134,
-#   21001,21150,
-#   22001,22041
-# )
-# length(data_year)
-# data_year=matrix(data_year,ncol = 2,byrow = TRUE,dimnames = NULL)
-# rows=dim(data_year)[1]
-# 
-# for (i in 1:rows) {
-#   for (j in data_year[i,1]:data_year[i,2]) {
-#     Check_Result_df(f_sum_l2_dcb_3,j,"dcb_data_CR_L2_sum_3.csv")
-#     Check_Result_df(f_sum_l2_dcb_6,j,"dcb_data_CR_L2_sum_6.csv")
-#     Check_Result_df(f_L2_1_dcb,j,"dcb_data_CR_L2_1.csv")
-#     Check_Result_df(f_L2_2_dcb,j,"dcb_data_CR_L2_2.csv")
-#     Check_Result_df(f_L2_3_dcb,j,"dcb_data_CR_L2_3.csv")
-#     Check_Result_df(f_L2_4_dcb,j,"dcb_data_CR_L2_4.csv")
-#     Check_Result_df(f_L2_5_dcb,j,"dcb_data_CR_L2_5.csv")
-#     Check_Result_df(f_L2_6_dcb,j,"dcb_data_CR_L2_6.csv")
-#     
-#   }
-# }
+n_max<-max(dcb$n)
+Check_Result_df(f_sum_l2_dcb_3,n_max,"dcb_data_CR_L2_sum_3.csv")
+Check_Result_df(f_sum_l2_dcb_6,n_max,"dcb_data_CR_L2_sum_6.csv")
+Check_Result_df(f_L2_1_dcb,n_max,"dcb_data_CR_L2_1.csv")
+Check_Result_df(f_L2_2_dcb,n_max,"dcb_data_CR_L2_2.csv")
+Check_Result_df(f_L2_3_dcb,n_max,"dcb_data_CR_L2_3.csv")
+Check_Result_df(f_L2_4_dcb,n_max,"dcb_data_CR_L2_4.csv")
+Check_Result_df(f_L2_5_dcb,n_max,"dcb_data_CR_L2_5.csv")
+Check_Result_df(f_L2_6_dcb,n_max,"dcb_data_CR_L2_6.csv")
 
 # Prepare data L3-L18
 f_l3_dcb<-as.data.frame(read.csv(file = "dcb_data_l3.csv"))

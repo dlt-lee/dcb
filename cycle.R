@@ -68,145 +68,145 @@ source("Check_Result_file.R")
 source("Check_Result_df.R")
 
 
-data_year = c(
-  06001,06154,
-  07001,07153,
-  08001,08153,
-  09001,09154,
-  10001,10153,
-  11001,11153,
-  12001,12154,
-  13001,13154,
-  14001,14152,
-  15001,15154,
-  16001,16153,
-  17001,17154,
-  18001,18153,
-  19001,19151,
-  20001,20134,
-  21001,21150,
-  22001,22041
-
-
-)
-
-
-length(data_year)
-
-data_year=matrix(data_year,ncol = 2,byrow = TRUE,dimnames = NULL)
-rows=dim(data_year)[1]
-
-for (i in 1:rows) {
-  for (j in data_year[i,1]:data_year[i,2]) {
-if (i>=1) {
-  # dcb_L3(j,number_of_core)
-  Check_Result("dcb_data_l3.csv",j,"dcb_data_CR_L3.csv")
-
-  
-}
-if (i>=2) {
-  # dcb_L4(j,number_of_core)
-  Check_Result("dcb_data_l4.csv",j,"dcb_data_CR_L4.csv")
-}
-if (i>=3) {
-  # dcb_L5(j,number_of_core)
-  # dcb_JL_L4(j,number_of_core)
-  Check_Result("dcb_data_l5.csv",j,"dcb_data_CR_L5.csv")
-  Check_Result("dcb_data_JL_L4.csv",j,"dcb_data_CR_JL_L4.csv")
-  
-}
-if (i>=4) {
-  # dcb_L6(j,number_of_core)
-  # dcb_JL_L5(j,number_of_core)
-  Check_Result("dcb_data_l6.csv",j,"dcb_data_CR_L6.csv")
-  Check_Result("dcb_data_JL_L5.csv",j,"dcb_data_CR_JL_L5.csv")
-}
-if (i>=5) {
-  # dcb_L7(j,number_of_core)
-  # dcb_JL_L6(j,number_of_core)
-  Check_Result("dcb_data_l7.csv",j,"dcb_data_CR_L7.csv")
-  Check_Result("dcb_data_JL_L6.csv",j,"dcb_data_CR_JL_L6.csv")
-}
-if (i>=6) {
-  # dcb_L8(j,number_of_core)
-  # dcb_JL_L7(j,number_of_core)
-  Check_Result("dcb_data_l8.csv",j,"dcb_data_CR_L8.csv")
-  Check_Result("dcb_data_JL_L7.csv",j,"dcb_data_CR_JL_L7.csv")
-}
-if (i>=7) {
-  # dcb_L9(j,number_of_core)
-  # dcb_JL_L8(j,number_of_core)
-  Check_Result("dcb_data_l9.csv",j,"dcb_data_CR_L9.csv")
-  Check_Result("dcb_data_JL_L8.csv",j,"dcb_data_CR_JL_L8.csv")
-}
-if (i>=8) {
-  # dcb_L10(j,number_of_core)
-  # dcb_JL_L9(j,number_of_core)
-  Check_Result("dcb_data_l10.csv",j,"dcb_data_CR_L10.csv")
-  Check_Result("dcb_data_JL_L9.csv",j,"dcb_data_CR_JL_L9.csv")
-}
-if (i>=9) {
-  # dcb_L11(j,number_of_core)
-  # dcb_JL_L10(j,number_of_core)
-  Check_Result("dcb_data_l11.csv",j,"dcb_data_CR_L11.csv")
-  Check_Result("dcb_data_JL_L10.csv",j,"dcb_data_CR_JL_L10.csv")
-}
-if (i>=10) {
-  # dcb_L12(j,number_of_core)
-  # dcb_JL_L11(j,number_of_core)
-  Check_Result("dcb_data_l12.csv",j,"dcb_data_CR_L12.csv")
-  Check_Result("dcb_data_JL_L11.csv",j,"dcb_data_CR_JL_L11.csv")
-}
-if (i>=11) {
-  # dcb_L13(j,number_of_core)
-  # dcb_JL_L12(j,number_of_core)
-  Check_Result("dcb_data_l13.csv",j,"dcb_data_CR_L13.csv")
-  Check_Result("dcb_data_JL_L12.csv",j,"dcb_data_CR_JL_L12.csv")
-}
-if (i>=12) {
-  # dcb_L14(j,number_of_core)
-  # dcb_JL_L13(j,number_of_core)
-  Check_Result("dcb_data_l14.csv",j,"dcb_data_CR_L14.csv")
-  Check_Result("dcb_data_JL_L13.csv",j,"dcb_data_CR_JL_L13.csv")
-}
-if (i>=13) {
-  # dcb_L15(j,number_of_core)
-  # dcb_JL_L14(j,number_of_core)
-  Check_Result("dcb_data_l15.csv",j,"dcb_data_CR_L15.csv")
-  Check_Result("dcb_data_JL_L14.csv",j,"dcb_data_CR_JL_L14.csv")
-}
-if (i>=14) {
-  # dcb_L16(j,number_of_core)
-  # dcb_JL_L15(j,number_of_core)
-  Check_Result("dcb_data_l16.csv",j,"dcb_data_CR_L16.csv")
-  Check_Result("dcb_data_JL_L15.csv",j,"dcb_data_CR_JL_L15.csv")
-}
-if (i>=15) {
-  # dcb_L17(j,number_of_core)
-  # dcb_JL_L16(j,number_of_core)
-  Check_Result("dcb_data_l17.csv",j,"dcb_data_CR_L17.csv")
-  Check_Result("dcb_data_JL_L16.csv",j,"dcb_data_CR_JL_L16.csv")
-  Check_Result("dcb_data_JL.csv",j,"dcb_data_CR_JL.csv")
-}
-if (i>=16) {
-  # dcb_L18(j,number_of_core)
-  # dcb_JL_L17(j,number_of_core)
-  Check_Result("dcb_data_l18.csv",j,"dcb_data_CR_L18.csv")
-  Check_Result("dcb_data_JL_L17.csv",j,"dcb_data_CR_JL_L17.csv")
-
-}
-    if (i>=17) {
-      # dcb_L19(j,number_of_core)
-      # dcb_JL_L18(j,number_of_core)
-      # dcb_JL(j,number_of_core)
-      Check_Result("dcb_data_l19.csv",j,"dcb_data_CR_L19.csv")
-      Check_Result("dcb_data_JL_L18.csv",j,"dcb_data_CR_JL_L18.csv")
-      
-    }
-
-  }
-
-}
+# data_year = c(
+#   06001,06154,
+#   07001,07153,
+#   08001,08153,
+#   09001,09154,
+#   10001,10153,
+#   11001,11153,
+#   12001,12154,
+#   13001,13154,
+#   14001,14152,
+#   15001,15154,
+#   16001,16153,
+#   17001,17154,
+#   18001,18153,
+#   19001,19151,
+#   20001,20134,
+#   21001,21150,
+#   22001,22041
+# 
+# 
+# )
+# 
+# 
+# length(data_year)
+# 
+# data_year=matrix(data_year,ncol = 2,byrow = TRUE,dimnames = NULL)
+# rows=dim(data_year)[1]
+# 
+# for (i in 1:rows) {
+#   for (j in data_year[i,1]:data_year[i,2]) {
+# if (i>=1) {
+#   # dcb_L3(j,number_of_core)
+#   # Check_Result("dcb_data_l3.csv",j,"dcb_data_CR_L3.csv")
+# 
+#   
+# }
+# if (i>=2) {
+#   # dcb_L4(j,number_of_core)
+#   Check_Result("dcb_data_l4.csv",j,"dcb_data_CR_L4.csv")
+# }
+# if (i>=3) {
+#   # dcb_L5(j,number_of_core)
+#   # dcb_JL_L4(j,number_of_core)
+#   Check_Result("dcb_data_l5.csv",j,"dcb_data_CR_L5.csv")
+#   Check_Result("dcb_data_JL_L4.csv",j,"dcb_data_CR_JL_L4.csv")
+#   
+# }
+# if (i>=4) {
+#   # dcb_L6(j,number_of_core)
+#   # dcb_JL_L5(j,number_of_core)
+#   Check_Result("dcb_data_l6.csv",j,"dcb_data_CR_L6.csv")
+#   Check_Result("dcb_data_JL_L5.csv",j,"dcb_data_CR_JL_L5.csv")
+# }
+# if (i>=5) {
+#   # dcb_L7(j,number_of_core)
+#   # dcb_JL_L6(j,number_of_core)
+#   Check_Result("dcb_data_l7.csv",j,"dcb_data_CR_L7.csv")
+#   Check_Result("dcb_data_JL_L6.csv",j,"dcb_data_CR_JL_L6.csv")
+# }
+# if (i>=6) {
+#   # dcb_L8(j,number_of_core)
+#   # dcb_JL_L7(j,number_of_core)
+#   Check_Result("dcb_data_l8.csv",j,"dcb_data_CR_L8.csv")
+#   Check_Result("dcb_data_JL_L7.csv",j,"dcb_data_CR_JL_L7.csv")
+# }
+# if (i>=7) {
+#   # dcb_L9(j,number_of_core)
+#   # dcb_JL_L8(j,number_of_core)
+#   Check_Result("dcb_data_l9.csv",j,"dcb_data_CR_L9.csv")
+#   Check_Result("dcb_data_JL_L8.csv",j,"dcb_data_CR_JL_L8.csv")
+# }
+# if (i>=8) {
+#   # dcb_L10(j,number_of_core)
+#   # dcb_JL_L9(j,number_of_core)
+#   Check_Result("dcb_data_l10.csv",j,"dcb_data_CR_L10.csv")
+#   Check_Result("dcb_data_JL_L9.csv",j,"dcb_data_CR_JL_L9.csv")
+# }
+# if (i>=9) {
+#   # dcb_L11(j,number_of_core)
+#   # dcb_JL_L10(j,number_of_core)
+#   Check_Result("dcb_data_l11.csv",j,"dcb_data_CR_L11.csv")
+#   Check_Result("dcb_data_JL_L10.csv",j,"dcb_data_CR_JL_L10.csv")
+# }
+# if (i>=10) {
+#   # dcb_L12(j,number_of_core)
+#   # dcb_JL_L11(j,number_of_core)
+#   Check_Result("dcb_data_l12.csv",j,"dcb_data_CR_L12.csv")
+#   Check_Result("dcb_data_JL_L11.csv",j,"dcb_data_CR_JL_L11.csv")
+# }
+# if (i>=11) {
+#   # dcb_L13(j,number_of_core)
+#   # dcb_JL_L12(j,number_of_core)
+#   Check_Result("dcb_data_l13.csv",j,"dcb_data_CR_L13.csv")
+#   Check_Result("dcb_data_JL_L12.csv",j,"dcb_data_CR_JL_L12.csv")
+# }
+# if (i>=12) {
+#   # dcb_L14(j,number_of_core)
+#   # dcb_JL_L13(j,number_of_core)
+#   Check_Result("dcb_data_l14.csv",j,"dcb_data_CR_L14.csv")
+#   Check_Result("dcb_data_JL_L13.csv",j,"dcb_data_CR_JL_L13.csv")
+# }
+# if (i>=13) {
+#   # dcb_L15(j,number_of_core)
+#   # dcb_JL_L14(j,number_of_core)
+#   Check_Result("dcb_data_l15.csv",j,"dcb_data_CR_L15.csv")
+#   Check_Result("dcb_data_JL_L14.csv",j,"dcb_data_CR_JL_L14.csv")
+# }
+# if (i>=14) {
+#   # dcb_L16(j,number_of_core)
+#   # dcb_JL_L15(j,number_of_core)
+#   Check_Result("dcb_data_l16.csv",j,"dcb_data_CR_L16.csv")
+#   Check_Result("dcb_data_JL_L15.csv",j,"dcb_data_CR_JL_L15.csv")
+# }
+# if (i>=15) {
+#   # dcb_L17(j,number_of_core)
+#   # dcb_JL_L16(j,number_of_core)
+#   Check_Result("dcb_data_l17.csv",j,"dcb_data_CR_L17.csv")
+#   Check_Result("dcb_data_JL_L16.csv",j,"dcb_data_CR_JL_L16.csv")
+#   Check_Result("dcb_data_JL.csv",j,"dcb_data_CR_JL.csv")
+# }
+# if (i>=16) {
+#   # dcb_L18(j,number_of_core)
+#   # dcb_JL_L17(j,number_of_core)
+#   Check_Result("dcb_data_l18.csv",j,"dcb_data_CR_L18.csv")
+#   Check_Result("dcb_data_JL_L17.csv",j,"dcb_data_CR_JL_L17.csv")
+# 
+# }
+#     if (i>=17) {
+#       # dcb_L19(j,number_of_core)
+#       # dcb_JL_L18(j,number_of_core)
+#       # dcb_JL(j,number_of_core)
+#       Check_Result("dcb_data_l19.csv",j,"dcb_data_CR_L19.csv")
+#       Check_Result("dcb_data_JL_L18.csv",j,"dcb_data_CR_JL_L18.csv")
+#       
+#     }
+# 
+#   }
+# 
+# }
 
 
 
@@ -215,6 +215,37 @@ time_start_dcb<-Sys.time()
 
 max_n=max(as.integer(dcb$n))
 
+Check_Result("dcb_data_l3.csv",max_n,"dcb_data_CR_L3.csv")
+Check_Result("dcb_data_l4.csv",max_n,"dcb_data_CR_L4.csv")
+Check_Result("dcb_data_l5.csv",max_n,"dcb_data_CR_L5.csv")
+Check_Result("dcb_data_l6.csv",max_n,"dcb_data_CR_L6.csv")
+Check_Result("dcb_data_l7.csv",max_n,"dcb_data_CR_L7.csv")
+Check_Result("dcb_data_l8.csv",max_n,"dcb_data_CR_L8.csv")
+Check_Result("dcb_data_l9.csv",max_n,"dcb_data_CR_L9.csv")
+Check_Result("dcb_data_l10.csv",max_n,"dcb_data_CR_L10.csv")
+Check_Result("dcb_data_l11.csv",max_n,"dcb_data_CR_L11.csv")
+Check_Result("dcb_data_l12.csv",max_n,"dcb_data_CR_L12.csv")
+Check_Result("dcb_data_l13.csv",max_n,"dcb_data_CR_L13.csv")
+Check_Result("dcb_data_l14.csv",max_n,"dcb_data_CR_L14.csv")
+Check_Result("dcb_data_l15.csv",max_n,"dcb_data_CR_L15.csv")
+Check_Result("dcb_data_l16.csv",max_n,"dcb_data_CR_L16.csv")
+Check_Result("dcb_data_l17.csv",max_n,"dcb_data_CR_L17.csv")
+Check_Result("dcb_data_l18.csv",max_n,"dcb_data_CR_L18.csv")
+Check_Result("dcb_data_JL_L4.csv",j,"dcb_data_CR_JL_L4.csv")
+Check_Result("dcb_data_JL_L5.csv",j,"dcb_data_CR_JL_L5.csv")
+Check_Result("dcb_data_JL_L6.csv",j,"dcb_data_CR_JL_L6.csv")
+Check_Result("dcb_data_JL_L7.csv",j,"dcb_data_CR_JL_L7.csv")
+Check_Result("dcb_data_JL_L8.csv",j,"dcb_data_CR_JL_L8.csv")
+Check_Result("dcb_data_JL_L9.csv",j,"dcb_data_CR_JL_L9.csv")
+Check_Result("dcb_data_JL_L10.csv",j,"dcb_data_CR_JL_L10.csv")
+Check_Result("dcb_data_JL_L11.csv",j,"dcb_data_CR_JL_L11.csv")
+Check_Result("dcb_data_JL_L12.csv",j,"dcb_data_CR_JL_L12.csv")
+Check_Result("dcb_data_JL_L13.csv",j,"dcb_data_CR_JL_L13.csv")
+Check_Result("dcb_data_JL_L14.csv",j,"dcb_data_CR_JL_L14.csv")
+Check_Result("dcb_data_JL_L15.csv",j,"dcb_data_CR_JL_L15.csv")
+Check_Result("dcb_data_JL_L16.csv",j,"dcb_data_CR_JL_L16.csv")
+Check_Result("dcb_data_JL_L17.csv",j,"dcb_data_CR_JL_L17.csv")
+Check_Result("dcb_data_JL.csv",j,"dcb_data_CR_JL.csv")
 dcb_L2(max_n)
 
 L3=dcb_L3(max_n,number_of_core)

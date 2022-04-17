@@ -1,4 +1,5 @@
 source("element.R")
+library("Get_Result.R")
 
 # Prepare data L2
 m_record_l2<-as.matrix(read.csv(file = "dcb_data_l2.csv", header = FALSE))[-1,]
@@ -466,7 +467,7 @@ Get_layers_fre<-function(n,m) {
   Max_a6=Max_a6[!duplicated(Max_a6)]
   Max_b1=Max_b1[!duplicated(Max_b1)]
   
-  print(c(m,Max_a1,Max_a2,Max_a3,Max_a4,Max_a5,Max_a6,Max_b1))
+  # print(c(m,Max_a1,Max_a2,Max_a3,Max_a4,Max_a5,Max_a6,Max_b1))
   return(fre_m)
 }
 
@@ -515,6 +516,7 @@ for (j in dcb_temp$n) {
   sum_a=sum( tab_a[tab_a$Var1%in%dcb[dcb$n==j,][2:7],]$Freq)
   sum_b=sum( tab_b[tab_b$Var1%in%dcb[dcb$n==j,][2:7],]$Freq)
   sum_ab=c(sum_ab,sum_a+sum_b)
+  print(j)
 }
 
 
